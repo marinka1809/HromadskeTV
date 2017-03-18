@@ -13,11 +13,16 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer" role="contentinfo" style="background: #b9b9b9">
+        <div class="container">
+            <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'footer-menu' ) ); ?>
+
+            <a class="linl-donate" href="<?php echo get_page_link(get_theme_mod('page-donate') ); ?>">
+                <?php echo get_theme_mod('inscription-donate'); ?>
+            </a>
+        </div>
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'hromadske-tv' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'hromadske-tv' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'hromadske-tv' ), 'hromadske-tv', '<a href="https://automattic.com/" rel="designer">Underscores.me</a>' ); ?>
+
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

@@ -106,6 +106,8 @@ add_action( 'widgets_init', 'hromadske_tv_widgets_init' );
  */
 function hromadske_tv_scripts() {
 	wp_enqueue_style( 'hromadske-tv-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'libs-css', get_template_directory_uri() . '/style/libs.css', array(), true );
+    //wp_enqueue_style( 'main', get_template_directory_uri() . '/style/main.css', array(), true );
 
 	wp_enqueue_script( 'hromadske-tv-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -116,6 +118,169 @@ function hromadske_tv_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'hromadske_tv_scripts' );
+
+// We connect the function of activating the meta block (my_extra_fields)
+function my_extra_fields() {
+    add_meta_box( 'extra_fields', 'Additional notation', 'extra_fields_box_func', 'post', 'side', 'high'  );
+}
+add_action('add_meta_boxes', 'my_extra_fields', 1);
+
+// Block code
+function extra_fields_box_func( $post ){
+    ?>
+    <ul>
+        <li>
+            <input type="hidden" name="extra[important]" value="">
+            <label><input type="checkbox" name="extra[important]" value="1" <?php checked( get_post_meta($post->ID, 'important', 1), 1 )?> > Important</label>
+        </li>
+        <li>
+            <input type="hidden" name="extra[updated]" value="">
+            <label><input type="checkbox" name="extra[updated]" value="1" <?php checked( get_post_meta($post->ID, 'updated', 1), 1 ) ?>"> Updated</label>
+        </li>
+        <li>
+            <input type="hidden" name="extra[video]" value="">
+            <label><input type="checkbox" name="extra[video]" value="1" <?php checked( get_post_meta($post->ID, 'video', 1), 1 ) ?>"> There is video</label>
+        </li>
+    </ul>
+
+    <input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
+    <?php
+}
+
+/* Save the data, if you save the post */
+function my_extra_fields_update( $post_id ){
+    if ( ! wp_verify_nonce($_POST['extra_fields_nonce'], __FILE__) ) return false; // Test
+    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE  ) return false; // Exit if this autosave
+    if ( !current_user_can('edit_post', $post_id) ) return false; // Exit if the user does not have the right to edit the record
+
+    if( !isset($_POST['extra']) ) return false; // If there is no data? left
+
+    // Все ОК! Теперь, нужно сохранить/удалить данные
+    $_POST['extra'] = array_map('trim', $_POST['extra']); // Clean all data from spaces at the edges
+    foreach( $_POST['extra'] as $key=>$value ){
+        if( empty($value) ){
+            delete_post_meta($post_id, $key); // Delete the field if the value is empty
+            continue;
+        }
+
+        update_post_meta($post_id, $key, $value); // add_post_meta() работает автоматически
+    }
+    return $post_id;
+}
+
+add_action('save_post', 'my_extra_fields_update', 0);
+
+
+/**
+ * Create custom post type
+ */
+/**
+ * Stories, Episodes
+ */
+add_action('init', 'register_post_types');
+function register_post_types(){
+    register_post_type('stories', array(
+        'labels' => array(
+            'name'               => 'Stories',
+            'singular_name'      => 'Story',
+            'add_new'            => 'Add new',
+            'add_new_item'       => 'Add new story',
+            'edit_item'          => 'Edit story',
+            'new_item'           => 'New story',
+            'view_item'          => '',
+        ),
+        'description'         => '',
+        'public'              => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'capability_type'    => 'post',
+        'supports'            => array('title','editor','excerpt','thumbnail','custom-fields'), // 'title','editor','author','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'taxonomies'          => array('stories-tags'),
+        'has_archive'         => true
+    ) );
+
+    register_post_type('episodes', array(
+        'labels' => array(
+            'name'               => 'Episodes',
+            'singular_name'      => 'Episode',
+            'add_new'            => 'Add new',
+            'add_new_item'       => 'Add new episode',
+            'edit_item'          => 'Edit episode',
+            'new_item'           => 'New episode',
+            'view_item'          => '',
+        ),
+        'description'         => '',
+        'public'              => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'capability_type'    => 'post',
+        'supports'            => array('title','editor','excerpt','thumbnail','custom-fields'), // 'title','editor','author','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'taxonomies'          => array(''),
+        'has_archive'         => true
+    ) );
+}
+
+add_action('init', 'create_taxonomy');
+function create_taxonomy(){
+    $labels = array(
+        'name'              => 'Tags for stories',
+        'singular_name'     => 'Tag',
+        'search_items'      => 'Search tag',
+        'all_items'         => 'All tags',
+        'edit_item'         => 'Edit tag',
+        'update_item'       => 'Update tag',
+        'add_new_item'      => 'Add New tag',
+        'new_item_name'     => 'New tag Name'
+    );
+    // параметры
+    $args = array(
+        'labels'                => $labels,
+        'description'           => '', // описание таксономии
+        'public'                => true,
+        'show_tagcloud'         => false, // равен аргументу show_ui
+        'hierarchical'          => false,
+        'update_count_callback' => '',
+        'rewrite'               => true,
+        'capabilities'          => array(),
+        'show_admin_column'     => false, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
+        '_builtin'              => false,
+        'show_in_quick_edit'    => null, // по умолчанию значение show_ui
+    );
+    register_taxonomy('stories-tags', array('stories'), $args );
+
+    $labelsProject = array(
+        'name'              => 'Projects',
+        'singular_name'     => 'Project',
+        'search_items'      => 'Search project',
+        'all_items'         => 'All Projects',
+        'edit_item'         => 'Edit project',
+        'update_item'       => 'Update project',
+        'add_new_item'      => 'Add New project',
+        'new_item_name'     => 'New project Name',
+        'parent_item'       => null,
+        'parent_item_colon' => null,
+    );
+
+    $argsProject = array(
+        'labels'                => $labelsProject,
+        'description'           => 'There are various projects in which studies, projects continue to expand new episodes', // описание таксономии
+        'public'                => true,
+        'show_tagcloud'         => false,
+        'hierarchical' => true,
+        'update_count_callback' => '',
+        'rewrite'               => true,
+        'capabilities'          => array(),
+        'show_admin_column'     => true, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
+        '_builtin'              => false,
+        'show_in_quick_edit'    => null, // по умолчанию значение show_ui
+
+    );
+    register_taxonomy('projects', array('episodes'), $argsProject );
+}
 
 /**
  * Implement the Custom Header feature.
