@@ -170,118 +170,6 @@ function my_extra_fields_update( $post_id ){
 
 add_action('save_post', 'my_extra_fields_update', 0);
 
-
-/**
- * Create custom post type
- */
-/**
- * Stories, Episodes
- */
-add_action('init', 'register_post_types');
-function register_post_types(){
-    register_post_type('stories', array(
-        'labels' => array(
-            'name'               => 'Stories',
-            'singular_name'      => 'Story',
-            'add_new'            => 'Add new',
-            'add_new_item'       => 'Add new story',
-            'edit_item'          => 'Edit story',
-            'new_item'           => 'New story',
-            'view_item'          => '',
-        ),
-        'description'         => '',
-        'public'              => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'capability_type'    => 'post',
-        'supports'            => array('title','editor','excerpt','thumbnail','custom-fields'), // 'title','editor','author','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-        'taxonomies'          => array('stories-tags'),
-        'has_archive'         => true
-    ) );
-
-    register_post_type('episodes', array(
-        'labels' => array(
-            'name'               => 'Episodes',
-            'singular_name'      => 'Episode',
-            'add_new'            => 'Add new',
-            'add_new_item'       => 'Add new episode',
-            'edit_item'          => 'Edit episode',
-            'new_item'           => 'New episode',
-            'view_item'          => '',
-        ),
-        'description'         => '',
-        'public'              => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'capability_type'    => 'post',
-        'supports'            => array('title','editor','excerpt','thumbnail','custom-fields'), // 'title','editor','author','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-        'taxonomies'          => array(''),
-        'has_archive'         => true
-    ) );
-}
-
-add_action('init', 'create_taxonomy');
-function create_taxonomy(){
-    $labels = array(
-        'name'              => 'Tags for stories',
-        'singular_name'     => 'Tag',
-        'search_items'      => 'Search tag',
-        'all_items'         => 'All tags',
-        'edit_item'         => 'Edit tag',
-        'update_item'       => 'Update tag',
-        'add_new_item'      => 'Add New tag',
-        'new_item_name'     => 'New tag Name'
-    );
-    // параметры
-    $args = array(
-        'labels'                => $labels,
-        'description'           => '', // описание таксономии
-        'public'                => true,
-        'show_tagcloud'         => false, // равен аргументу show_ui
-        'hierarchical'          => false,
-        'update_count_callback' => '',
-        'rewrite'               => true,
-        'capabilities'          => array(),
-        'show_admin_column'     => false, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
-        '_builtin'              => false,
-        'show_in_quick_edit'    => null, // по умолчанию значение show_ui
-    );
-    register_taxonomy('stories-tags', array('stories'), $args );
-
-    $labelsProject = array(
-        'name'              => 'Projects',
-        'singular_name'     => 'Project',
-        'search_items'      => 'Search project',
-        'all_items'         => 'All Projects',
-        'edit_item'         => 'Edit project',
-        'update_item'       => 'Update project',
-        'add_new_item'      => 'Add New project',
-        'new_item_name'     => 'New project Name',
-        'parent_item'       => null,
-        'parent_item_colon' => null,
-    );
-
-    $argsProject = array(
-        'labels'                => $labelsProject,
-        'description'           => 'There are various projects in which studies, projects continue to expand new episodes', // описание таксономии
-        'public'                => true,
-        'show_tagcloud'         => false,
-        'hierarchical' => true,
-        'update_count_callback' => '',
-        'rewrite'               => true,
-        'capabilities'          => array(),
-        'show_admin_column'     => true, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
-        '_builtin'              => false,
-        'show_in_quick_edit'    => null, // по умолчанию значение show_ui
-
-    );
-    register_taxonomy('projects', array('episodes'), $argsProject );
-}
-
 /**
  * Implement the Custom Header feature.
  */
@@ -301,6 +189,11 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Custom Post Type and Custom Taxonomy
+ */
+require get_template_directory() . '/inc/custom-post-type.php';
 
 /**
  * Load Jetpack compatibility file.

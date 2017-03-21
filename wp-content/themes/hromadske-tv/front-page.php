@@ -19,13 +19,14 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
             <?php
             $args = array(
-                'post_type' => 'post',
                 'posts_per_page' => 1,
+                'post__in'  => get_option( 'sticky_posts' ),
+                'ignore_sticky_posts' => 1
             );
-            $firstPosts = new WP_Query($args);
+            $stickPosts = new WP_Query($args);
 
-            while ( $firstPosts->have_posts() ) : $firstPosts->the_post();?>
-                <section class="section welcom-section" style="background-image: url('<?php echo get_field("poster_image")?>');">
+            while ( $stickPosts->have_posts() ) : $stickPosts->the_post();?>
+                <section class="section welcom-section" style="background-image: url('<?php echo get_field("poster_image")['url']?>');">
                     <div class="container">
                         <h1><?php the_title(); ?></h1>
                         <p><?php the_excerpt(); ?></p>
