@@ -1,11 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * The template for displaying front page
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -25,67 +20,71 @@ get_header(); ?>
             );
             $stickPosts = new WP_Query($args);
 
-            while ( $stickPosts->have_posts() ) : $stickPosts->the_post();?>
-                <section class="section welcom-section" style="background-image: url('<?php echo get_field("poster_image")['url']?>');">
+            while ( $stickPosts->have_posts() ) : $stickPosts->the_post();
+                $image=get_field("poster_image");?>
+                <section class="section welcom-section" style="background-image: url('<?php  echo $image['url']; ?>');">
                     <div class="container">
                         <h1><?php the_title(); ?></h1>
                         <p><?php the_excerpt(); ?></p>
                         <a href="<?php the_permalink(); ?>"><?php echo get_theme_mod('inscription-detailed-button'); ?></a>
                     </div>
-                    <?php $firstPostID = array($post->ID);
+                <?php $firstPostID = array($post->ID);
             endwhile;
 
-            wp_reset_postdata();
+                wp_reset_postdata();
             ?>
-
             <?php
-                $args = array(
-                    'post_type' => 'post',
-                    'post__not_in' => $firstPostID,
-                    'posts_per_page' => 5,
-                );
+            $args = array(
+                'post_type' => 'post',
+                'post__not_in' => $firstPostID,
+                'posts_per_page' => 5,
+                'ignore_sticky_posts' => 1
+            );
 
-                $recentPosts = new WP_Query($args);
+            $recentPosts = new WP_Query($args);
 
-                if ( $recentPosts->have_posts() ) :?>
-                    <div>
-                        <h2><?php echo get_theme_mod('title-news-section'); ?></h2>
-                        <ul>
-                            <?php while ( $recentPosts->have_posts() ) : $recentPosts->the_post();?>
-                                <li>
+            if ( $recentPosts->have_posts() ) :?>
+            <div>
+                <h2><?php echo get_theme_mod('title-news-section'); ?></h2>
+                <ul>
+                    <?php while ( $recentPosts->have_posts() ) : $recentPosts->the_post();?>
+                        <li>
 
-                                    <div class="info-news">
-                                        <?php the_time('d.m.Y');?>
-                                        <?php if ( get_post_meta($post->ID,'important')):
-                                                echo "Важливо";
-                                        endif;
-                                        if ( get_post_meta($post->ID,'updated')):
-                                            echo "Оновлено";
-                                        endif;
+                            <div class="info-news">
+                                <?php the_time('d.m.Y');?>
+                                <?php if ( get_post_meta($post->ID,'important')):?>
+                                <span class="important-label">Важливо</span>
+                                <?php endif;?>
+                                <?php if ( get_post_meta($post->ID,'updated')):?>
+                                    <span class="updated-label">Оновлено</span>
+                                <?php endif;?>
 
-                                        if ( get_post_meta($post->ID,'video')):
-                                        echo "Відео";
-                                        endif;
-                                        ?>
+                                <?php if ( get_post_meta($post->ID,'video')):?>
+                                    <span class="fa fa-video-camera" aria-hidden="true"></span>
+                                <?php endif; ?>
 
-                                    </div>
-                                    <a href="<?php the_permalink(); ?>">
-                                            <?php the_title();?>
-                                    </a>
-                                </li>
-                            <?php endwhile;  ?>
-                        </ul>
-                    <div>
-                <?php endif;
-            wp_reset_postdata();
-            ?>
+
+                            </div>
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_title();?>
+                            </a>
+                        </li>
+                    <?php endwhile;  ?>
+                </ul>
+                <a class="link-all-articles" href="/news"> Більше новин</a>
+                <div>
+                    <?php endif;
+                    wp_reset_postdata();
+                    ?>
             </section>
+
             <?php
             $args = array(
                 'post_type' => 'post',
                 'meta_key'  => 'important',
-                    'post__not_in' => $firstPostID,
+                'post__not_in' => $firstPostID,
                 'posts_per_page' => 4,
+                'ignore_sticky_posts' => 1
             );
 
             $importantPosts = new WP_Query($args);
@@ -94,7 +93,7 @@ get_header(); ?>
             <section class="section">
                 <div class="container">
                     <h1><?php echo get_theme_mod('title-important-news-section'); ?></h1>
-                    <a class="link-all-articles" href=""> <?php echo get_theme_mod('inscription-button-all-articles'); ?></a>
+                    <a class="link-all-articles" href="/news"> <?php echo get_theme_mod('inscription-button-all-articles'); ?></a>
                     <ul class="row">
                         <?php while ( $importantPosts->have_posts() ) : $importantPosts->the_post();?>
                             <li class="col-sm-3">
@@ -107,10 +106,9 @@ get_header(); ?>
                         <?php endwhile;  ?>
                     </ul>
                 </div>
-            <section>
-            <?php endif;
-                wp_reset_postdata();
-            ?>
+                <section>
+                    <?php endif;
+                wp_reset_postdata();      ?>
 
             <?php
             $args = array(
@@ -120,19 +118,19 @@ get_header(); ?>
             $firstStories = new WP_Query($args);
 
             while ( $firstStories->have_posts() ) : $firstStories->the_post();?>
-            <section class="section front-story-section" style="background-image: url('<?php echo get_the_post_thumbnail_url() ?>');">
-                <div class="container">
-                    <h1><?php echo get_theme_mod('title-stories-section'); ?></h1>
-                    <a class="link-all-articles" href="/stories"> <?php echo get_theme_mod('inscription-button-all-articles'); ?></a>
-                    <h2><?php the_title(); ?></h2>
-                    <p><?php the_excerpt(); ?></p>
-                    <a href="<?php the_permalink(); ?>"><?php echo get_theme_mod('inscription-detailed-button'); ?></a>
-                </div>
-            </section>
-                <?php endwhile;
+                <section class="section front-story-section" style="background-image: url('<?php echo get_the_post_thumbnail_url() ?>');">
+                    <div class="container">
+                        <h1><?php echo get_theme_mod('title-stories-section'); ?></h1>
+                        <a class="link-all-articles" href="/stories"> <?php echo get_theme_mod('inscription-button-all-articles'); ?></a>
+                        <h2><?php the_title(); ?></h2>
+                        <p><?php the_excerpt(); ?></p>
+                        <a href="<?php the_permalink(); ?>"><?php echo get_theme_mod('inscription-detailed-button'); ?></a>
+                    </div>
+                </section>
+            <?php endwhile;
 
-                wp_reset_postdata();
-                ?>
+            wp_reset_postdata();
+            ?>
 
             <section class="section">
                 <div class="container">
@@ -173,17 +171,17 @@ get_header(); ?>
                     </div>
                 </section>
             <?php endif;?>
-            <?phpwp_reset_postdata();?>
+            <?php wp_reset_postdata();?>
 
-                <section class="section">
-                    <div class="container">
-                        <h1><?php echo get_theme_mod('title-social-section'); ?></h1>
+            <section class="section">
+                <div class="container">
+                    <h1><?php echo get_theme_mod('title-social-section'); ?></h1>
 
-                    </div>
-                </section>
+                </div>
+            </section>
 
 
-		</main><!-- #main -->
+        </main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php

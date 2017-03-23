@@ -24,11 +24,28 @@
 	<header id="masthead" class="site-header" role="banner">
         <div class="container">
             <div class="site-branding">
+
                 <?php
+                $custom_logo_id = get_theme_mod( 'custom_logo' );
+                $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
                 if ( is_front_page() && is_home() ) : ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    <h1 class="site-title">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                            <?php if ( has_custom_logo() ) {
+                            echo '<img src="'. esc_url( $logo[0] ) .'">';
+                            }?>
+                            <?php bloginfo( 'name' ); ?>
+                        </a>
+                    </h1>
                 <?php else : ?>
-                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                    <p class="site-title">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                            <?php if ( has_custom_logo() ) {
+                                echo '<img src="'. esc_url( $logo[0] ) .'">';
+                            }?>
+                            <?php bloginfo( 'name' ); ?>
+                        </a>
+                    </p>
                 <?php
                 endif; ?>
             </div><!-- .site-branding -->
@@ -39,6 +56,8 @@
             </nav><!-- #site-navigation -->
 
             <a class="linl-donate" href="<?php echo get_page_link(get_theme_mod('page-donate') ); ?>"><?php echo get_theme_mod('inscription-donate'); ?></a>
+
+            <?php get_template_part( 'template-parts/social-link' ); ?>
         </div><!-- .container -->
 	</header><!-- #masthead -->
 

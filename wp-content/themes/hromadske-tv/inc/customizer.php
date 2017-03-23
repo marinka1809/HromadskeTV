@@ -196,7 +196,104 @@ add_action('customize_register', function($customizer){
 
 
 
+    $customizer->add_section(
+        'social-links-section',
+        array(
+            'title' => esc_html__( 'Social links section', 'hromadske-tv' ),
+            'description' => esc_html__( 'If you need to add a link to the site, add the address in the appropriate field, if the link is not needed just do not fill the field.', 'hromadske-tv' )
+        )
+    );
 
+    $customizer->add_setting(
+        'vk-link',
+        array('default' => '')
+    );
+    $customizer->add_control(
+        'vk-link',
+        array(
+            'label' => esc_html__('Vk:', 'hromadske-tv' ) ,
+            'section' => 'social-links-section',
+            'type' => 'url',
+        )
+    );
+
+    $customizer->add_setting(
+        'facebook-link',
+        array('default' => '')
+    );
+    $customizer->add_control(
+        'facebook-link',
+        array(
+            'label' => esc_html__('Facebook:', 'hromadske-tv' ) ,
+            'section' => 'social-links-section',
+            'type' => 'url',
+        )
+    );
+
+    $customizer->add_setting(
+        'google-link',
+        array('default' => '')
+    );
+    $customizer->add_control(
+        'google-link',
+        array(
+            'label' => esc_html__('Google +:', 'hromadske-tv' ) ,
+            'section' => 'social-links-section',
+            'type' => 'url',
+        )
+    );
+
+    $customizer->add_setting(
+        'youtube-link',
+        array('default' => '')
+    );
+    $customizer->add_control(
+        'youtube-link',
+        array(
+            'label' => esc_html__('Youtube:', 'hromadske-tv' ) ,
+            'section' => 'social-links-section',
+            'type' => 'url',
+        )
+    );
+
+    $customizer->add_setting(
+        'tumblr-link',
+        array('default' => '')
+    );
+    $customizer->add_control(
+        'tumblr-link',
+        array(
+            'label' => esc_html__('Tumblr:', 'hromadske-tv' ) ,
+            'section' => 'social-links-section',
+            'type' => 'url',
+        )
+    );
+
+    $customizer->add_setting(
+        'rss-link',
+        array('default' => '')
+    );
+    $customizer->add_control(
+        'rss-link',
+        array(
+            'label' => esc_html__('RSS:', 'hromadske-tv' ) ,
+            'section' => 'social-links-section',
+            'type' => 'url',
+        )
+    );
+
+    $customizer->add_setting(
+        'twitter-link',
+        array('default' => '')
+    );
+    $customizer->add_control(
+        'twitter-link',
+        array(
+            'label' => esc_html__('Twitter:', 'hromadske-tv' ) ,
+            'section' => 'social-links-section',
+            'type' => 'url',
+        )
+    );
 });
 
 
