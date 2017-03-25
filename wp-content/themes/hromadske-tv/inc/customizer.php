@@ -33,6 +33,10 @@ add_action( 'customize_preview_init', 'hromadske_tv_customize_preview_js' );
 
 add_action('customize_register', function($customizer){
 
+    /**
+     * Front page
+     */
+
     $customizer->add_panel( 'settings-front-page', array(
         'priority' => 10,
         'capability' => 'edit_theme_options',
@@ -169,6 +173,19 @@ add_action('customize_register', function($customizer){
     );
 
     $customizer->add_setting(
+        'label-news-button',
+        array('default' => 'Більше новин')
+    );
+    $customizer->add_control(
+        'label-news-button',
+        array(
+            'label' => esc_html__( 'Inscription for type button more news.', 'hromadske-tv' ),
+            'section' => 'button-labels',
+            'type' => 'text'
+        )
+    );
+
+    $customizer->add_setting(
         'inscription-detailed-button',
         array('default' => 'Детальніше')
     );
@@ -194,7 +211,9 @@ add_action('customize_register', function($customizer){
         )
     );
 
-
+    /**
+     * Social link
+     */
 
     $customizer->add_section(
         'social-links-section',
@@ -294,6 +313,32 @@ add_action('customize_register', function($customizer){
             'type' => 'url',
         )
     );
+
+    /**
+     * Project page
+     */
+    $customizer->add_section(
+        'project-page-settings',
+        array(
+            'title' => esc_html__( 'Project page settings', 'hromadske-tv' ),
+        )
+    );
+
+    $customizer->add_setting(
+        'series-for-big-thumbnail',
+        array('default' => '1')
+    );
+
+    $customizer->add_control(
+        'series-for-big-thumbnail',
+        array(
+            'label' => esc_html__('From which series to begin to display big thumbnail:', 'hromadske-tv' ) ,
+            'section' => 'project-page-settings',
+            'type' => 'select',
+            'choices' => array("1", "2", "3",),
+        )
+    );
+
 });
 
 

@@ -93,8 +93,8 @@ function hromadske_tv_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'hromadske-tv' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'hromadske-tv' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
@@ -102,9 +102,18 @@ function hromadske_tv_widgets_init() {
         'name'          => esc_html__( 'Footer', 'hromadske-tv' ),
         'id'            => 'footer-menu',
         'description'   => esc_html__( 'Add widgets here.', 'hromadske-tv' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
         'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+        'name'          => esc_html__( 'Social section', 'hromadske-tv' ),
+        'id'            => 'social-sections',
+        'description'   => esc_html__( 'Add widgets here.', 'hromadske-tv' ),
+        'before_widget' => '<li id="%1$s" class="col-md-4 widget %2$s">',
+        'after_widget'  => '</li>',
+        'before_title'  => '<h2 class="widget-title-social">',
         'after_title'   => '</h2>',
     ) );
 }
@@ -116,7 +125,7 @@ add_action( 'widgets_init', 'hromadske_tv_widgets_init' );
 function hromadske_tv_scripts() {
 	wp_enqueue_style( 'hromadske-tv-style', get_stylesheet_uri() );
     wp_enqueue_style( 'libs-css', get_template_directory_uri() . '/style/libs.css', array(), true );
-    //wp_enqueue_style( 'main', get_template_directory_uri() . '/style/main.css', array(), true );
+    wp_enqueue_style( 'main', get_template_directory_uri() . '/style/main.css', array(), true );
 
     wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/95a5ddb753.js', true);
 	wp_enqueue_script( 'hromadske-tv-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -126,12 +135,15 @@ function hromadske_tv_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+    wp_enqueue_script( 'libs', get_template_directory_uri() . '/js/libs.min.js', array(),  false );
+    wp_enqueue_script( 'main-script', get_template_directory_uri() . '/js/main.js', array(),  false );
 }
 add_action( 'wp_enqueue_scripts', 'hromadske_tv_scripts' );
 
 // We connect the function of activating the meta block (my_extra_fields)
 function my_extra_fields() {
     add_meta_box( 'extra_fields', 'Additional notation', 'extra_fields_box_func', 'post', 'side', 'high'  );
+    add_meta_box( 'stories_extra_fields', 'Additional notation', 'stories_extra_fields_box', 'stories', 'side', 'high'  );
 }
 add_action('add_meta_boxes', 'my_extra_fields', 1);
 
@@ -150,6 +162,24 @@ function extra_fields_box_func( $post ){
         <li>
             <input type="hidden" name="extra[video]" value="">
             <label><input type="checkbox" name="extra[video]" value="1" <?php checked( get_post_meta($post->ID, 'video', 1), 1 ) ?>"> There is video</label>
+        </li>
+    </ul>
+
+    <input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
+    <?php
+}
+
+// Block code
+function stories_extra_fields_box( $stories ){
+    ?>
+    <ul>
+        <li>
+            <input type="hidden" name="extra[stick-stories]" value="">
+            <label><input type="checkbox" name="extra[stick-stories]" value="1" <?php checked( get_post_meta($stories->ID, 'stick-stories', 1), 1 )?> > Stick front page</label>
+        </li>
+        <li>
+            <input type="hidden" name="extra[big-thumbnail]" value="">
+            <label><input type="checkbox" name="extra[big-thumbnail]" value="1" <?php checked( get_post_meta($stories->ID, 'big-thumbnail', 1), 1 ) ?>"> Big Thumbnail</label>
         </li>
     </ul>
 
@@ -179,6 +209,30 @@ function my_extra_fields_update( $post_id ){
 }
 
 add_action('save_post', 'my_extra_fields_update', 0);
+
+/**
+ * The excerpt max charlength
+ */
+
+function the_excerpt_max_charlength( $charlength ){
+    $excerpt = get_the_excerpt();
+    $charlength++;
+
+    if ( mb_strlen( $excerpt ) > $charlength ) {
+        $subex = mb_substr( $excerpt, 0, $charlength - 5 );
+        $exwords = explode( ' ', $subex );
+        $excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+        if ( $excut < 0 ) {
+            echo mb_substr( $subex, 0, $excut );
+        } else {
+            echo $subex;
+        }
+        echo '...';
+    } else {
+        echo $excerpt;
+    }
+}
+
 
 /**
  * Implement the Custom Header feature.

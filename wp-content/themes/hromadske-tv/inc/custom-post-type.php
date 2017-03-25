@@ -36,7 +36,6 @@ function register_post_types(){
         'capability_type'    => 'post',
         'supports'            => array('title','editor','excerpt','thumbnail','custom-fields'), // 'title','editor','author','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'taxonomies'          => array('stories-tags'),
-        'has_archive'         => true
     ) );
 
     /**
@@ -115,13 +114,13 @@ function create_taxonomy(){
         'description'           => 'There are various projects in which studies, projects continue to expand new episodes', // описание таксономии
         'public'                => true,
         'show_tagcloud'         => false,
-        'hierarchical' => true,
+        'hierarchical'          => true,
         'update_count_callback' => '',
-        'rewrite'               => true,
         'capabilities'          => array(),
         'show_admin_column'     => true,
         '_builtin'              => false,
-        'show_in_quick_edit'    => null,
+        'query_var'             => true,
+        'rewrite'               => true,
 
     );
     register_taxonomy('projects', array('episodes'), $argsProject );
