@@ -62,6 +62,28 @@ function register_post_types(){
         'taxonomies'          => array(''),
         'has_archive'         => true
     ) );
+
+    /**
+     * Employees
+     */
+    register_post_type('employees', array(
+        'labels' => array(
+            'name'               => 'Employees',
+            'singular_name'      => 'Employee',
+            'add_new'            => 'Add new',
+            'add_new_item'       => 'Add new employee',
+            'edit_item'          => 'Edit employee',
+            'new_item'           => 'New employee',
+            'view_item'          => '',
+        ),
+        'description'         => '',
+        'public'              => false,
+        'menu_icon'           => 'dashicons-groups',
+        'show_ui'            => true,
+        'capability_type'    => 'post',
+        'supports'            => array('title','excerpt','thumbnail'), // 'title','editor','author','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+
+    ) );
 }
 
 

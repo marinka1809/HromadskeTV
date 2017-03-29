@@ -9,7 +9,7 @@
 
 ?>
 <li class="col-xs-6 col-md-3" data-href="<?php the_permalink(); ?>" >
-    <article id="stories-<?php the_ID(); ?>" <?php post_class('stories'); ?> >
+    <article id="<?php the_ID(); ?>">
         <?php the_post_thumbnail(); ?>
         <h2> <?php the_title();?> </h2>
         <?php the_excerpt();?>

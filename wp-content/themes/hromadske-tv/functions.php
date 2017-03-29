@@ -144,6 +144,7 @@ add_action( 'wp_enqueue_scripts', 'hromadske_tv_scripts' );
 function my_extra_fields() {
     add_meta_box( 'extra_fields', 'Additional notation', 'extra_fields_box_func', 'post', 'side', 'high'  );
     add_meta_box( 'stories_extra_fields', 'Additional notation', 'stories_extra_fields_box', 'stories', 'side', 'high'  );
+    add_meta_box( 'episodes_extra_fields', 'Additional notation', 'episodes_extra_fields_box', 'episodes', 'side', 'high'  );
 }
 add_action('add_meta_boxes', 'my_extra_fields', 1);
 
@@ -169,7 +170,7 @@ function extra_fields_box_func( $post ){
     <?php
 }
 
-// Block code
+// Block code stories
 function stories_extra_fields_box( $stories ){
     ?>
     <ul>
@@ -187,6 +188,18 @@ function stories_extra_fields_box( $stories ){
     <?php
 }
 
+// Block code episodes
+function episodes_extra_fields_box( $episodes ){
+    ?>
+    <ul>
+        <li>
+            <input type="hidden" name="extra[big-thumbnail]" value="">
+            <label><input type="checkbox" name="extra[big-thumbnail]" value="1" <?php checked( get_post_meta($episodes->ID, 'big-thumbnail', 1), 1 ) ?>"> Big Thumbnail</label>
+        </li>
+    </ul>
+    <input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
+    <?php
+}
 /* Save the data, if you save the post */
 function my_extra_fields_update( $post_id ){
     if ( ! wp_verify_nonce($_POST['extra_fields_nonce'], __FILE__) ) return false; // Test
@@ -210,6 +223,55 @@ function my_extra_fields_update( $post_id ){
 
 add_action('save_post', 'my_extra_fields_update', 0);
 
+
+// Add term page
+function pippin_taxonomy_add_new_meta_field() {
+    // this will add the custom meta field to the add new term page
+    ?>
+    <div class="form-field">
+        <label for="term_meta[custom_term_meta]">Stick project</label>
+        <input type="hidden" name="term_meta[custom_term_meta]" value="">
+        <input type="checkbox" name="term_meta[custom_term_meta]" id="term_meta[custom_term_meta]" value="1" <?php checked( get_term_meta($term->term_id, 'custom_term_meta', 1 ), 1); ?>"/>
+    </div>
+    <?php
+}
+add_action( 'projects_add_form_fields', 'pippin_taxonomy_add_new_meta_field', 10, 2 );
+// Edit term page
+function pippin_taxonomy_edit_meta_field($term) {?>
+
+    <tr class="form-field">
+        <th scope="row" valign="top">
+            <label for="term_meta[custom_term_meta]">Stick project</label>
+        </th>
+        <td>
+            <input type="hidden" name="term_meta[custom_term_meta]" value="">
+            <input type="checkbox" name="term_meta[custom_term_meta]" id="term_meta[custom_term_meta]" value="1" <?php checked( get_term_meta($term->term_id, 'custom_term_meta', 1 ), 1); ?>"/>
+        </td>
+    </tr>
+
+    <?php
+}
+add_action( 'projects_edit_form_fields', 'pippin_taxonomy_edit_meta_field', 10, 2 );
+
+// Save extra taxonomy fields callback function.
+function save_taxonomy_custom_meta( $term_id ) {
+    if ( isset( $_POST['term_meta'] ) ) {
+        foreach( $_POST['term_meta'] as $key=>$value ){
+            if( empty($value) ){
+                delete_term_meta( $term_id, $key); // Delete the field if the value is empty
+                continue;
+            }
+
+            update_term_meta($term_id, $key, $value); // add_post_meta() работает автоматически
+        }
+    }
+
+    return $term_id;
+}
+add_action( 'edited_projects', 'save_taxonomy_custom_meta', 10, 2 );
+add_action( 'create_projects', 'save_taxonomy_custom_meta', 10, 2 );
+
+
 /**
  * The excerpt max charlength
  */
@@ -232,6 +294,69 @@ function the_excerpt_max_charlength( $charlength ){
         echo $excerpt;
     }
 }
+
+function admin_ajax() {
+
+
+  // wp_enqueue_script('libs');
+   wp_enqueue_script( 'ajax-script', get_theme_file_uri( '/js/ajax-script.js' ), array('libs') );
+}
+add_action('wp_enqueue_scripts', 'admin_ajax');
+
+function add_news_func(){
+    $args = unserialize(stripslashes($_POST['query']));
+    $args['paged'] = $_POST['page'] + 1;
+    $args['post_status'] = 'publish';
+
+    $q = new WP_Query($args);
+    if( $q->have_posts() ):?>
+        <ul class="list-news">
+            <?php while($q->have_posts()): $q->the_post(); ?>
+                <li>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class('news'); ?> >
+                        <div class="info-news">
+                            <?php
+                            $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+                            if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+                                $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+                            }
+
+                            $time_string = sprintf( $time_string,
+                                esc_attr( get_the_date( 'c' ) ),
+                                esc_html( get_the_date() ),
+                                esc_attr( get_the_modified_date( 'c' ) ),
+                                esc_html( get_the_modified_date() )
+                            );
+                            ?>
+                            <a href="<?php  get_permalink();?>" rel="bookmark"> <?php echo $time_string?> </a>
+                            <?php if ( get_post_meta($q->the_post->ID,'important')):
+                                $important = "important" ?>
+                                <span class="important-label">Важливо</span>
+                            <?php endif;?>
+                            <?php if ( get_post_meta($q->the_post->ID,'updated')):?>
+                                <span class="updated-label">Оновлено</span>
+                            <?php endif;?>
+
+                        </div>
+                        <h2 class="<?php echo $important;?>">
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_title();?>
+                                <?php if ( get_post_meta($q->the_post->ID,'video')):?>
+                                    <span class="fa fa-video-camera" aria-hidden="true"></span>
+                                <?php endif; ?>
+                            </a>
+                        </h2>
+                    </article><!-- #post-## -->
+                </li>
+            <?php endwhile;?>
+        </ul>
+    <?php endif;
+    wp_reset_postdata();
+
+    die();
+}
+add_action( 'wp_ajax_add_news_func', 'add_news_func');
+add_action( 'wp_ajax_nopriv_add_news_func', 'add_news_func');
 
 
 /**

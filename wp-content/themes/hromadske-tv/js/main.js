@@ -6,7 +6,7 @@ $(document).ready(function(){
     artificialLink  (".item-project");
     artificialLink  (".list-stories li");
 
-
+    artificialLink  (".list-episodes li");
 
     function artificialLink(element) {
 

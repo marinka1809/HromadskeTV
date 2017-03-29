@@ -16,6 +16,7 @@
         'fields'        => 'all',
         'hide_empty'    => false,
         'number'        => 5,
+        'meta_key'      =>  'custom_term_meta',
     );
     $projects_query = new WP_Term_Query( $args );
     if ( $projects_query->terms ) :?>

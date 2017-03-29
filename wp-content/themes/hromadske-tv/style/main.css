@@ -78,7 +78,8 @@ ul {
             justify-content: space-between;
     padding: 20px 0; }
 
-.list-stories li {
+.list-stories li,
+.list-episodes li {
   cursor: pointer; }
 
 .list-projects .item-project {

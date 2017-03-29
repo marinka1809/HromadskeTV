@@ -21,7 +21,7 @@ get_header(); ?>
             $stickPosts = new WP_Query($args);
 
             while ( $stickPosts->have_posts() ) : $stickPosts->the_post();
-                $image=get_field("poster_image");?>
+                $image = get_field("poster_image");?>
                 <section class="section welcom-section" style="background-image: url('<?php  echo $image['url']; ?>');">
                     <div class="container">
                         <div class="row">
@@ -153,18 +153,11 @@ get_header(); ?>
 
             $args = array(
                 'taxonomy'      => array( 'projects' ),
-                'orderby'       => 'count',
+                'meta_key' =>  'custom_term_meta',
+               // 'orderby'       => 'update',
                 'fields'        => 'all',
-               'hide_empty'    => false,
+               'hide_empty'    =>  false,
                'number'        => 3,
-//                'relation' => 'OR', // Optional, defaults to "OR"
-//                array(
-//                  'key'     => 'stick-project',
-//                    'value'   => '1',
-//                    'compare' => '='
-//               )
-                //'meta-key' => get_field('stick-project'),
-
             );
 
             $projects_query = new WP_Term_Query( $args );

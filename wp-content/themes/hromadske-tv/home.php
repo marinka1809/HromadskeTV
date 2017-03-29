@@ -24,10 +24,16 @@ get_header();?>
                         get_template_part( 'template-parts/content', 'preview' );
                     endwhile; ?>
                 </ul>
-                <a class="link-all-articles"> <?php echo get_theme_mod('label-news-button'); ?> </a>
+                <script>
+                    var ajaxurl = '<?php echo admin_url('admin-ajax.php')?>';
+                    var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
+                    var current_page = <?php echo get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1?>;
+                    var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
+                </script>
+                <button class="more-news"> <?php echo get_theme_mod('label-news-button'); ?> </button>
                 <div class="blog-nav">
                     <?php
-                    echo paginate_links();?>
+                   echo paginate_links();?>
                 </div>
 
             <?php   else :
