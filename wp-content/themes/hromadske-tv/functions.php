@@ -72,18 +72,6 @@ endif;
 add_action( 'after_setup_theme', 'hromadske_tv_setup' );
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function hromadske_tv_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'hromadske_tv_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'hromadske_tv_content_width', 0 );
-
-/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
@@ -142,9 +130,9 @@ add_action( 'wp_enqueue_scripts', 'hromadske_tv_scripts' );
 
 // We connect the function of activating the meta block (my_extra_fields)
 function my_extra_fields() {
-    add_meta_box( 'extra_fields', 'Additional notation', 'extra_fields_box_func', 'post', 'side', 'high'  );
-    add_meta_box( 'stories_extra_fields', 'Additional notation', 'stories_extra_fields_box', 'stories', 'side', 'high'  );
-    add_meta_box( 'episodes_extra_fields', 'Additional notation', 'episodes_extra_fields_box', 'episodes', 'side', 'high'  );
+    add_meta_box( 'extra_fields', esc_html__( 'Additional notation', 'hromadske-tv' ), 'extra_fields_box_func', 'post', 'side', 'high'  );
+    add_meta_box( 'stories_extra_fields', esc_html__( 'Additional notation', 'hromadske-tv'), 'stories_extra_fields_box', 'stories', 'side', 'high'  );
+    add_meta_box( 'episodes_extra_fields', esc_html__( 'Additional notation', 'hromadske-tv'), 'episodes_extra_fields_box', 'episodes', 'side', 'high'  );
 }
 add_action('add_meta_boxes', 'my_extra_fields', 1);
 
@@ -154,15 +142,15 @@ function extra_fields_box_func( $post ){
     <ul>
         <li>
             <input type="hidden" name="extra[important]" value="">
-            <label><input type="checkbox" name="extra[important]" value="1" <?php checked( get_post_meta($post->ID, 'important', 1), 1 )?> > Important</label>
+            <label><input type="checkbox" name="extra[important]" value="1" <?php checked( get_post_meta($post->ID, 'important', 1), 1 )?> ><?php esc_html_e( 'Important', 'hromadske-tv' ); ?></label>
         </li>
         <li>
             <input type="hidden" name="extra[updated]" value="">
-            <label><input type="checkbox" name="extra[updated]" value="1" <?php checked( get_post_meta($post->ID, 'updated', 1), 1 ) ?>"> Updated</label>
+            <label><input type="checkbox" name="extra[updated]" value="1" <?php checked( get_post_meta($post->ID, 'updated', 1), 1 ) ?>"><?php esc_html_e( 'Updated', 'hromadske-tv' ); ?></label>
         </li>
         <li>
             <input type="hidden" name="extra[video]" value="">
-            <label><input type="checkbox" name="extra[video]" value="1" <?php checked( get_post_meta($post->ID, 'video', 1), 1 ) ?>"> There is video</label>
+            <label><input type="checkbox" name="extra[video]" value="1" <?php checked( get_post_meta($post->ID, 'video', 1), 1 ) ?>"><?php esc_html_e( 'There is video', 'hromadske-tv' ); ?></label>
         </li>
     </ul>
 
@@ -176,11 +164,11 @@ function stories_extra_fields_box( $stories ){
     <ul>
         <li>
             <input type="hidden" name="extra[stick-stories]" value="">
-            <label><input type="checkbox" name="extra[stick-stories]" value="1" <?php checked( get_post_meta($stories->ID, 'stick-stories', 1), 1 )?> > Stick front page</label>
+            <label><input type="checkbox" name="extra[stick-stories]" value="1" <?php checked( get_post_meta($stories->ID, 'stick-stories', 1), 1 )?> ><?php esc_html_e( 'Stick front page', 'hromadske-tv' ); ?></label>
         </li>
         <li>
             <input type="hidden" name="extra[big-thumbnail]" value="">
-            <label><input type="checkbox" name="extra[big-thumbnail]" value="1" <?php checked( get_post_meta($stories->ID, 'big-thumbnail', 1), 1 ) ?>"> Big Thumbnail</label>
+            <label><input type="checkbox" name="extra[big-thumbnail]" value="1" <?php checked( get_post_meta($stories->ID, 'big-thumbnail', 1), 1 ) ?>"><?php esc_html_e( 'Big Thumbnail', 'hromadske-tv' ); ?></label>
         </li>
     </ul>
 
@@ -194,7 +182,7 @@ function episodes_extra_fields_box( $episodes ){
     <ul>
         <li>
             <input type="hidden" name="extra[big-thumbnail]" value="">
-            <label><input type="checkbox" name="extra[big-thumbnail]" value="1" <?php checked( get_post_meta($episodes->ID, 'big-thumbnail', 1), 1 ) ?>"> Big Thumbnail</label>
+            <label><input type="checkbox" name="extra[big-thumbnail]" value="1" <?php checked( get_post_meta($episodes->ID, 'big-thumbnail', 1), 1 ) ?>"><?php esc_html_e( 'Big Thumbnail', 'hromadske-tv' ); ?></label>
         </li>
     </ul>
     <input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
@@ -229,7 +217,7 @@ function pippin_taxonomy_add_new_meta_field() {
     // this will add the custom meta field to the add new term page
     ?>
     <div class="form-field">
-        <label for="term_meta[custom_term_meta]">Stick project</label>
+        <label for="term_meta[custom_term_meta]"><?php esc_html_e( 'Stick project', 'hromadske-tv' ); ?></label>
         <input type="hidden" name="term_meta[custom_term_meta]" value="">
         <input type="checkbox" name="term_meta[custom_term_meta]" id="term_meta[custom_term_meta]" value="1" <?php checked( get_term_meta($term->term_id, 'custom_term_meta', 1 ), 1); ?>"/>
     </div>
@@ -241,7 +229,7 @@ function pippin_taxonomy_edit_meta_field($term) {?>
 
     <tr class="form-field">
         <th scope="row" valign="top">
-            <label for="term_meta[custom_term_meta]">Stick project</label>
+            <label for="term_meta[custom_term_meta]"><?php esc_html_e( 'Stick project', 'hromadske-tv' ); ?></label>
         </th>
         <td>
             <input type="hidden" name="term_meta[custom_term_meta]" value="">
@@ -307,7 +295,7 @@ function add_news_func(){
     $args = unserialize(stripslashes($_POST['query']));
     $args['paged'] = $_POST['page'] + 1;
     $args['post_status'] = 'publish';
-
+    $args['click'] = (int)$_POST['click'];
     $q = new WP_Query($args);
     if( $q->have_posts() ):?>
         <ul class="list-news">
@@ -331,10 +319,10 @@ function add_news_func(){
                             <a href="<?php  get_permalink();?>" rel="bookmark"> <?php echo $time_string?> </a>
                             <?php if ( get_post_meta($q->the_post->ID,'important')):
                                 $important = "important" ?>
-                                <span class="important-label">Важливо</span>
+                                <span class="important-label"><?php echo get_theme_mod('label-important-news'); ?></span>
                             <?php endif;?>
                             <?php if ( get_post_meta($q->the_post->ID,'updated')):?>
-                                <span class="updated-label">Оновлено</span>
+                                <span class="updated-label"><?php echo get_theme_mod('label-updated-news'); ?></span>
                             <?php endif;?>
 
                         </div>
@@ -342,7 +330,7 @@ function add_news_func(){
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_title();?>
                                 <?php if ( get_post_meta($q->the_post->ID,'video')):?>
-                                    <span class="fa fa-video-camera" aria-hidden="true"></span>
+                                    <span class="fa <?php echo get_theme_mod('video-icon'); ?>" aria-hidden="true"></span>
                                 <?php endif; ?>
                             </a>
                         </h2>
@@ -352,7 +340,26 @@ function add_news_func(){
         </ul>
     <?php endif;
     wp_reset_postdata();
-
+    if (( $args['click'] == 2)|| ($args['paged'] == $q->max_num_pages)):
+        $paginate_args = array(
+            'end_size'     => 2,
+            'mid_size'     => 2,
+        );
+        $big = 999999999; // need an unlikely integer
+    ?>
+        <div class="blog-nav">
+            <?php echo paginate_links(array(
+                'base' => $_POST['my_url'] .'%_%',
+                'format' => '?paged=%#%',
+                'current' =>  $args['paged'],
+                'total' => $q->max_num_pages,
+                'prev_text'    => __('<'),
+                'next_text'    => __('>'),
+                'mid_size'     => 2,
+            )
+            );?>
+        </div>
+    <?php endif;
     die();
 }
 add_action( 'wp_ajax_add_news_func', 'add_news_func');

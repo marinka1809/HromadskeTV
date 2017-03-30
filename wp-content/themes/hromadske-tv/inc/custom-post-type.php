@@ -19,12 +19,12 @@ function register_post_types(){
      */
     register_post_type('stories', array(
         'labels' => array(
-            'name'               => 'Stories',
-            'singular_name'      => 'Story',
-            'add_new'            => 'Add new',
-            'add_new_item'       => 'Add new story',
-            'edit_item'          => 'Edit story',
-            'new_item'           => 'New story',
+            'name'               => esc_html__('Stories', 'hromadske-tv'),
+            'singular_name'      => esc_html__('Story', 'hromadske-tv'),
+            'add_new'            => esc_html__('Add new', 'hromadske-tv'),
+            'add_new_item'       => esc_html__('Add new story', 'hromadske-tv'),
+            'edit_item'          => esc_html__('Edit story', 'hromadske-tv'),
+            'new_item'           => esc_html__('New story', 'hromadske-tv'),
             'view_item'          => '',
         ),
         'description'         => '',
@@ -33,6 +33,7 @@ function register_post_types(){
         'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
+        'menu_icon'           => 'dashicons-id-alt',
         'capability_type'    => 'post',
         'supports'            => array('title','editor','excerpt','thumbnail','custom-fields'), // 'title','editor','author','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'taxonomies'          => array('stories-tags'),
@@ -43,12 +44,12 @@ function register_post_types(){
      */
     register_post_type('episodes', array(
         'labels' => array(
-            'name'               => 'Episodes',
-            'singular_name'      => 'Episode',
-            'add_new'            => 'Add new',
-            'add_new_item'       => 'Add new episode',
-            'edit_item'          => 'Edit episode',
-            'new_item'           => 'New episode',
+            'name'               => esc_html__('Episodes', 'hromadske-tv'),
+            'singular_name'      => esc_html__('Episode', 'hromadske-tv'),
+            'add_new'            => esc_html__('Add new', 'hromadske-tv'),
+            'add_new_item'       => esc_html__('Add new episode', 'hromadske-tv'),
+            'edit_item'          => esc_html__('Edit episode', 'hromadske-tv'),
+            'new_item'           => esc_html__('New episode', 'hromadske-tv') ,
             'view_item'          => '',
         ),
         'description'         => '',
@@ -68,12 +69,12 @@ function register_post_types(){
      */
     register_post_type('employees', array(
         'labels' => array(
-            'name'               => 'Employees',
-            'singular_name'      => 'Employee',
-            'add_new'            => 'Add new',
-            'add_new_item'       => 'Add new employee',
-            'edit_item'          => 'Edit employee',
-            'new_item'           => 'New employee',
+            'name'               => esc_html__('Employees', 'hromadske-tv'),
+            'singular_name'      => esc_html__('Employee', 'hromadske-tv'),
+            'add_new'            => esc_html__('Add new', 'hromadske-tv'),
+            'add_new_item'       => esc_html__('Add new employee', 'hromadske-tv'),
+            'edit_item'          => esc_html__('Edit employee', 'hromadske-tv'),
+            'new_item'           => esc_html__('New employee', 'hromadske-tv'),
             'view_item'          => '',
         ),
         'description'         => '',
@@ -93,14 +94,14 @@ function register_post_types(){
 add_action('init', 'create_taxonomy');
 function create_taxonomy(){
     $labels = array(
-        'name'              => 'Tags for stories',
-        'singular_name'     => 'Tag',
-        'search_items'      => 'Search tag',
-        'all_items'         => 'All tags',
-        'edit_item'         => 'Edit tag',
-        'update_item'       => 'Update tag',
-        'add_new_item'      => 'Add New tag',
-        'new_item_name'     => 'New tag Name'
+        'name'              => esc_html__('Tags for stories', 'hromadske-tv'),
+        'singular_name'     => esc_html__('Tag', 'hromadske-tv'),
+        'search_items'      => esc_html__('Search tag', 'hromadske-tv'),
+        'all_items'         => esc_html__('All tags', 'hromadske-tv'),
+        'edit_item'         => esc_html__('Edit tag', 'hromadske-tv'),
+        'update_item'       => esc_html__('Update tag', 'hromadske-tv'),
+        'add_new_item'      => esc_html__('Add New tag', 'hromadske-tv'),
+        'new_item_name'     => esc_html__('New tag Name', 'hromadske-tv')
     );
 
     $args = array(
@@ -119,21 +120,21 @@ function create_taxonomy(){
     register_taxonomy('stories-tags', array('stories'), $args );
 
     $labelsProject = array(
-        'name'              => 'Projects',
-        'singular_name'     => 'Project',
-        'search_items'      => 'Search project',
-        'all_items'         => 'All Projects',
-        'edit_item'         => 'Edit project',
-        'update_item'       => 'Update project',
-        'add_new_item'      => 'Add New project',
-        'new_item_name'     => 'New project Name',
+        'name'              => esc_html__('Projects', 'hromadske-tv'),
+        'singular_name'     => esc_html__('Project', 'hromadske-tv'),
+        'search_items'      => esc_html__('Search project', 'hromadske-tv'),
+        'all_items'         => esc_html__('All Projects', 'hromadske-tv'),
+        'edit_item'         => esc_html__('Edit project', 'hromadske-tv'),
+        'update_item'       => esc_html__('Update project', 'hromadske-tv'),
+        'add_new_item'      => esc_html__('Add New project', 'hromadske-tv'),
+        'new_item_name'     => esc_html__('New project Name', 'hromadske-tv'),
         'parent_item'       => null,
         'parent_item_colon' => null,
     );
 
     $argsProject = array(
         'labels'                => $labelsProject,
-        'description'           => 'There are various projects in which studies, projects continue to expand new episodes', // описание таксономии
+        'description'           => esc_html__('There are various projects in which studies, projects continue to expand new episodes', 'hromadske-tv'), // описание таксономии
         'public'                => true,
         'show_tagcloud'         => false,
         'hierarchical'          => true,

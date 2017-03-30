@@ -173,19 +173,6 @@ add_action('customize_register', function($customizer){
     );
 
     $customizer->add_setting(
-        'label-news-button',
-        array('default' => 'Більше новин')
-    );
-    $customizer->add_control(
-        'label-news-button',
-        array(
-            'label' => esc_html__( 'Inscription for type button more news.', 'hromadske-tv' ),
-            'section' => 'button-labels',
-            'type' => 'text'
-        )
-    );
-
-    $customizer->add_setting(
         'inscription-detailed-button',
         array('default' => 'Детальніше')
     );
@@ -336,6 +323,72 @@ add_action('customize_register', function($customizer){
             'section' => 'project-page-settings',
             'type' => 'select',
             'choices' => array("1", "2", "3",),
+        )
+    );
+
+    /**
+     * News
+     */
+    $customizer->add_section(
+        'news-settings',
+        array(
+            'title' => esc_html__( 'News settings', 'hromadske-tv' ),
+        )
+    );
+
+    $customizer->add_setting(
+        'label-important-news',
+        array('default' => 'Важливо')
+    );
+
+    $customizer->add_control(
+        'label-important-news',
+        array(
+            'label' => esc_html__('Label for important news:', 'hromadske-tv' ) ,
+            'section' => 'news-settings',
+            'type' => 'text',
+        )
+    );
+
+    $customizer->add_setting(
+        'label-updated-news',
+        array('default' => 'Оновлено')
+    );
+
+    $customizer->add_control(
+        'label-updated-news',
+        array(
+            'label' => esc_html__('Label for updated news:', 'hromadske-tv' ) ,
+            'section' => 'news-settings',
+            'type' => 'text',
+        )
+    );
+
+    $customizer->add_setting(
+        'video-icon',
+        array('default' => 'fa-video-camera')
+    );
+
+    $customizer->add_control(
+        'video-icon',
+        array(
+            'label' => esc_html__('Icon for news with video:', 'hromadske-tv' ) ,
+            'description' => esc_html__('Insert here the class icons with Font Awesome','hromadske-tv' ) ,
+            'section' => 'news-settings',
+            'type' => 'text',
+        )
+    );
+
+    $customizer->add_setting(
+        'label-news-button',
+        array('default' => 'Більше новин')
+    );
+    $customizer->add_control(
+        'label-news-button',
+        array(
+            'label' => esc_html__( 'Inscription for type button more news.', 'hromadske-tv' ),
+            'section' => 'news-settings',
+            'type' => 'text'
         )
     );
 

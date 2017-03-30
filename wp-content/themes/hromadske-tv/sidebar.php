@@ -23,7 +23,7 @@
         <ul class="row">
             <?php foreach( $projects_query->terms as $project ){
                 $image = get_field('image_project', $project);?>
-                <li>
+                <li class="item-project" data-href="<?php echo get_term_link($project);?>">
                     <?php if( !empty($image) ): ?>
                         <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                     <?php endif; ?>

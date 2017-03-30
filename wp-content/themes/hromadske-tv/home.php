@@ -31,10 +31,6 @@ get_header();?>
                     var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
                 </script>
                 <button class="more-news"> <?php echo get_theme_mod('label-news-button'); ?> </button>
-                <div class="blog-nav">
-                    <?php
-                   echo paginate_links();?>
-                </div>
 
             <?php   else :
                 get_template_part( 'template-parts/content', 'none' );

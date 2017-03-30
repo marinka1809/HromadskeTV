@@ -8,7 +8,7 @@ get_header();?>
         <section class="title-section" style="background: url('<?php echo get_the_post_thumbnail_url(); ?>') 50% 50% no-repeat; background-size: cover;">
             <div class="container"?>
                 <h1><?php the_title();?></h1>
-                <p><?php the_content(); ?> </p>
+                <?php the_content(); ?>
             </div>
         </section>
 

@@ -57,14 +57,14 @@ get_header(); ?>
                             <div class="info-news">
                                 <?php the_time('d.m.Y');?>
                                 <?php if ( get_post_meta($post->ID,'important')):?>
-                                <span class="important-label">Важливо</span>
+                                <span class="important-label"><?php echo get_theme_mod('label-important-news'); ?></span>
                                 <?php endif;?>
                                 <?php if ( get_post_meta($post->ID,'updated')):?>
-                                    <span class="updated-label">Оновлено</span>
+                                    <span class="updated-label"><?php echo get_theme_mod('label-updated-news'); ?></span>
                                 <?php endif;?>
 
                                 <?php if ( get_post_meta($post->ID,'video')):?>
-                                    <span class="fa fa-video-camera" aria-hidden="true"></span>
+                                    <span class="fa <?php echo get_theme_mod('video-icon'); ?>" aria-hidden="true"></span>
                                 <?php endif; ?>
 
 
