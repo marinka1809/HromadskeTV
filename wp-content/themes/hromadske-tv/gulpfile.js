@@ -34,6 +34,7 @@ gulp.task('scripts', function() {
         'libs/jquery/dist/jquery.min.js', // Берем jQuery
         //'libs/magnific-popup/dist/jquery.magnific-popup.min.js', // Берем Magnific Popup
         'libs/bootstrap/dist/js/bootstrap.min.js', // Бутстрап
+        'libs/dotdotdot-master/jquery.dotdotdot.min.js'
        // 'libs/slick/slick.min.js', // Слайдер
         //'libs/masonry.pkgd.min.js' // Masonry
     ])
@@ -49,16 +50,16 @@ gulp.task('css-libs', ['sass'], function() {
         .pipe(gulp.dest('style')); // Выгружаем в папку css
 });
 
-// gulp.task('img', function() {
-//     return gulp.src('img/**/*') // Берем все изображения
-//         .pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
-//             interlaced: true,
-//             progressive: true,
-//             svgoPlugins: [{removeViewBox: false}],
-//             use: [pngquant()]
-//         })))
-//         .pipe(gulp.dest('img')); //
-// });
+ gulp.task('img', function() {
+     return gulp.src('img/**/*') // Берем все изображения
+        .pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest('img')); //
+});
 
 gulp.task('watch', ['browser-sync','css-libs','scripts', 'sass'], function () {
     gulp.watch('sass/**/*.+(scss|sass)', ['sass']);

@@ -201,7 +201,6 @@ add_action('customize_register', function($customizer){
     /**
      * Social link
      */
-
     $customizer->add_section(
         'social-links-section',
         array(
@@ -392,6 +391,20 @@ add_action('customize_register', function($customizer){
         )
     );
 
+    //--------------Footer-logo--------------------------
+
+    $customizer->add_setting('footer-logo');
+    $customizer->add_control(
+        new WP_Customize_Image_Control(
+            $customizer,
+            'background-page-title',
+            array(
+                'label' => 'Logo for footer',
+                'section' => 'title_tagline',
+                'settings' => 'footer-logo'
+            )
+        )
+    );
 });
 
 

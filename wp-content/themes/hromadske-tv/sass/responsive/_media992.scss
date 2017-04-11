@@ -1,0 +1,139 @@
+@media screen and (min-width: 992px) {
+
+  //-------------------------WELCOME---------------------
+
+  .top-block {
+    height: calc(100vh - 140px);
+    position: relative;
+
+
+    .last-news {
+      position: absolute;
+      width: 640px;
+      max-width: 33%;
+      top:0;
+      right: 0;
+      bottom: 0;
+      background-color: #ffffff;
+      overflow: hidden;
+
+      .wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        padding: 0 35px 120px;
+        color: #171617;
+
+        h2,
+        article {
+          padding: 20px 0;
+          border-bottom: 1px solid #dedede;
+        }
+
+        h2 {
+          font: 18px GothamProBold;
+          text-transform: uppercase;
+        }
+
+        a.title {
+          font: 20px GothamProRegular;
+          color: inherit;
+        }
+
+        a.important-title {
+          font: 20px GothamProBold;
+        }
+      }
+
+      .info-news {
+        margin-bottom: 10px;
+
+        .time {
+          margin-right: 5px;
+          font: 12px $font-content;
+          color: #53555a;
+        }
+
+        .fa {
+          color: #bfbfbf;
+          font-size: 12px;
+        }
+
+        .important-label,
+        .updated-label {
+          margin-right: 5px;
+          padding: 0 5px;
+          font: 10px/1.2em $font-content;
+          font-weight: 700;
+          color: #ffffff;
+          text-transform: uppercase;
+          background-color: $color-second;
+          border-radius: 5px;
+        }
+
+        .updated-label {
+          background-color: #7ca5e2;
+        }
+      }
+
+
+      .bottom-wrapper {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0 35px;
+        background-color: $color-primary;
+      }
+
+      .link-all-articles {
+        display: inline-block;
+        font: 14px/4.5em GothamProBold;
+        color: #ffffff;
+
+        &:after {
+          content: "\f061";
+          margin-left: 1em;
+          font-family: FontAwesome;
+        }
+
+      }
+    }
+  }
+
+  .welcome-section {
+    height: 100%;
+    color: #ffffff;
+
+    .flex-block {
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+      font: 50px GothamProBlack;
+    }
+
+    p {
+      margin-bottom: 45px;
+      font: 22px $font-content;
+      opacity: 0.8;
+    }
+  }
+
+  //-------------------------IMPORTANT-NEWS---------------------
+  .important-news-section {
+    .item-important-posts {
+      margin-bottom: 0;
+
+      .img-wrapper {
+        height: 152px;
+      }
+    }
+  }
+}

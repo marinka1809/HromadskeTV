@@ -20,7 +20,7 @@ function hromadske_tv_custom_logo_setup() {
 	add_theme_support( 'custom-logo', array(
         'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 200,
+		'width'                  => 194,
 		'height'                 => 50,
 		'flex-height'            => true,
         'header-text' => array( 'site-title', 'site-description' )

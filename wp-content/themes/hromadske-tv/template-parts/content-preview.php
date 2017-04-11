@@ -36,7 +36,7 @@
         <h2 class="<?php echo $important;?>" >
            <a href="<?php the_permalink(); ?>">
                <?php the_title();?>
-               <?php if ( get_post_meta($post->ID,'video')):?>
+               <?php if ( ( get_post_meta($post->ID,'content-cap', 1)=='video')):?>
                    <span class="fa <?php echo get_theme_mod('video-icon'); ?>" aria-hidden="true"></span>
                <?php endif; ?>
            </a>

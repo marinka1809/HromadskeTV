@@ -1,8 +1,140 @@
-ul {
+/* font-family: "GothamProRegular"; */
+@font-face {
+  font-family: "GothamProRegular";
+  src: url("../fonts/GothamProRegular/GothamProRegular.eot");
+  src: url("../fonts/GothamProRegular/GothamProRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProRegular/GothamProRegular.woff") format("woff"), url("../fonts/GothamProRegular/GothamProRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "GothamProBold"; */
+@font-face {
+  font-family: "GothamProBold";
+  src: url("../fonts/GothamProBold/GothamProBold.eot");
+  src: url("../fonts/GothamProBold/GothamProBold.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProBold/GothamProBold.woff") format("woff"), url("../fonts/GothamProBold/GothamProBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "GothamProBlack"; */
+@font-face {
+  font-family: "GothamProBlack";
+  src: url("../fonts/GothamProBlack/GothamProBlack.eot");
+  src: url("../fonts/GothamProBlack/GothamProBlack.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProBlack/GothamProBlack.woff") format("woff"), url("../fonts/GothamProBlack/GothamProBlack.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "GothamProItalic"; */
+@font-face {
+  font-family: "GothamProItalic";
+  src: url("../fonts/GothamProItalic/GothamProItalic.eot");
+  src: url("../fonts/GothamProItalic/GothamProItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProItalic/GothamProItalic.woff") format("woff"), url("../fonts/GothamProItalic/GothamProItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "GothamProMedium"; */
+@font-face {
+  font-family: "GothamProMedium";
+  src: url("../fonts/GothamProMedium/GothamProMedium.eot");
+  src: url("../fonts/GothamProMedium/GothamProMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProMedium/GothamProMedium.woff") format("woff"), url("../fonts/GothamProMedium/GothamProMedium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "GothamProLight"; */
+@font-face {
+  font-family: "GothamProLight";
+  src: url("../fonts/GothamProLight/GothamProLight.eot");
+  src: url("../fonts/GothamProLight/GothamProLight.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProLight/GothamProLight.woff") format("woff"), url("../fonts/GothamProLight/GothamProLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "GothamProMediumItalic"; */
+@font-face {
+  font-family: "GothamProMediumItalic";
+  src: url("../fonts/GothamProMediumItalic/GothamProMediumItalic.eot");
+  src: url("../fonts/GothamProMediumItalic/GothamProMediumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProMediumItalic/GothamProMediumItalic.woff") format("woff"), url("../fonts/GothamProMediumItalic/GothamProMediumItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "GothamProLightItalic"; */
+@font-face {
+  font-family: "GothamProLightItalic";
+  src: url("../fonts/GothamProLightItalic/GothamProLightItalic.eot");
+  src: url("../fonts/GothamProLightItalic/GothamProLightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProLightItalic/GothamProLightItalic.woff") format("woff"), url("../fonts/GothamProLightItalic/GothamProLightItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "GothamProBoldItalic"; */
+@font-face {
+  font-family: "GothamProBoldItalic";
+  src: url("../fonts/GothamProBoldItalic/GothamProBoldItalic.eot");
+  src: url("../fonts/GothamProBoldItalic/GothamProBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProBoldItalic/GothamProBoldItalic.woff") format("woff"), url("../fonts/GothamProBoldItalic/GothamProBoldItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "GothamProBlackItalic"; */
+@font-face {
+  font-family: "GothamProBlackItalic";
+  src: url("../fonts/GothamProBlackItalic/GothamProBlackItalic.eot");
+  src: url("../fonts/GothamProBlackItalic/GothamProBlackItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProBlackItalic/GothamProBlackItalic.woff") format("woff"), url("../fonts/GothamProBlackItalic/GothamProBlackItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
   list-style: none; }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
+
+a:hover, a:focus {
+  text-decoration: none; }
+
 .section {
-  padding: 80px 0; }
+  padding: 60px 0; }
 
 .section-header {
   display: -webkit-box;
@@ -16,46 +148,246 @@ ul {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  margin-bottom: 50px; }
+  .section-header h1, .section-header h2 {
+    font: 22px/1em GothamProBlack;
+    margin-right: 2em; }
+  .section-header .link-all-articles {
+    padding-bottom: 5px;
+    font: 14px "Open Sans", sans-serif;
+    font-weight: 700;
+    color: inherit;
+    border-bottom: 4px solid #f6921e; }
+    .section-header .link-all-articles:after {
+      content: "\f061";
+      margin-left: 1em;
+      font-family: FontAwesome; }
 
-.site-header .flex-block {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.link-donate,
+.link-detailed {
+  display: inline-block;
+  padding: 0 35px;
+  font: 15px/4em GothamProBold;
+  text-transform: uppercase;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
+  border: 2px solid #f61e1e; }
+
+.link-donate:visited, .link-donate:active {
+  color: #f61e1e; }
+
+.link-donate:hover {
+  color: #ffffff;
+  background-color: #f61e1e; }
+
+.link-detailed {
+  padding: 0 30px;
+  color: #f6921e;
+  border-color: #f6921e; }
+  .link-detailed:visited, .link-detailed:active {
+    color: #f6921e; }
+  .link-detailed:hover {
+    color: #ffffff;
+    background-color: #f6921e; }
+
+.social-link li {
+  display: inline-block; }
+
+.social-link a {
+  padding: 5px;
+  font-size: 20px;
+  color: #a6b6c8; }
+
+.img-wrapper {
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  margin-bottom: 20px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  overflow: hidden; }
+  .img-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block; }
 
-.welcom-section {
-  height: -webkit-calc(100vh - 200px);
-  height: calc(100vh - 200px);
-  position: relative; }
-  .welcom-section .last-news {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ffffff; }
+.site-header {
+  padding: 30px 0;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+  .site-header .flex-block {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .site-header .site-title {
+    width: 154px;
+    height: 40px;
+    overflow: hidden; }
+  .site-header .menu-toggle {
+    font-size: 1.5em;
+    background-color: transparent;
+    border: none; }
+  .site-header .main-navigation {
+    width: auto;
+    font: 16px/1.8em GothamProBold;
+    text-transform: uppercase; }
+    .site-header .main-navigation a {
+      margin: 0 15px;
+      color: #171617;
+      border-bottom: 2px solid transparent; }
+      .site-header .main-navigation a:hover {
+        border-bottom: 2px solid #f6921e; }
+  .site-header .current_page_item a {
+    border-bottom: 2px solid #f6921e; }
+
+.top-block .last-news {
+  background-color: #ffffff; }
+  .top-block .last-news .wrapper {
+    width: 100%;
+    padding: 0 30px;
+    color: #171617; }
+    .top-block .last-news .wrapper h2,
+    .top-block .last-news .wrapper article {
+      padding: 25px 0;
+      border-bottom: 1px solid #dedede; }
+    .top-block .last-news .wrapper h2 {
+      display: none; }
+    .top-block .last-news .wrapper a.title {
+      font: 14px GothamProRegular;
+      color: inherit; }
+    .top-block .last-news .wrapper a.important-title {
+      font: 14px GothamProBold; }
+  .top-block .last-news .info-news {
+    margin-bottom: 10px; }
+    .top-block .last-news .info-news .time {
+      margin-right: 5px;
+      font: 12px "Open Sans", sans-serif;
+      color: #53555a; }
+    .top-block .last-news .info-news .fa {
+      color: #bfbfbf;
+      font-size: 12px; }
+    .top-block .last-news .info-news .important-label,
+    .top-block .last-news .info-news .updated-label {
+      margin-right: 5px;
+      padding: 0 5px;
+      font: 10px/1.2em "Open Sans", sans-serif;
+      font-weight: 700;
+      color: #ffffff;
+      text-transform: uppercase;
+      background-color: #f61e1e;
+      -webkit-border-radius: 5px;
+              border-radius: 5px; }
+    .top-block .last-news .info-news .updated-label {
+      background-color: #7ca5e2; }
+  .top-block .last-news .bottom-wrapper {
+    padding: 0 30px;
+    text-align: center;
+    background-color: #f6921e; }
+  .top-block .last-news .link-all-articles {
+    display: inline-block;
+    font: 14px/4.5em GothamProBold;
+    color: #ffffff; }
+    .top-block .last-news .link-all-articles:after {
+      content: "\f061";
+      margin-left: 1em;
+      font-family: FontAwesome; }
+
+.welcome-section {
+  height: -webkit-calc(100vh - 100px);
+  height: calc(100vh - 100px);
+  padding: 60px 0 30px;
+  color: #ffffff; }
+  .welcome-section h1 {
+    margin-bottom: 25px;
+    font: 24px GothamProBlack; }
+  .welcome-section p {
+    margin-bottom: 35px;
+    font: 18px "Open Sans", sans-serif;
+    opacity: 0.8; }
 
 .important-news-section .item-important-posts {
+  margin-bottom: 60px;
+  height: 340px;
   cursor: pointer; }
+  .important-news-section .item-important-posts .item-wrapper {
+    height: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eeeeee; }
+  .important-news-section .item-important-posts .img-wrapper {
+    height: 146px; }
+  .important-news-section .item-important-posts h3 {
+    margin-bottom: 10px;
+    font: 18px/1.3em GothamProBold;
+    color: #343434; }
+  .important-news-section .item-important-posts p {
+    font: 14px/1.5em "Open Sans", sans-serif;
+    color: #696e72; }
 
-.item-project {
-  cursor: pointer; }
+.front-story-section {
+  color: #ffffff; }
+  .front-story-section .section-header {
+    opacity: 0.75; }
+  .front-story-section h1 {
+    font: 24px/1.2em GothamProBlack;
+    margin-bottom: 30px; }
+  .front-story-section p {
+    margin-bottom: 30px;
+    font: 18px/1.5em "Open Sans", sans-serif;
+    opacity: 0.8; }
+
+.section-donate {
+  text-align: center; }
+  .section-donate h1 {
+    margin-bottom: 30px;
+    font: 20px GothamProBold;
+    color: #171617; }
 
 .front-project-section {
-  background-color: #aeb7bf; }
+  background-color: #eff2f7; }
+  .front-project-section .item-project {
+    height: 350px;
+    cursor: pointer; }
+  .front-project-section .img-wrapper {
+    height: 208px; }
+  .front-project-section h3 {
+    margin-bottom: 10px;
+    font: 18px GothamProBold;
+    color: #343434; }
+  .front-project-section p {
+    opacity: 0.8;
+    font: 14px/1.5em "Open Sans", sans-serif;
+    color: #3e4144; }
+
+.front-social-section {
+  text-align: center; }
+  .front-social-section h1 {
+    margin-bottom: 30px;
+    font: 26px GothamProBold;
+    color: #171617; }
+  .front-social-section h2 {
+    margin-bottom: 20px;
+    font: 14px GothamProBold;
+    color: #171617; }
+  .front-social-section #text-5 {
+    padding: 45px 35px;
+    -webkit-border-radius: 2px;
+            border-radius: 2px;
+    border: 1px solid #e2e7eb; }
+    .front-social-section #text-5 .color {
+      color: #f61e1e; }
 
 .site-footer {
   color: #ffffff;
-  background: #063259; }
+  background-color: #303d4a; }
   .site-footer .site-info-top {
     display: -webkit-box;
     display: -webkit-flex;
@@ -66,7 +398,20 @@ ul {
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding: 40px 0;
-    border-bottom: 2px solid #ffffff; }
+    border-bottom: 1px solid #44505b; }
+  .site-footer .widget_nav_menu {
+    margin-bottom: auto;
+    margin-top: auto; }
+    .site-footer .widget_nav_menu li {
+      display: inline-block; }
+    .site-footer .widget_nav_menu a {
+      padding: 10px;
+      font: 14px GothamProBold;
+      color: inherit;
+      text-transform: uppercase; }
+  .site-footer .link-donate {
+    border-color: transparent;
+    background-color: #ffffff; }
   .site-footer .site-info {
     display: -webkit-box;
     display: -webkit-flex;
@@ -76,7 +421,18 @@ ul {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 20px 0; }
+  .site-footer .site-title {
+    width: 155px;
+    height: 40px;
+    overflow: hidden; }
+  .site-footer .copyright {
+    font: 14px "Open Sans", sans-serif;
+    color: #a6b6c8; }
 
 .list-stories li,
 .list-episodes li {
@@ -90,3 +446,283 @@ ul {
     background-size: cover;
     -webkit-border-radius: 20px;
             border-radius: 20px; }
+
+@media screen and (min-width: 768px) {
+  .section {
+    padding: 120px 0; }
+  .section-header {
+    margin-bottom: 60px; }
+    .section-header h1, .section-header h2 {
+      font: 48px/1em GothamProBlack;
+      margin-right: 2em; }
+  .site-header {
+    padding: 40px 0;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+    .site-header .flex-block {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .site-header .site-title {
+      width: 194px;
+      height: 50px;
+      overflow: hidden; }
+    .site-header .main-navigation {
+      width: auto;
+      font: 16px/1.8em GothamProBold;
+      text-transform: uppercase; }
+      .site-header .main-navigation a {
+        margin: 0 15px;
+        color: #171617;
+        border-bottom: 2px solid transparent; }
+        .site-header .main-navigation a:hover {
+          border-bottom: 2px solid #f6921e; }
+    .site-header .current_page_item a {
+      border-bottom: 2px solid #f6921e; }
+  .top-block {
+    height: -webkit-calc(100vh - 140px);
+    height: calc(100vh - 140px);
+    position: relative; }
+    .top-block .last-news {
+      position: absolute;
+      width: 640px;
+      max-width: 33%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ffffff;
+      overflow: hidden; }
+      .top-block .last-news .wrapper {
+        position: relative;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        padding: 0 35px 120px;
+        color: #171617; }
+        .top-block .last-news .wrapper h2,
+        .top-block .last-news .wrapper article {
+          padding: 20px 0;
+          border-bottom: 1px solid #dedede; }
+        .top-block .last-news .wrapper h2 {
+          font: 18px GothamProBold;
+          text-transform: uppercase; }
+        .top-block .last-news .wrapper a.title {
+          font: 20px GothamProRegular;
+          color: inherit; }
+        .top-block .last-news .wrapper a.important-title {
+          font: 20px GothamProBold; }
+      .top-block .last-news .info-news {
+        margin-bottom: 10px; }
+        .top-block .last-news .info-news .time {
+          margin-right: 5px;
+          font: 12px "Open Sans", sans-serif;
+          color: #53555a; }
+        .top-block .last-news .info-news .fa {
+          color: #bfbfbf;
+          font-size: 12px; }
+        .top-block .last-news .info-news .important-label,
+        .top-block .last-news .info-news .updated-label {
+          margin-right: 5px;
+          padding: 0 5px;
+          font: 10px/1.2em "Open Sans", sans-serif;
+          font-weight: 700;
+          color: #ffffff;
+          text-transform: uppercase;
+          background-color: #f61e1e;
+          -webkit-border-radius: 5px;
+                  border-radius: 5px; }
+        .top-block .last-news .info-news .updated-label {
+          background-color: #7ca5e2; }
+      .top-block .last-news .bottom-wrapper {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0 35px;
+        background-color: #f6921e; }
+      .top-block .last-news .link-all-articles {
+        display: inline-block;
+        font: 14px/4.5em GothamProBold;
+        color: #ffffff; }
+        .top-block .last-news .link-all-articles:after {
+          content: "\f061";
+          margin-left: 1em;
+          font-family: FontAwesome; }
+  .welcome-section {
+    height: 100%;
+    color: #ffffff; }
+    .welcome-section .flex-block {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      height: 100%;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .welcome-section h1 {
+      margin-bottom: 25px;
+      font: 50px GothamProBlack; }
+    .welcome-section p {
+      margin-bottom: 45px;
+      font: 22px "Open Sans", sans-serif;
+      opacity: 0.8; }
+  .important-news-section .item-important-posts {
+    height: 380px; }
+    .important-news-section .item-important-posts .img-wrapper {
+      height: 185px; }
+    .important-news-section .item-important-posts p {
+      font: 16px/1.5em "Open Sans", sans-serif; }
+  .front-story-section h1 {
+    font-size: 62px;
+    margin-bottom: 0; }
+  .front-story-section p {
+    margin-bottom: 50px;
+    font-size: 22px; }
+  .section-donate h1 {
+    font-size: 26px; }
+  .front-project-section .img-wrapper {
+    height: 208px; }
+  .front-project-section h3 {
+    font-size: 24px; }
+  .front-project-section p {
+    font-size: 16px; }
+  .front-social-section h1 {
+    margin-bottom: 30px;
+    font-size: 26px; }
+  .front-social-section h2 {
+    margin-bottom: 20px;
+    font-size: 14px; }
+  .front-social-section #text-5 {
+    padding: 45px 35px;
+    border: 1px solid #e2e7eb; } }
+
+@media screen and (min-width: 992px) {
+  .top-block {
+    height: -webkit-calc(100vh - 140px);
+    height: calc(100vh - 140px);
+    position: relative; }
+    .top-block .last-news {
+      position: absolute;
+      width: 640px;
+      max-width: 33%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ffffff;
+      overflow: hidden; }
+      .top-block .last-news .wrapper {
+        position: relative;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        padding: 0 35px 120px;
+        color: #171617; }
+        .top-block .last-news .wrapper h2,
+        .top-block .last-news .wrapper article {
+          padding: 20px 0;
+          border-bottom: 1px solid #dedede; }
+        .top-block .last-news .wrapper h2 {
+          font: 18px GothamProBold;
+          text-transform: uppercase; }
+        .top-block .last-news .wrapper a.title {
+          font: 20px GothamProRegular;
+          color: inherit; }
+        .top-block .last-news .wrapper a.important-title {
+          font: 20px GothamProBold; }
+      .top-block .last-news .info-news {
+        margin-bottom: 10px; }
+        .top-block .last-news .info-news .time {
+          margin-right: 5px;
+          font: 12px "Open Sans", sans-serif;
+          color: #53555a; }
+        .top-block .last-news .info-news .fa {
+          color: #bfbfbf;
+          font-size: 12px; }
+        .top-block .last-news .info-news .important-label,
+        .top-block .last-news .info-news .updated-label {
+          margin-right: 5px;
+          padding: 0 5px;
+          font: 10px/1.2em "Open Sans", sans-serif;
+          font-weight: 700;
+          color: #ffffff;
+          text-transform: uppercase;
+          background-color: #f61e1e;
+          -webkit-border-radius: 5px;
+                  border-radius: 5px; }
+        .top-block .last-news .info-news .updated-label {
+          background-color: #7ca5e2; }
+      .top-block .last-news .bottom-wrapper {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0 35px;
+        background-color: #f6921e; }
+      .top-block .last-news .link-all-articles {
+        display: inline-block;
+        font: 14px/4.5em GothamProBold;
+        color: #ffffff; }
+        .top-block .last-news .link-all-articles:after {
+          content: "\f061";
+          margin-left: 1em;
+          font-family: FontAwesome; }
+  .welcome-section {
+    height: 100%;
+    color: #ffffff; }
+    .welcome-section .flex-block {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      height: 100%;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .welcome-section h1 {
+      margin-bottom: 25px;
+      font: 50px GothamProBlack; }
+    .welcome-section p {
+      margin-bottom: 45px;
+      font: 22px "Open Sans", sans-serif;
+      opacity: 0.8; }
+  .important-news-section .item-important-posts {
+    margin-bottom: 0; }
+    .important-news-section .item-important-posts .img-wrapper {
+      height: 152px; } }

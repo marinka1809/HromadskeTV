@@ -21,6 +21,17 @@ $(document).ready(function(){
             e.preventDefault();
         });
     }
+
+    $(".item-important-posts").dotdotdot({
+        //	configuration goes here
+    });
+    $(".front-project-section .item-project").dotdotdot({
+        //	configuration goes here
+    });
+
+    // $(".last-news .wrapper").dotdotdot({
+    //     //	configuration goes here
+    // });
 });
 
 

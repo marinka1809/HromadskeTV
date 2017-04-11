@@ -108,6 +108,17 @@ function hromadske_tv_widgets_init() {
 add_action( 'widgets_init', 'hromadske_tv_widgets_init' );
 
 /**
+ * Widget title
+ */
+function html_widget_title( $var) {
+    $var = (str_replace( '[', '<', $var ));
+    $var = (str_replace( ']', '>', $var ));
+    return $var ;
+
+}
+add_filter( 'widget_title', 'html_widget_title' );
+
+/**
  * Enqueue scripts and styles.
  */
 function hromadske_tv_scripts() {
@@ -130,11 +141,31 @@ add_action( 'wp_enqueue_scripts', 'hromadske_tv_scripts' );
 
 // We connect the function of activating the meta block (my_extra_fields)
 function my_extra_fields() {
+    add_meta_box( 'choice_cap', esc_html__( 'Choice of cap', 'hromadske-tv' ), 'choice_cap_func', array('post','stories','episodes'), 'side', 'high'  );
     add_meta_box( 'extra_fields', esc_html__( 'Additional notation', 'hromadske-tv' ), 'extra_fields_box_func', 'post', 'side', 'high'  );
     add_meta_box( 'stories_extra_fields', esc_html__( 'Additional notation', 'hromadske-tv'), 'stories_extra_fields_box', 'stories', 'side', 'high'  );
     add_meta_box( 'episodes_extra_fields', esc_html__( 'Additional notation', 'hromadske-tv'), 'episodes_extra_fields_box', 'episodes', 'side', 'high'  );
 }
 add_action('add_meta_boxes', 'my_extra_fields', 1);
+
+// Block code
+function choice_cap_func( $post ){
+    ?>
+    <ul>
+        <li>Appearance of title for single page: <?php $mark_v = get_post_meta($post->ID, 'content-cap', 1); ?></li>
+        <li>
+            <label><input type="radio" name="extra[content-cap]" value="image" <?php checked( $mark_v, 'image' ); ?> /> image</label>
+            <label><input type="radio" name="extra[content-cap]" value="video" <?php checked( $mark_v, 'video' ); ?> /> video</label>
+            <label><input type="radio" name="extra[content-cap]" value="clean" <?php checked( $mark_v, 'clean' ); ?> /> clean</label>
+        </li>
+        <li>
+            <label>Url video: <input type="text" name="extra[url-video]" value="<?php echo get_post_meta($post->ID, 'url-video', 1); ?>" style="width:70%" /></label>
+        </li>
+    </ul>
+
+    <input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
+    <?php
+}
 
 // Block code
 function extra_fields_box_func( $post ){
@@ -147,10 +178,6 @@ function extra_fields_box_func( $post ){
         <li>
             <input type="hidden" name="extra[updated]" value="">
             <label><input type="checkbox" name="extra[updated]" value="1" <?php checked( get_post_meta($post->ID, 'updated', 1), 1 ) ?>"><?php esc_html_e( 'Updated', 'hromadske-tv' ); ?></label>
-        </li>
-        <li>
-            <input type="hidden" name="extra[video]" value="">
-            <label><input type="checkbox" name="extra[video]" value="1" <?php checked( get_post_meta($post->ID, 'video', 1), 1 ) ?>"><?php esc_html_e( 'There is video', 'hromadske-tv' ); ?></label>
         </li>
     </ul>
 
@@ -263,7 +290,6 @@ add_action( 'create_projects', 'save_taxonomy_custom_meta', 10, 2 );
 /**
  * The excerpt max charlength
  */
-
 function the_excerpt_max_charlength( $charlength ){
     $excerpt = get_the_excerpt();
     $charlength++;
@@ -282,6 +308,10 @@ function the_excerpt_max_charlength( $charlength ){
         echo $excerpt;
     }
 }
+
+
+
+
 
 function admin_ajax() {
 
@@ -329,7 +359,7 @@ function add_news_func(){
                         <h2 class="<?php echo $important;?>">
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_title();?>
-                                <?php if ( get_post_meta($q->the_post->ID,'video')):?>
+                                <?php if ( ( get_post_meta($post->ID,'content-cap', 1)=='video')):?>
                                     <span class="fa <?php echo get_theme_mod('video-icon'); ?>" aria-hidden="true"></span>
                                 <?php endif; ?>
                             </a>
