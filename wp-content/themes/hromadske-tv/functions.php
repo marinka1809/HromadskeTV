@@ -99,8 +99,8 @@ function hromadske_tv_widgets_init() {
         'name'          => esc_html__( 'Social section', 'hromadske-tv' ),
         'id'            => 'social-sections',
         'description'   => esc_html__( 'Add widgets here.', 'hromadske-tv' ),
-        'before_widget' => '<li id="%1$s" class="col-md-4 widget %2$s">',
-        'after_widget'  => '</li>',
+        'before_widget' => '<li id="%1$s" class="col-sm-offset-3 col-sm-6 col-md-offset-0 col-md-4 widget %2$s"> <div class="wrapper">',
+        'after_widget'  => '</div></li>',
         'before_title'  => '<h2 class="widget-title-social">',
         'after_title'   => '</h2>',
     ) );

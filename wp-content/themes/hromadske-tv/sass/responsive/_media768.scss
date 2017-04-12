@@ -59,109 +59,56 @@
   //-------------------------WELCOME---------------------
 
   .top-block {
-    height: calc(100vh - 140px);
-    position: relative;
-
 
     .last-news {
-      position: absolute;
-      width: 640px;
-      max-width: 33%;
-      top:0;
-      right: 0;
-      bottom: 0;
-      background-color: #ffffff;
-      overflow: hidden;
-
+      position: relative;
       .wrapper {
-        position: relative;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        width: 100%;
-        padding: 0 35px 120px;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0;
         color: #171617;
 
         h2,
         article {
-          padding: 20px 0;
+          width: 33.3%;
+          padding: 30px 15px 10px;
           border-bottom: 1px solid #dedede;
-        }
-
-        h2 {
-          font: 18px GothamProBold;
-          text-transform: uppercase;
+          height: 200px;
+          border-right: 1px solid #dedede;
         }
 
         a.title {
-          font: 20px GothamProRegular;
+          font: 14px GothamProRegular;
           color: inherit;
         }
 
         a.important-title {
-          font: 20px GothamProBold;
+          font: 14px GothamProBold;
         }
       }
-
-      .info-news {
-        margin-bottom: 10px;
-
-        .time {
-          margin-right: 5px;
-          font: 12px $font-content;
-          color: #53555a;
-        }
-
-        .fa {
-          color: #bfbfbf;
-          font-size: 12px;
-        }
-
-        .important-label,
-        .updated-label {
-          margin-right: 5px;
-          padding: 0 5px;
-          font: 10px/1.2em $font-content;
-          font-weight: 700;
-          color: #ffffff;
-          text-transform: uppercase;
-          background-color: $color-second;
-          border-radius: 5px;
-        }
-
-        .updated-label {
-          background-color: #7ca5e2;
-        }
-      }
-
 
       .bottom-wrapper {
         position: absolute;
-        left: 0;
         right: 0;
         bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 33.6%;
+        height: 200px;
         padding: 0 35px;
-        background-color: $color-primary;
+
       }
 
       .link-all-articles {
-        display: inline-block;
-        font: 14px/4.5em GothamProBold;
-        color: #ffffff;
-
-        &:after {
-          content: "\f061";
-          margin-left: 1em;
-          font-family: FontAwesome;
-        }
-
       }
     }
   }
 
   .welcome-section {
-    height: 100%;
+    padding: 70px 0;
     color: #ffffff;
 
     .flex-block {
@@ -184,6 +131,7 @@
 
   //-------------------------IMPORTANT-NEWS---------------------
   .important-news-section {
+    padding-bottom: 60px;
 
     .item-important-posts {
       height: 380px;
@@ -222,8 +170,35 @@
   //-------------------------PROJECT-SECTION---------------------
   .front-project-section {
 
-    .img-wrapper {
-      height: 208px;
+    .first-item-project {
+      display: block;
+      margin-bottom: 60px;
+
+      .bg {
+        position: relative;
+        height: 390px;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .content {
+        position: absolute;
+        left: 30px;
+        right: 30px;
+        bottom: 40px;
+      }
+
+      h3, p {
+        color: #ffffff;
+      }
+
+      p {
+        opacity: 0.8;
+      }
+    }
+
+    .hidden-tablet{
+      display: none;
     }
 
     h3 {
@@ -243,17 +218,58 @@
       font-size: 26px;
     }
 
-
-    h2 {
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
-
-    #text-5 {
-      padding: 45px 35px;
-      border: 1px solid #e2e7eb;
-    }
   }
 
+  //-------------------------FOOTER---------------------
+  .site-footer {
 
+    .site-info-top {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .widget_nav_menu {
+      width: 100%;
+      margin-bottom: 30px;
+      margin-top: auto;
+
+      ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      li {
+        display: inline-block;
+      }
+
+      a {
+        display: inline-block;
+        padding: 10px;
+        font: 12px GothamProBold;
+      }
+    }
+
+    .site-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .site-title {
+      width: 155px;
+      height: 40px;
+      overflow: hidden;
+    }
+
+    .copyright {
+      font: 14px $font-content;
+      color: #a6b6c8;
+    }
+
+  }
 }

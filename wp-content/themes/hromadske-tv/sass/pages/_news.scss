@@ -1,0 +1,120 @@
+.page-news {
+  padding-top: 60px;
+  padding-bottom: 120px;
+  color: #171617;
+  font: 20px GothamProRegular;
+
+  .row {
+    margin: 0 -40px;
+  }
+
+  main,
+  aside {
+    padding: 0 40px;
+  }
+
+  h1 {
+    margin-bottom: 40px;
+    font: 48px GothamProBlack;
+  }
+
+  .more-news {
+    display: block;
+    width: 100%;
+    margin-top: -4px;
+    padding: 0 10px;
+    font: 14px/4.5em GothamProBold;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $color-primary;
+    border: none;
+    border-radius: 8px;
+
+    &:after {
+      content: "\f063";
+      margin-left: 1em;
+      font-family: FontAwesome;
+    }
+  }
+
+  .blog-nav {
+    margin-top: 50px;
+    text-align: center;
+    font: 14px/2.5em GothamProBold;
+    color: #696e72;
+
+    .page-numbers {
+      margin: 0 10px;
+      display: inline-block;
+      padding: 0 1em;
+      border-radius: 4px;
+    }
+
+    .current {
+      color: #ffffff;
+      background-color: $color-primary;
+    }
+
+    .prev,
+    .next {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    a {
+      color: inherit;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+.list-news {
+
+  li {
+    padding: 30px 0;
+    border-bottom: 1px solid  #eeeeee;
+
+    article {
+      display: flex;
+
+      a{
+        color: inherit;
+      }
+    }
+  }
+
+  .info-news {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    margin-right: 45px;
+
+    .time,
+    time {
+      margin-right: 0;
+      font: 16px $font-content;
+      font-weight: 700;
+      color: #a6b6c8;
+    }
+
+    .important-label,
+    .updated-label {
+      margin-bottom: 7px;
+      margin-right: 0;
+      text-align: center;
+      font-size: 11px;
+    }
+  }
+
+  .important {
+    font-family: GothamProBold;
+  }
+
+  .fa {
+    color: #bfbfbf;
+    font-size: 12px;
+  }
+}

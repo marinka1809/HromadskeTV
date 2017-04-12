@@ -114,36 +114,6 @@ a {
   }
 }
 
-.section {
-  padding: 60px 0;
-}
-
-.section-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 50px;
-
-  h1, h2 {
-    font: 22px/1em GothamProBlack;
-    margin-right: 2em;
-  }
-
-  .link-all-articles {
-    padding-bottom: 5px;
-    font: 14px $font-content;
-    font-weight: 700;
-    color: inherit;
-    border-bottom: 4px solid $color-primary;
-
-    &:after {
-      content: "\f061";
-      margin-left: 1em;
-      font-family: FontAwesome;
-    }
-  }
-}
-
 .link-donate,
 .link-detailed {
   display: inline-block;
@@ -195,342 +165,90 @@ a {
   }
 }
 
-.img-wrapper {
-  width: 100%;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  overflow: hidden;
+.info-news {
+  margin-bottom: 10px;
 
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-}
-
-
-//--------------------------------HEADER----------------------
-.site-header {
-  padding: 30px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-  .flex-block {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
+  .time,
+   time {
+    margin-right: 5px;
+    font: 12px $font-content;
+    color: #53555a;
   }
 
-  .site-title {
-    width: 154px;
-    height: 40px;
-    overflow: hidden;
+  .fa {
+    color: #bfbfbf;
+    font-size: 12px;
   }
 
-  .menu-toggle {
-    font-size: 1.5em;
-    background-color: transparent;
-    border: none;
-  }
-
-  .main-navigation {
-    width: auto;
-    font: 16px/1.8em GothamProBold;
+  .important-label,
+  .updated-label {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 0 5px;
+    font: 10px/1.4em $font-content;
+    font-weight: 700;
+    color: #ffffff;
     text-transform: uppercase;
-
-
-    a {
-      margin: 0 15px;
-      color: #171617;
-      border-bottom: 2px solid transparent;
-
-      &:hover {
-        border-bottom: 2px solid #f6921e;
-      }
-    }
+    background-color: $color-second;
+    border-radius: 5px;
   }
 
-  .current_page_item {
-    a {
-      border-bottom: 2px solid #f6921e;
-    }
+  .updated-label {
+    background-color: #7ca5e2;
   }
 }
 
-//-------------------------WELCOME---------------------
-
-.top-block {
-
-  .last-news {
-    background-color: #ffffff;
-
-    .wrapper {
-      width: 100%;
-      padding: 0 30px;
-      color: #171617;
-
-      h2,
-      article {
-        padding: 25px 0;
-        border-bottom: 1px solid #dedede;
-      }
-
-      h2 {
-        display: none;
-      }
-
-      a.title {
-        font: 14px GothamProRegular;
-        color: inherit;
-      }
-
-      a.important-title {
-        font: 14px GothamProBold;
-      }
-    }
-
-    .info-news {
-      margin-bottom: 10px;
-
-      .time {
-        margin-right: 5px;
-        font: 12px $font-content;
-        color: #53555a;
-      }
-
-      .fa {
-        color: #bfbfbf;
-        font-size: 12px;
-      }
-
-      .important-label,
-      .updated-label {
-        margin-right: 5px;
-        padding: 0 5px;
-        font: 10px/1.2em $font-content;
-        font-weight: 700;
-        color: #ffffff;
-        text-transform: uppercase;
-        background-color: $color-second;
-        border-radius: 5px;
-      }
-
-      .updated-label {
-        background-color: #7ca5e2;
-      }
-    }
-
-
-    .bottom-wrapper {
-      padding: 0 30px;
-      text-align: center;
-      background-color: $color-primary;
-    }
-
-    .link-all-articles {
-      display: inline-block;
-      font: 14px/4.5em GothamProBold;
-      color: #ffffff;
-
-      &:after {
-        content: "\f061";
-        margin-left: 1em;
-        font-family: FontAwesome;
-      }
-
-    }
-  }
-}
-
-.welcome-section {
-  height: calc(100vh - 100px);
-  padding: 60px 0 30px;
-  color: #ffffff;
-
-  h1 {
-    margin-bottom: 25px;
-    font: 24px GothamProBlack;
-  }
-
-  p {
-    margin-bottom: 35px;
-    font: 18px $font-content;
-    opacity: 0.8;
-  }
-}
-
-//-------------------------IMPORTANT-NEWS---------------------
-
-.important-news-section {
-
-  .item-important-posts {
-    margin-bottom: 60px;
-    height: 340px;
-    cursor: pointer;
-
-    .item-wrapper {
-      height: 100%;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #eeeeee;
-    }
-
-    .img-wrapper {
-      height: 146px;
-    }
-
-    h3 {
-      margin-bottom: 10px;
-      font: 18px/1.3em GothamProBold;
-      color: #343434;
-    }
-
-    p {
-      font: 14px/1.5em $font-content;
-      color: #696e72;
-    }
-
-  }
-}
-
-//-------------------------STORY-SECTION---------------------
-.front-story-section  {
-  color: #ffffff;
-
-  .section-header {
-    opacity: 0.75;
-  }
-
-  h1 {
-    font: 24px/1.2em GothamProBlack;
-    margin-bottom: 30px;
-  }
-
-  p {
-    margin-bottom: 30px;
-    font: 18px/1.5em $font-content;
-    opacity: 0.8;
-  }
-}
-
-
-//-------------------------SECTION-DONATE---------------------
-.section-donate {
-  text-align: center;
-
-  h1 {
-    margin-bottom: 30px;
-    font: 20px GothamProBold;
-    color: #171617;
-  }
-}
-
-//-------------------------PROJECT-SECTION---------------------
-.front-project-section {
-  background-color: #eff2f7;
+aside {
+  font: 16px GothamProBold;
 
   .item-project {
-    height: 350px;
-    cursor: pointer;
-  }
-
-  .img-wrapper {
-    height: 208px;
-  }
-
-  h3 {
-    margin-bottom: 10px;
-    font: 18px GothamProBold;
-    color: #343434;
-  }
-
-  p {
-    opacity: 0.8;
-    font: 14px/1.5em $font-content;
-    color: #3e4144;;
-  }
-}
-
-
-//-------------------------SOCIAL-SECTION---------------------
-.front-social-section {
-  text-align: center;
-
-  h1 {
-    margin-bottom: 30px;
-    font: 20px GothamProBold;
-    color: #171617;
-  }
-
-
-  h2 {
-    margin-bottom: 20px;
-    font: 14px GothamProBold;
-    color: #171617;
-  }
-
-  #text-5 {
-    padding: 45px 35px;
-    border-radius: 2px;
-    border: 1px solid #e2e7eb;
-
-    .color {
-      color: $color-second;
-    }
-  }
-}
-
-
-.site-footer {
-  color: #ffffff;
-  background-color: #303d4a;
-
-  .site-info-top {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 0;
-    border-bottom: 1px solid #44505b;
-  }
-
-  .widget_nav_menu {
-    margin-bottom: auto;
-    margin-top: auto;
-
-    li {
-      display: inline-block;
-    }
-
-    a {
-      padding: 10px;
-      font: 14px GothamProBold;
-      color:inherit;
-      text-transform: uppercase;
-    }
-  }
-
-  .link-donate {
-    border-color: transparent;
-    background-color: #ffffff;
-  }
-
-  .site-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-  }
-
-  .site-title {
-    width: 155px;
-    height: 40px;
+    position: relative;
+    margin-bottom: 25px;
+    border-radius: 4px;
     overflow: hidden;
-  }
 
-  .copyright {
-    font: 14px $font-content;
-    color: #a6b6c8;
-  }
+    img {
+      display: block;
+    }
 
+    .dark-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 15px;
+      color: #ffffff;
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+
+    }
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .list-stories,
@@ -552,6 +270,11 @@ a {
     }
   }
 }
+@import "parts/header";
+@import "parts/footer";
+
+@import "pages/home";
+@import "pages/news";
 
 @import "responsive/media768";
 @import "responsive/media992";

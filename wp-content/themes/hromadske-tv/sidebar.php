@@ -9,7 +9,7 @@
 ?>
 
 <aside id="secondary" class="col-sm-3" role="complementary">
-
+    <h1>Проекти</h1>
     <?php
     $args = array(
         'taxonomy'      => array( 'projects' ),
@@ -20,23 +20,19 @@
     );
     $projects_query = new WP_Term_Query( $args );
     if ( $projects_query->terms ) :?>
-        <ul class="row">
+        <ul>
             <?php foreach( $projects_query->terms as $project ){
                 $image = get_field('image_project', $project);?>
                 <li class="item-project" data-href="<?php echo get_term_link($project);?>">
                     <?php if( !empty($image) ): ?>
                         <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                     <?php endif; ?>
-                    <h3><?php echo $project->name; ?></h3>
+                    <div class="dark-bg">
+                        <h3><?php echo $project->name; ?></h3>
+                    </div>
                 </li>
             <?php } ?>
         </ul>
     <?php endif;?>
     <?php wp_reset_postdata();?>
-
-	<?php
-    if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-        return;
-    }
-    dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

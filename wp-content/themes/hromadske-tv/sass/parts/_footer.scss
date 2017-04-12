@@ -1,0 +1,51 @@
+//-------------------------FOOTER---------------------
+.site-footer {
+  color: #ffffff;
+  background-color: #303d4a;
+
+  .site-info-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    border-bottom: 1px solid #44505b;
+  }
+
+  .widget_nav_menu {
+    margin-bottom: auto;
+    margin-top: auto;
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      padding: 10px;
+      font: 14px GothamProBold;
+      color:inherit;
+      text-transform: uppercase;
+    }
+  }
+
+  .link-donate {
+    border-color: transparent;
+    background-color: #ffffff;
+  }
+
+  .site-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .site-title {
+    width: 155px;
+    height: 40px;
+    overflow: hidden;
+  }
+
+  .copyright {
+    font: 14px $font-content;
+    color: #a6b6c8;
+  }
+}

@@ -4,6 +4,8 @@
 
   .top-block {
     height: calc(100vh - 140px);
+    max-height: 800px;
+    min-height: 500px;
     position: relative;
 
 
@@ -20,86 +22,49 @@
       .wrapper {
         position: relative;
         display: flex;
+        flex-wrap: nowrap;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
         width: 100%;
         padding: 0 35px 120px;
-        color: #171617;
 
         h2,
         article {
+          width: 100%;
+          height: auto;
           padding: 20px 0;
+          border: none;
           border-bottom: 1px solid #dedede;
         }
 
         h2 {
-          font: 18px GothamProBold;
-          text-transform: uppercase;
+          display: block;
         }
 
         a.title {
-          font: 20px GothamProRegular;
+          font-size: 20px;
           color: inherit;
         }
 
         a.important-title {
-          font: 20px GothamProBold;
+          font-size: 20px;
         }
       }
-
-      .info-news {
-        margin-bottom: 10px;
-
-        .time {
-          margin-right: 5px;
-          font: 12px $font-content;
-          color: #53555a;
-        }
-
-        .fa {
-          color: #bfbfbf;
-          font-size: 12px;
-        }
-
-        .important-label,
-        .updated-label {
-          margin-right: 5px;
-          padding: 0 5px;
-          font: 10px/1.2em $font-content;
-          font-weight: 700;
-          color: #ffffff;
-          text-transform: uppercase;
-          background-color: $color-second;
-          border-radius: 5px;
-        }
-
-        .updated-label {
-          background-color: #7ca5e2;
-        }
-      }
-
 
       .bottom-wrapper {
         position: absolute;
         left: 0;
         right: 0;
         bottom: 0;
+        width: 100%;
+        display: block;
+        height: auto;
         padding: 0 35px;
-        background-color: $color-primary;
+        text-align: left;
       }
 
       .link-all-articles {
-        display: inline-block;
-        font: 14px/4.5em GothamProBold;
-        color: #ffffff;
-
-        &:after {
-          content: "\f061";
-          margin-left: 1em;
-          font-family: FontAwesome;
-        }
-
       }
     }
   }
@@ -128,6 +93,8 @@
 
   //-------------------------IMPORTANT-NEWS---------------------
   .important-news-section {
+    padding-bottom: 120px;
+
     .item-important-posts {
       margin-bottom: 0;
 
@@ -135,5 +102,65 @@
         height: 152px;
       }
     }
+  }
+
+  //-------------------------PROJECT-SECTION---------------------
+  .front-project-section {
+
+    .first-item-project {
+      display: none;
+    }
+
+    .hidden-tablet{
+      display: block;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  //-------------------------FOOTER---------------------
+  .site-footer {
+
+    .site-info-top {
+      flex-direction: row;
+    }
+
+    .widget_nav_menu {
+      width: auto;
+      margin-bottom: auto;
+
+      li {
+        display: inline-block;
+      }
+
+      a {
+        font: 14px GothamProBold;
+      }
+    }
+
+    .site-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .site-title {
+      width: 155px;
+      height: 40px;
+      overflow: hidden;
+    }
+
+    .copyright {
+      font: 14px $font-content;
+      color: #a6b6c8;
+    }
+
   }
 }

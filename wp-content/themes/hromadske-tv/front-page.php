@@ -105,7 +105,7 @@ get_header(); ?>
                         </header>
                         <ul class="row">
                             <?php while ( $importantPosts->have_posts() ) : $importantPosts->the_post();?>
-                                <li class="col-md-3 item-important-posts" data-href="<?php the_permalink(); ?>">
+                                <li class="col-sm-6 col-md-3 item-important-posts" data-href="<?php the_permalink(); ?>">
                                     <div class="item-wrapper">
                                         <div class="img-wrapper">
                                             <?php the_post_thumbnail();?>
@@ -171,7 +171,8 @@ get_header(); ?>
 
             $projects_query = new WP_Term_Query( $args );
 
-            if ( $projects_query->terms ) :?>
+            if ( $projects_query->terms ) :
+                $count = 1; ?>
                 <section class="section front-project-section" >
                     <div class="container">
                         <header class="section-header">
@@ -182,8 +183,17 @@ get_header(); ?>
                             <?php foreach( $projects_query->terms as $project ){
                                 $image = get_field('image_project', $project);
                                 ?>
-
-                                <li class="col-md-4 item-project" data-href="<?php echo get_term_link($project);?>">
+                                <?php if( $count==1 ):?>
+                                    <li class="col-sm-12 first-item-project visible-tablet" data-href="<?php echo get_term_link($project);?>">
+                                        <div class="bg" style="background: url('<?php echo $image['url']; ?>') 50% 50% no-repeat; background-size: cover;">
+                                            <div class="content">
+                                                <h3><?php echo $project->name; ?></h3>
+                                                <p><?php echo $project->description; ?></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endif; ?>
+                                <li class="col-sm-6 col-md-4 item-project <?php if( $count==1 ): echo "hidden-tablet"; endif;?>" data-href="<?php echo get_term_link($project);?>">
                                     <?php if( !empty($image) ): ?>
                                         <div class="img-wrapper">
                                             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
@@ -192,7 +202,9 @@ get_header(); ?>
                                     <h3><?php echo $project->name; ?></h3>
                                     <p><?php echo $project->description; ?></p>
                                 </li>
-                            <?php } ?>
+                            <?php
+                                $count++;
+                            } ?>
                         </ul>
                     </div>
                 </section>
