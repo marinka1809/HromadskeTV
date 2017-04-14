@@ -1,0 +1,30 @@
+.project-title-section {
+  position: relative;
+  padding: 70px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .dark-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    filter: blur(7px);
+
+  }
+
+  .type {
+    margin-bottom: 30px;
+    font: 16px GothamProBold;
+    opacity: 0.5;
+    text-transform: uppercase;
+  }
+
+
+}
+
+.single-project-page {
+  padding-top: 80px;
+  padding-bottom: 120px;
+}

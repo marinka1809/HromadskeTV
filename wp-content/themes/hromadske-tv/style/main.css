@@ -133,6 +133,12 @@ a {
 a:hover, a:focus {
   text-decoration: none; }
 
+.site-content {
+  padding-top: 130px; }
+
+main h1 {
+  font: 48px GothamProBlack; }
+
 .link-donate,
 .link-detailed {
   display: inline-block;
@@ -193,6 +199,15 @@ a:hover, a:focus {
   .info-news .updated-label {
     background-color: #7ca5e2; }
 
+.stories-page,
+.project-page {
+  padding-top: 60px;
+  padding-bottom: 60px; }
+  .stories-page h1,
+  .project-page h1 {
+    margin-bottom: 40px;
+    text-align: center; }
+
 aside {
   font: 16px GothamProBold; }
   aside .item-project {
@@ -223,23 +238,50 @@ aside {
       background-image: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
       background-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%); }
 
-.list-stories li,
-.list-episodes li {
-  cursor: pointer; }
+.blog-nav {
+  text-align: center;
+  font: 14px/2.5em GothamProBold;
+  color: #696e72; }
+  .blog-nav .page-numbers {
+    margin: 0 10px;
+    display: inline-block;
+    padding: 0 1em;
+    -webkit-border-radius: 4px;
+            border-radius: 4px; }
+  .blog-nav .current {
+    color: #ffffff;
+    background-color: #f6921e; }
+  .blog-nav .prev,
+  .blog-nav .next {
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+  .blog-nav a {
+    color: inherit; }
+    .blog-nav a:hover {
+      color: #f6921e; }
 
-.list-projects .item-project {
-  margin-bottom: 20px; }
-  .list-projects .item-project .content-block {
-    padding: 100px 0;
-    overflow: hidden;
-    background-size: cover;
-    -webkit-border-radius: 20px;
-            border-radius: 20px; }
+.title-section {
+  padding: 100px 0;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden; }
+  .title-section h1 {
+    margin-bottom: 30px;
+    font: 48px/1.2em GothamProBlack; }
+  .title-section p {
+    font: 22px/1.5em "Open Sans", sans-serif;
+    opacity: 0.8; }
 
 .site-header {
+  position: fixed;
+  width: 100%;
+  z-index: 3;
   padding: 30px 0;
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
   .site-header .flex-block {
     display: -webkit-box;
     display: -webkit-flex;
@@ -275,6 +317,11 @@ aside {
   .site-header .current_page_item a {
     border-bottom: 2px solid #f6921e; }
 
+header.sticky {
+  padding: 10px 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
 .site-footer {
   color: #ffffff;
   background-color: #303d4a; }
@@ -302,6 +349,8 @@ aside {
   .site-footer .link-donate {
     border-color: transparent;
     background-color: #ffffff; }
+    .site-footer .link-donate:hover {
+      background-color: #f61e1e; }
   .site-footer .site-info {
     display: -webkit-box;
     display: -webkit-flex;
@@ -493,8 +542,9 @@ aside {
   .page-news main,
   .page-news aside {
     padding: 0 40px; }
+  .page-news aside h1 {
+    margin-bottom: 30px; }
   .page-news h1 {
-    margin-bottom: 40px;
     font: 48px GothamProBlack; }
   .page-news .more-news {
     display: block;
@@ -514,27 +564,7 @@ aside {
       margin-left: 1em;
       font-family: FontAwesome; }
   .page-news .blog-nav {
-    margin-top: 50px;
-    text-align: center;
-    font: 14px/2.5em GothamProBold;
-    color: #696e72; }
-    .page-news .blog-nav .page-numbers {
-      margin: 0 10px;
-      display: inline-block;
-      padding: 0 1em;
-      -webkit-border-radius: 4px;
-              border-radius: 4px; }
-    .page-news .blog-nav .current {
-      color: #ffffff;
-      background-color: #f6921e; }
-    .page-news .blog-nav .prev,
-    .page-news .blog-nav .next {
-      -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
-    .page-news .blog-nav a {
-      color: inherit; }
-      .page-news .blog-nav a:hover {
-        color: #f6921e; }
+    margin-top: 50px; }
 
 .list-news li {
   padding: 30px 0;
@@ -579,6 +609,228 @@ aside {
   color: #bfbfbf;
   font-size: 12px; }
 
+.list-stories li,
+.list-episodes li {
+  cursor: pointer;
+  margin-bottom: 60px; }
+  .list-stories li article,
+  .list-episodes li article {
+    height: 320px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eeeeee; }
+  .list-stories li h2,
+  .list-episodes li h2 {
+    margin-bottom: 10px;
+    font: 20px/1.2em GothamProBold;
+    color: #343434; }
+  .list-stories li p,
+  .list-episodes li p {
+    font: 14px/1.5em "Open Sans", sans-serif;
+    color: #696e72; }
+  .list-stories li article.big,
+  .list-episodes li article.big {
+    padding: 0;
+    -webkit-border-radius: 8px;
+            border-radius: 8px;
+    overflow: hidden; }
+    .list-stories li article.big .dark-bg,
+    .list-episodes li article.big .dark-bg {
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: end;
+      -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.5); }
+    .list-stories li article.big h2,
+    .list-episodes li article.big h2 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      color: #ffffff; }
+    .list-stories li article.big p,
+    .list-episodes li article.big p {
+      font-size: 16px;
+      color: #ffffff; }
+
+.project-page .blog-nav {
+  margin-top: 60px; }
+
+.list-projects .item-project {
+  margin-bottom: 60px;
+  color: #3e4144;
+  cursor: pointer; }
+  .list-projects .item-project .small-content {
+    height: 380px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eeeeee;
+    overflow: hidden; }
+  .list-projects .item-project h3 {
+    margin-bottom: 10px;
+    font: 24px/1.2em GothamProBold; }
+  .list-projects .item-project p {
+    font: 16px/1.5em "Open Sans", sans-serif;
+    opacity: 0.8; }
+
+.list-projects .big-item-project {
+  margin-bottom: 60px;
+  padding: 0;
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
+  overflow: hidden;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer; }
+  .list-projects .big-item-project .content-block {
+    height: 450px; }
+  .list-projects .big-item-project .dark-bg {
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 40px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden; }
+  .list-projects .big-item-project h3 {
+    margin-bottom: 10px;
+    font: 64px/1.2em GothamProBlack; }
+  .list-projects .big-item-project p {
+    font: 22px/1.5em "Open Sans", sans-serif; }
+
+.project-title-section {
+  position: relative;
+  padding: 70px 0;
+  background-color: rgba(0, 0, 0, 0.5); }
+  .project-title-section .dark-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    -webkit-filter: blur(7px);
+            filter: blur(7px); }
+  .project-title-section .type {
+    margin-bottom: 30px;
+    font: 16px GothamProBold;
+    opacity: 0.5;
+    text-transform: uppercase; }
+
+.single-project-page {
+  padding-top: 80px;
+  padding-bottom: 120px; }
+
+.about-page h1 {
+  margin-bottom: 60px;
+  text-align: center; }
+
+.team-section {
+  padding: 120px 0 0; }
+  .team-section h1 {
+    color: #171617; }
+  .team-section ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .team-section li {
+    margin-bottom: 60px; }
+  .team-section article {
+    height: 100%;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eeeeee; }
+  .team-section img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px; }
+  .team-section h3 {
+    margin-bottom: 10px;
+    font: 18px/1.5em GothamProBold;
+    color: #343434; }
+  .team-section p {
+    font: 14px/1.5em "Open Sans", sans-serif;
+    color: #696e72; }
+
+.contacts-section {
+  padding: 70px 0 120px; }
+  .contacts-section h1 {
+    color: #171617; }
+  .contacts-section address {
+    margin-bottom: 50px; }
+    .contacts-section address li {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      font-size: 16px; }
+    .contacts-section address .fa {
+      margin-bottom: 15px;
+      font-size: 3em;
+      color: #f6921e; }
+    .contacts-section address .label-name {
+      margin-bottom: 10px;
+      font: 18px/1.5em GothamProBold;
+      color: #343434; }
+    .contacts-section address p {
+      font: 1em/1.5em "Open Sans", sans-serif;
+      color: #696e72; }
+      .contacts-section address p a {
+        color: inherit; }
+        .contacts-section address p a:hover {
+          color: #f6921e; }
+    .contacts-section address .link-mail {
+      display: inline-block;
+      color: #f6921e;
+      border-bottom: 1px solid #f6921e; }
+      .contacts-section address .link-mail:hover {
+        color: #696e72; }
+  .contacts-section .center-li {
+    position: relative; }
+    .contacts-section .center-li:after, .contacts-section .center-li:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 2px;
+      height: 50px;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      background-color: #eeeeee; }
+    .contacts-section .center-li:before {
+      left: 0; }
+    .contacts-section .center-li:after {
+      right: 0; }
+
 @media screen and (min-width: 768px) {
   .section {
     padding: 120px 0; }
@@ -588,7 +840,7 @@ aside {
       font: 48px/1em GothamProBlack;
       margin-right: 2em; }
   .site-header {
-    padding: 40px 0;
+    padding: 35px 0;
     -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
     .site-header .flex-block {

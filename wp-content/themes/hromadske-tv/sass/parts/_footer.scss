@@ -29,6 +29,10 @@
   .link-donate {
     border-color: transparent;
     background-color: #ffffff;
+
+    &:hover {
+      background-color: $color-second;
+    }
   }
 
   .site-info {

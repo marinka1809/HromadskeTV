@@ -5,11 +5,15 @@ Template Name: Stories
 get_header();
 ?>
 
-<main class="container" >
+<main class="container stories-page" >
     <h1><?php single_post_title();?></h1>
     <?php
+
+    $ourCurrentPage = get_query_var('paged');
         $args = array(
         'post_type' => 'stories',
+        'posts_per_page' => 14,
+        'paged' => $ourCurrentPage,
         );
         $queryStories = new WP_Query($args);
     ?>
@@ -24,6 +28,15 @@ get_header();
                 <?php endif; ?>
             <?php endwhile; ?>
         </ul>
+        <div class="blog-nav">
+            <?php echo paginate_links(array(
+                    'total'        => $queryStories->max_num_pages,
+                    'prev_text'    => __('<'),
+                    'next_text'    => __('>'),
+                    'mid_size'     => 2,
+                )
+            );?>
+        </div>
         <?php wp_reset_postdata();?>
     <?php   else :
         get_template_part( 'template-parts/content', 'none' );

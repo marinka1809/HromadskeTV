@@ -25,7 +25,7 @@
                 $image = get_field('image_project', $project);?>
                 <li class="item-project" data-href="<?php echo get_term_link($project);?>">
                     <?php if( !empty($image) ): ?>
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                        <?php echo wp_get_attachment_image( $image['id'], 'thumbnails' );?>
                     <?php endif; ?>
                     <div class="dark-bg">
                         <h3><?php echo $project->name; ?></h3>

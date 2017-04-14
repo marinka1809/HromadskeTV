@@ -1,0 +1,51 @@
+.list-stories,
+.list-episodes {
+
+  li {
+    cursor: pointer;
+    margin-bottom: 60px;
+
+    article {
+      height: 320px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      font: 20px/1.2em GothamProBold;
+      color: #343434;
+    }
+
+    p {
+      font: 14px/1.5em $font-content;
+      color: #696e72;
+    }
+
+    article.big {
+      padding: 0;
+      border-radius: 8px;
+      overflow: hidden;
+
+      .dark-bg {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 25px;
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+      h2 {
+        margin-bottom: 10px;
+        font-size: 24px;
+        color: #ffffff;
+      }
+
+      p{
+        font-size: 16px;
+        color: #ffffff;
+      }
+    }
+  }
+}

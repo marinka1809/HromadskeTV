@@ -9,9 +9,11 @@
 
 ?>
 <li class="col-xs-6 col-md-3" data-href="<?php the_permalink(); ?>" >
-    <article id="<?php the_ID(); ?>">
-        <?php the_post_thumbnail(); ?>
+    <article class="regular" id="<?php the_ID(); ?>">
+        <div class="img-wrapper">
+            <?php the_post_thumbnail('thumbnails'); ?>
+        </div>
         <h2> <?php the_title();?> </h2>
         <?php the_excerpt();?>
-    </article><!-- #post-## -->
+    </article>
 </li>

@@ -4,6 +4,8 @@ $(document).ready(function(){
 
     artificialLink  (".item-important-posts");
     artificialLink  (".item-project");
+    artificialLink  (".big-item-project");
+
     artificialLink  (".list-stories li");
 
     artificialLink  (".list-episodes li");
@@ -29,9 +31,38 @@ $(document).ready(function(){
         //	configuration goes here
     });
 
+    $(".list-stories article.regular").dotdotdot({
+        //	configuration goes here
+    });
+
+    $(".list-stories .dark-bg").dotdotdot({
+        //	configuration goes here
+    });
+
+    $(".list-episodes article.regular").dotdotdot({
+        //	configuration goes here
+    });
+
+    $(".list-episodes .dark-bg").dotdotdot({
+        //	configuration goes here
+    });
+
+    $(".list-projects .small-content").dotdotdot({
+        //	configuration goes here
+    });
+
     // $(".last-news .wrapper").dotdotdot({
     //     //	configuration goes here
     // });
+});
+
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 1){
+        $('#masthead').addClass("sticky");
+    }
+    else{
+        $('#masthead').removeClass("sticky");
+    }
 });
 
 

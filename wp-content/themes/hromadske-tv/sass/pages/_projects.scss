@@ -1,0 +1,63 @@
+.project-page {
+  .blog-nav {
+    margin-top: 60px;
+  }
+}
+
+.list-projects {
+
+  .item-project {
+    margin-bottom: 60px;
+    color: #3e4144;
+    cursor: pointer;
+
+    .small-content {
+      height: 380px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #eeeeee;
+      overflow: hidden;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font: 24px/1.2em GothamProBold;
+    }
+
+    p {
+      font: 16px/1.5em $font-content;
+      opacity: 0.8;
+    }
+  }
+
+  .big-item-project {
+    margin-bottom: 60px;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+
+    .content-block {
+      height: 450px;
+    }
+
+    .dark-bg {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 40px 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font: 64px/1.2em GothamProBlack;
+    }
+
+    p{
+      font: 22px/1.5em $font-content;
+    }
+  }
+}

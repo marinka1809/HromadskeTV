@@ -108,7 +108,7 @@ get_header(); ?>
                                 <li class="col-sm-6 col-md-3 item-important-posts" data-href="<?php the_permalink(); ?>">
                                     <div class="item-wrapper">
                                         <div class="img-wrapper">
-                                            <?php the_post_thumbnail();?>
+                                            <?php  the_post_thumbnail('thumbnails');?>
                                         </div>
                                         <h3><?php the_title();?></h3>
                                         <?php the_excerpt(); ?>
@@ -181,8 +181,7 @@ get_header(); ?>
                         </header>
                         <ul class="row">
                             <?php foreach( $projects_query->terms as $project ){
-                                $image = get_field('image_project', $project);
-                                ?>
+                                $image = get_field('image_project', $project);?>
                                 <?php if( $count==1 ):?>
                                     <li class="col-sm-12 first-item-project visible-tablet" data-href="<?php echo get_term_link($project);?>">
                                         <div class="bg" style="background: url('<?php echo $image['url']; ?>') 50% 50% no-repeat; background-size: cover;">
@@ -196,7 +195,7 @@ get_header(); ?>
                                 <li class="col-sm-6 col-md-4 item-project <?php if( $count==1 ): echo "hidden-tablet"; endif;?>" data-href="<?php echo get_term_link($project);?>">
                                     <?php if( !empty($image) ): ?>
                                         <div class="img-wrapper">
-                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                                            <?php echo wp_get_attachment_image( $image['id'], 'thumbnails' );?>
                                         </div>
                                     <?php endif; ?>
                                     <h3><?php echo $project->name; ?></h3>
