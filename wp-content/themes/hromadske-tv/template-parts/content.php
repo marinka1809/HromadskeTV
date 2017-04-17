@@ -10,7 +10,8 @@
 ?>
 
 
-	<div class="container-fluid single-content">
+	<div class="single-content">
+
 		<?php
 			the_content( );
 		?>

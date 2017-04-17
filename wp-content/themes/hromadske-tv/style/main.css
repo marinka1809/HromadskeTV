@@ -272,6 +272,27 @@ aside {
     font: 22px/1.5em "Open Sans", sans-serif;
     opacity: 0.8; }
 
+.content-regular-page {
+  padding-top: 80px;
+  padding-bottom: 90px;
+  font: 18px/1.7em "Open Sans", sans-serif;
+  color: #242729; }
+  .content-regular-page strong {
+    font-weight: 700; }
+  .content-regular-page h2,
+  .content-regular-page h3 {
+    margin-bottom: 20px; }
+  .content-regular-page h1 {
+    margin-bottom: 20px;
+    color: #171617; }
+  .content-regular-page h2 {
+    font: bold 2em/1.2em "Open Sans", sans-serif; }
+  .content-regular-page h3 {
+    font: bold 1.5em/1.2em "Open Sans", sans-serif; }
+  .content-regular-page p,
+  .content-regular-page br {
+    margin-bottom: 30px; }
+
 .site-header {
   position: fixed;
   width: 100%;
@@ -830,6 +851,122 @@ header.sticky {
       left: 0; }
     .contacts-section .center-li:after {
       right: 0; }
+
+.article-header {
+  color: #171617; }
+  .article-header .header-wrap {
+    width: 770px;
+    margin: 0 auto;
+    text-align: center; }
+  .article-header h1 {
+    margin-bottom: 30px;
+    font: 50px/1.4em GothamProBlack; }
+  .article-header p {
+    margin-bottom: 30px;
+    font: 22px/1.5em "Open Sans", sans-serif;
+    color: #696e72; }
+  .article-header time {
+    font: bold 12px/1.7em "Open Sans", sans-serif;
+    color: #a6b6c8;
+    text-transform: uppercase; }
+  .article-header .video-wrap {
+    background-color: #eff2f7; }
+    .article-header .video-wrap iframe {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%; }
+
+.img-header {
+  padding: 140px 0;
+  color: #ffffff; }
+  .img-header p {
+    opacity: 0.8;
+    color: #ffffff; }
+  .img-header time {
+    opacity: 0.5;
+    color: #ffffff; }
+
+.clear-header {
+  padding: 80px 0 0; }
+
+.video-header {
+  padding: 90px 0 0; }
+  .video-header .header-wrap {
+    margin-bottom: 65px; }
+
+.single-content {
+  width: 100%;
+  padding-top: 70px;
+  font: 18px/1.7em "Open Sans", sans-serif;
+  color: #242729; }
+  .single-content p, .single-content h1, .single-content h2, .single-content h3, .single-content h4, .single-content ul, .single-content ol {
+    width: 770px;
+    margin: 0 auto; }
+  .single-content strong {
+    font-size: 20px;
+    font-weight: 700; }
+  .single-content a {
+    display: inline-block;
+    color: #f61e1e;
+    border-bottom: 1px solid #f61e1e; }
+    .single-content a:hover {
+      color: #242729; }
+  .single-content h1,
+  .single-content h2,
+  .single-content h3 {
+    margin-bottom: 20px;
+    color: #121212; }
+  .single-content h1 {
+    font: bold 2.2em/1.2em "Open Sans", sans-serif; }
+  .single-content h2 {
+    font: bold 2em/1.2em "Open Sans", sans-serif; }
+  .single-content h3 {
+    font: bold 1.5em/1.2em "Open Sans", sans-serif; }
+  .single-content p,
+  .single-content br,
+  .single-content ul,
+  .single-content ol,
+  .single-content pre {
+    margin-bottom: 30px; }
+  .single-content ul, .single-content ol {
+    list-style: auto;
+    padding-left: 50px; }
+  .single-content pre {
+    background-color: transparent; }
+  .single-content img.size-full {
+    width: 100% !important;
+    max-width: 100% !important; }
+  .single-content img.size-large {
+    display: block;
+    width: 970px;
+    margin: 0 auto; }
+  .single-content img.size-medium {
+    display: block;
+    width: 770px;
+    margin: 0 auto; }
+  .single-content .gallery .gallery-item {
+    padding: 0 15px; }
+    .single-content .gallery .gallery-item a {
+      cursor: initial; }
+  .single-content .gallery a {
+    border: 0; }
+  .single-content .gallery .slick-dots {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: yellow;
+    padding: 5px;
+    opacity: 0.8;
+    -webkit-border-radius: 5px;
+            border-radius: 5px; }
+  .single-content .gallery .slick-next {
+    position: absolute;
+    right: 4%; }
+    .single-content .gallery .slick-next:before {
+      font-size: 30px;
+      opacity: 1; }
+      .single-content .gallery .slick-next:before:hover {
+        opacity: 0.8; }
 
 @media screen and (min-width: 768px) {
   .section {

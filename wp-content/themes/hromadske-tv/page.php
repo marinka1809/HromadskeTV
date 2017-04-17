@@ -14,13 +14,17 @@
 
 get_header(); ?>
 
-<main class="container section">
-    <?php
-    while ( have_posts() ) : the_post();?>
-        <h1><?php the_title();?></h1>
-        <?php the_content(); ?>
-    <?php endwhile; // End of the loop.
-    ?>
+<main class="container content-regular-page">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <?php
+            while ( have_posts() ) : the_post();?>
+                <h1><?php the_title();?></h1>
+                <?php the_content(); ?>
+            <?php endwhile; // End of the loop.
+            ?>
+        </div>
+    </div>
 </main><!-- #main -->
 
 <?php

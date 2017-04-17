@@ -19,7 +19,7 @@
     <?php else : ?>
         class="article-header clear-header">
     <?php endif; ?>
-        <div class="">
+        <div class="header-wrap">
           <h1> <?php the_title(); ?> </h1>
           <?php the_excerpt(); ?>
             <?php
@@ -38,9 +38,9 @@
             <?php echo $time_string ;?>
         </div>
         <?php if (get_post_meta($post->ID,'content-cap', 1)=='video'): ?>
-           <div class="">
+           <div class="video-wrap">
                <?php $videoID = get_post_meta($post->ID,'url-video', 1); ?>
-               <?php echo wp_oembed_get( $videoID, array('width' => 800));?>
+               <?php echo wp_oembed_get( $videoID, array('width' => 970));?>
            </div>
         <?php endif; ?>
     </header>

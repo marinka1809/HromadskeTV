@@ -54,6 +54,17 @@ $(document).ready(function(){
     // $(".last-news .wrapper").dotdotdot({
     //     //	configuration goes here
     // });
+    var $gallery = $('.gallery');
+    var slideCount = null;
+
+    $('.gallery').slick({
+        centerMode: true,
+        centerPadding: '25%',
+        slidesToShow: 1,
+        autoplay: true,
+      //  dots: true,
+        });
+
 });
 
 $(window).scroll(function() {
