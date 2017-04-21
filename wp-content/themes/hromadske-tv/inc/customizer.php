@@ -391,6 +391,19 @@ add_action('customize_register', function($customizer){
         )
     );
 
+    $customizer->add_setting(
+        'title-related-posts',
+        array('default' => 'Читайте також')
+    );
+    $customizer->add_control(
+        'title-related-posts',
+        array(
+            'label' => esc_html__( 'Title for section Related posts', 'hromadske-tv' ),
+            'section' => 'news-settings',
+            'type' => 'text'
+        )
+    );
+
     //--------------Footer-logo--------------------------
 
     $customizer->add_setting('footer-logo');

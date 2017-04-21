@@ -12,8 +12,12 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header
     <?php if ( get_post_meta($post->ID,'content-cap', 1)=='image'):
-        $image = get_field("poster_image");?>
-        class="article-header img-header"  style="background: url('<?php echo $image['url']; ?>') 50% 50% no-repeat; background-size: cover">
+        if (get_post_type()== post):
+            $image = get_field("poster_image");?>
+            class="article-header img-header"  style="background: url('<?php echo $image['url']; ?>') 50% 50% no-repeat; background-size: cover">
+        <?php  else : ?>
+            class="article-header img-header"  style="background: url('<?php the_post_thumbnail_url(); ?>') 50% 50% no-repeat; background-size: cover">
+        <?php  endif; ?>
     <?php elseif (get_post_meta($post->ID,'content-cap', 1)=='video'): ?>
         class="article-header video-header">
     <?php else : ?>

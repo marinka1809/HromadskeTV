@@ -1,0 +1,87 @@
+.donate-content {
+  padding: 100px 0 120px;
+
+  header {
+    margin-bottom: 60px;
+    text-align: center;
+
+    h1 {
+      margin-bottom: 30px;
+      font: 48px/1.2em GothamProBlack;
+      color: #171617;
+    }
+
+    p {
+      font: 16px/1.5em $font-content;
+      color: #696e72;
+    }
+  }
+
+  .block {
+    height: 100%;
+    padding: 60px 40px;
+    border-radius: 8px;
+    border: 1px solid #eeeeee;
+    background-color: #eff2f7;
+
+    h2 {
+      margin-bottom: 20px;
+      font: 26px GothamProBold;
+      color: #343434;
+    }
+  }
+
+  .flex-block {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .bank-details  {
+    li {
+      margin-bottom: 20px;
+      font: 16px/1.5em $font-content;
+      color: #696e72;
+    }
+  }
+
+  .online-payment {
+    text-align: center;
+
+    form {
+      position: relative;
+      width: 90%;
+    }
+
+    input {
+      width: 100%;
+      margin-bottom: 30px;
+      padding: 0 50px 0 20px;
+      font: 14px/4em GothamProBold;
+      color: #a6b6c8;
+      text-transform: uppercase;
+      border-radius: 4px;
+      border: 1px solid #e5e5e5;
+      background-color: #ffffff;
+    }
+
+    .price-label {
+      position: absolute;
+      right: 20px;
+      font: 15px/4em GothamProBold;
+      color: #171617;
+      text-transform: uppercase;
+    }
+
+    .payment {
+      display: inline-block;
+      padding: 0 25px;
+      font: 15px/3em GothamProBold;
+      color: #ffffff;
+      text-transform: uppercase;
+      border-radius: 26px;
+      border: 0;
+      background-color: $color-primary;
+    }
+
+  }
+}

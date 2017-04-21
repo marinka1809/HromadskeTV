@@ -105,6 +105,15 @@ function hromadske_tv_widgets_init() {
         'before_title'  => '<h2 class="widget-title-social">',
         'after_title'   => '</h2>',
     ) );
+    register_sidebar( array(
+        'name'          => esc_html__( 'Social share', 'hromadske-tv' ),
+        'id'            => 'social-share-sections',
+        'description'   => esc_html__( 'Add widgets here.', 'hromadske-tv' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
 }
 add_action( 'widgets_init', 'hromadske_tv_widgets_init' );
 
@@ -146,6 +155,11 @@ function my_extra_fields() {
     add_meta_box( 'extra_fields', esc_html__( 'Additional notation', 'hromadske-tv' ), 'extra_fields_box_func', 'post', 'side', 'high'  );
     add_meta_box( 'stories_extra_fields', esc_html__( 'Additional notation', 'hromadske-tv'), 'stories_extra_fields_box', 'stories', 'side', 'high'  );
     add_meta_box( 'episodes_extra_fields', esc_html__( 'Additional notation', 'hromadske-tv'), 'episodes_extra_fields_box', 'episodes', 'side', 'high'  );
+    global $post;
+    if ( $post->post_name == donate ) {
+        add_meta_box( 'bank_details', 'Section of bank details', 'bank_details_box_func', 'page', 'normal', 'high'  );
+        add_meta_box( 'online_payment', 'Online payment section', 'online_payment_box_func', 'page', 'normal', 'high'  );
+    };
 }
 add_action('add_meta_boxes', 'my_extra_fields', 1);
 
@@ -216,6 +230,68 @@ function episodes_extra_fields_box( $episodes ){
     <input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
     <?php
 }
+
+// Block code
+function bank_details_box_func( $post ){ ?>
+    <ul>
+        <li>
+            <label>Title for section
+                <input type="text" name="extra[title-bank_details]" value="<?php echo get_post_meta($post->ID, 'title-bank_details', 1); ?>" style="width:50%" />
+            </label>
+        </li>
+        <li>
+            <label>Bank detailsn:
+                <textarea type="text" rows="5" name="extra[bank_details]" style="width:100%;"><?php echo get_post_meta($post->ID, 'bank_details', 1); ?></textarea>
+            </label>
+        </li>
+    </ul>
+    <input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
+    <?php
+}
+
+// Block code
+function online_payment_box_func( $post ){ ?>
+    <ul>
+        <li>
+            <label>Title for section
+                <input type="text" name="extra[title-online_payment]" value="<?php echo get_post_meta($post->ID, 'title-online_payment', 1); ?>" style="width:50%" />
+            </label>
+        </li>
+        <li>
+            <label>Placeholder text for the input field of sum
+                <input type="text" name="extra[placeholder-sum]" value="<?php echo get_post_meta($post->ID, 'placeholder-sum', 1); ?>" style="width:50%" />
+            </label>
+        </li>
+        <li>
+            <label>Label for submit button:
+                <input type="text" name="extra[label-submit]" value="<?php echo get_post_meta($post->ID, 'label-submit', 1); ?>" style="width:50%" />
+            </label>
+        </li>
+    </ul>
+    <fieldset style="border:1px solid #aaaaaa; border-radius: 5px; padding: 20px;">
+        <legend>Setting for ligpay</legend>
+        <ul>
+            <li>
+                <label>Public key:
+                    <input type="text" name="extra[public-key]" value="<?php echo get_post_meta($post->ID, 'public-key', 1); ?>" style="width:50%" />
+                </label>
+            </li>
+            <li>
+                <label>Private key:
+                    <input type="text" name="extra[private-key]" value="<?php echo get_post_meta($post->ID, 'private-key', 1); ?>" style="width:50%" />
+                </label>
+            </li>
+            <li>
+                <label>Purpose of payment:
+                    <textarea type="text" name="extra[purpose-payment]" style="width:100%;height:50px;"><?php echo get_post_meta($post->ID, 'purpose-payment', 1); ?></textarea>
+                </label>
+            </li>
+        </ul>
+    </fieldset>
+    <input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
+    <?php
+}
+
 /* Save the data, if you save the post */
 function my_extra_fields_update( $post_id ){
     if ( ! wp_verify_nonce($_POST['extra_fields_nonce'], __FILE__) ) return false; // Test
@@ -311,12 +387,73 @@ function the_excerpt_max_charlength( $charlength ){
 }
 
 
+/**
+ * Plugin wptuts buttons
+ */
+add_action( 'init', 'wptuts_buttons' );
+function wptuts_buttons() {
+    add_filter( "mce_external_plugins", "wptuts_add_buttons" );
+    add_filter( 'mce_buttons', 'wptuts_register_buttons' );
+}
+function wptuts_add_buttons( $plugin_array ) {
+    $plugin_array['wptuts'] = get_template_directory_uri() . '/wptuts-editor-buttons/wptuts-plugin.js';
+    return $plugin_array;
+}
+function wptuts_register_buttons( $buttons ) {
+    array_push( $buttons, 'background-text', 'quote-type1', 'quote-type2' ); // dropcap', 'recentposts
+    return $buttons;
+}
+
+
+/**
+ * Shortcode
+ */
+
+add_shortcode( 'quote-type2', 'wp_quote_type2_func' );
+function wp_quote_type2_func( $atts, $content) {
+    extract( shortcode_atts( array(
+        'author_name' => '',
+        'author_photo'  => '',
+        'author_description' => ''
+    ), $atts, $content ) );
+    $html = '';
+    $html.= '<div class="quote-type2">';
+        $html.='<blockquote>';
+            $html.= $content;
+        $html.='</blockquote>';
+        $html.= '<cite>';
+            $html.= '<div class="author-wrap">';
+                $html.= '<img src="' .$atts['author_photo'] .'">';
+            $html.= '</div>';
+            $html.= '<span class="name">';
+                $html.= $atts['author_name'];
+            $html.= '</span>';
+            $html.= '<span class="description">';
+                $html.= $atts['author_description'];
+            $html.= '</span>';
+        $html.= '</cite>';
+    $html.= '</div>';
+
+    return $html;
+}
+
+function progresbar_func( $atts ) {
+    extract( shortcode_atts( array(
+        'name' => 'NAME',
+        'percent' => '0',
+    ), $atts ) );
+    $deg = (int)$atts['percent']/100*180;
+    return "<style> @keyframes " .$atts['name'] ."{100% { transform: rotate(" .$deg ."deg); } } </style>" . " <div class=\"progresbar-item\" > <div class=\"chart-skills\"> <span class=\"line\" style=\"animation-name:".$atts['name'] .";\"></span> "
+        ."<span class=\"percent\">" .$atts['percent'] ."</span> "
+     ."</div>"
+     ."<span class=\"label\">" .$atts['name'] ."</span></div>";
+}
+
+add_shortcode( 'progresbar', 'progresbar_func' );
 
 
 
 function admin_ajax() {
-
-
   // wp_enqueue_script('libs');
    wp_enqueue_script( 'ajax-script', get_theme_file_uri( '/js/ajax-script.js' ), array('libs') );
 }
@@ -396,6 +533,35 @@ function add_news_func(){
 add_action( 'wp_ajax_add_news_func', 'add_news_func');
 add_action( 'wp_ajax_nopriv_add_news_func', 'add_news_func');
 
+function make_form_func()
+{
+    require("payment/api.php"); //Все уже придумано за нас ...
+
+    $micro = sprintf("%06d", (microtime(true) - floor(microtime(true))) * 1000000);
+    $number = date("YmdHis");
+    $order_id = $number . $micro;
+
+    $price = $_GET['price'];
+    $post = $_GET['post'];
+
+    $merchant_id = get_post_meta($post, 'public-key', 1); //public_key
+    $signature = get_post_meta($post, 'private-key', 1); //Private key
+
+
+
+    $liqpay = new LiqPay($merchant_id, $signature);
+    $html = $liqpay->cnb_form(array(
+        'version' => '3',
+        'amount' => "$price",
+        'currency' => 'UAH',     //'EUR','UAH','USD','RUB','RUR'
+        'description' => get_post_meta($post, 'purpose-payment', 1),
+        'order_id' => $order_id
+    ));
+
+    echo $html;
+}
+add_action( 'wp_ajax_make_form_func', 'make_form_func');
+add_action( 'wp_ajax_nopriv_make_form_func', 'make_form_func');
 
 /**
  * Implement the Custom Header feature.
@@ -426,3 +592,8 @@ require get_template_directory() . '/inc/custom-post-type.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load file wptuts editor buttons.
+ */
+require  get_template_directory() .'/wptuts-editor-buttons/wptuts.php';
