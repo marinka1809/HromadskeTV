@@ -70,23 +70,36 @@ function hromadske_tv_setup() {
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif;
+
+
+//Video YouTube
 add_action( 'after_setup_theme', 'hromadske_tv_setup' );
 
+
+add_filter( 'embed_defaults', 'bigger_embed_size' );
+
+function bigger_embed_size()
+{
+    return array( 'width' => 970, 'height' => 1000 );
+}
+
+add_filter('embed_oembed_html', 'vnmFunctionality_embedWrapper', 10, 4);
+
+function vnmFunctionality_embedWrapper($html, $url, $attr, $post_id) {
+
+    if (strpos($html, 'youtube') !== false) {
+        return '<div class="youtube-wrapper">' . $html . '</div>';
+    }
+
+    return $html;
+}
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function hromadske_tv_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'hromadske-tv' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'hromadske-tv' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+
     register_sidebar( array(
         'name'          => esc_html__( 'Footer', 'hromadske-tv' ),
         'id'            => 'footer-menu',
@@ -104,15 +117,6 @@ function hromadske_tv_widgets_init() {
         'after_widget'  => '</div></li>',
         'before_title'  => '<h2 class="widget-title-social">',
         'after_title'   => '</h2>',
-    ) );
-    register_sidebar( array(
-        'name'          => esc_html__( 'Social share', 'hromadske-tv' ),
-        'id'            => 'social-share-sections',
-        'description'   => esc_html__( 'Add widgets here.', 'hromadske-tv' ),
-        'before_widget' => '',
-        'after_widget'  => '',
-        'before_title'  => '',
-        'after_title'   => '',
     ) );
 }
 add_action( 'widgets_init', 'hromadske_tv_widgets_init' );
@@ -134,11 +138,12 @@ add_filter( 'widget_title', 'html_widget_title' );
 function hromadske_tv_scripts() {
 	wp_enqueue_style( 'hromadske-tv-style', get_stylesheet_uri() );
     wp_enqueue_style( 'libs-css', get_template_directory_uri() . '/style/libs.css', array(), true );
+    wp_enqueue_style( 'icomoonHromadske', get_template_directory_uri() . '/fonts/icomoonHromadske/style.css', array(), true );
     wp_enqueue_style( 'main', get_template_directory_uri() . '/style/main.css', array(), true );
+
 
     wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/95a5ddb753.js', true);
 	wp_enqueue_script( 'hromadske-tv-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'hromadske-tv-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -437,22 +442,6 @@ function wp_quote_type2_func( $atts, $content) {
     return $html;
 }
 
-function progresbar_func( $atts ) {
-    extract( shortcode_atts( array(
-        'name' => 'NAME',
-        'percent' => '0',
-    ), $atts ) );
-    $deg = (int)$atts['percent']/100*180;
-    return "<style> @keyframes " .$atts['name'] ."{100% { transform: rotate(" .$deg ."deg); } } </style>" . " <div class=\"progresbar-item\" > <div class=\"chart-skills\"> <span class=\"line\" style=\"animation-name:".$atts['name'] .";\"></span> "
-        ."<span class=\"percent\">" .$atts['percent'] ."</span> "
-     ."</div>"
-     ."<span class=\"label\">" .$atts['name'] ."</span></div>";
-}
-
-add_shortcode( 'progresbar', 'progresbar_func' );
-
-
-
 function admin_ajax() {
   // wp_enqueue_script('libs');
    wp_enqueue_script( 'ajax-script', get_theme_file_uri( '/js/ajax-script.js' ), array('libs') );
@@ -464,46 +453,14 @@ function add_news_func(){
     $args['paged'] = $_POST['page'] + 1;
     $args['post_status'] = 'publish';
     $args['click'] = (int)$_POST['click'];
+    $url =  stristr( $_POST['my_url'], '/page', true);
+
     $q = new WP_Query($args);
+    $important ='';
     if( $q->have_posts() ):?>
         <ul class="list-news">
             <?php while($q->have_posts()): $q->the_post(); ?>
-                <li>
-                    <article id="post-<?php the_ID(); ?>" <?php post_class('news'); ?> >
-                        <div class="info-news">
-                            <?php
-                            $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-                            if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-                                $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-                            }
-
-                            $time_string = sprintf( $time_string,
-                                esc_attr( get_the_date( 'c' ) ),
-                                esc_html( get_the_date() ),
-                                esc_attr( get_the_modified_date( 'c' ) ),
-                                esc_html( get_the_modified_date() )
-                            );
-                            ?>
-                            <a href="<?php  get_permalink();?>" rel="bookmark"> <?php echo $time_string?> </a>
-                            <?php if ( get_post_meta($q->the_post->ID,'important')):
-                                $important = "important" ?>
-                                <span class="important-label"><?php echo get_theme_mod('label-important-news'); ?></span>
-                            <?php endif;?>
-                            <?php if ( get_post_meta($q->the_post->ID,'updated')):?>
-                                <span class="updated-label"><?php echo get_theme_mod('label-updated-news'); ?></span>
-                            <?php endif;?>
-
-                        </div>
-                        <h2 class="<?php echo $important;?>">
-                            <a href="<?php the_permalink(); ?>">
-                                <?php the_title();?>
-                                <?php if ( ( get_post_meta($post->ID,'content-cap', 1)=='video')):?>
-                                    <span class="fa <?php echo get_theme_mod('video-icon'); ?>" aria-hidden="true"></span>
-                                <?php endif; ?>
-                            </a>
-                        </h2>
-                    </article><!-- #post-## -->
-                </li>
+                <?php get_template_part( 'template-parts/content-preview'); ?>
             <?php endwhile;?>
         </ul>
     <?php endif;
@@ -517,7 +474,7 @@ function add_news_func(){
     ?>
         <div class="blog-nav">
             <?php echo paginate_links(array(
-                'base' => $_POST['my_url'] .'%_%',
+                'base' => $url .'%_%',
                 'format' => '?paged=%#%',
                 'current' =>  $args['paged'],
                 'total' => $q->max_num_pages,
@@ -532,6 +489,87 @@ function add_news_func(){
 }
 add_action( 'wp_ajax_add_news_func', 'add_news_func');
 add_action( 'wp_ajax_nopriv_add_news_func', 'add_news_func');
+
+
+function add_search_func()
+{
+
+    $fun_args['paged'] = $_POST['page'];
+    $fun_args['search'] = $_POST['search'];
+    $fun_args['tab'] = $_POST['tab'];
+    $fun_args['click'] = (int)$_POST['click'];
+
+    if ($fun_args ['tab'] == '#news-content') :
+        $post_type = 'post';
+    elseif ($fun_args ['tab'] == '#stories-content') :
+        $post_type = 'stories';
+    elseif ($fun_args ['tab'] == '#project-content') :
+        $post_type = 'episodes';
+    else:
+        $post_type = array('post', 'stories', 'episodes');
+    endif;
+
+    $args = array(
+        'post_type' => $post_type,
+        's' => $fun_args['search'],
+        'paged' => $fun_args['paged']
+    );
+
+
+    $q = new WP_Query($args);
+
+    if( $q->have_posts() ):
+        if (($_POST['event']=='show.tab') || ($_POST['event']=='click_pag')): ?>
+            <span class="count_post" data-count="<?php echo $q->max_num_pages; ?>">
+                <?php $count = $q->found_posts;
+                echo 'Знайдено ' .$count .' результатів'; ?>
+            </span>
+        <?php endif; ?>
+        <ul class="list-news">
+            <?php while($q->have_posts()): $q->the_post(); ?>
+                <?php get_template_part( 'template-parts/content-preview'); ?>
+            <?php endwhile;?>
+        </ul>
+
+        <?php if (( ($q->max_num_pages >1) && ($fun_args['paged'] != $q->max_num_pages))
+              && (($_POST['event']=='show.tab') || ($_POST['event']=='click_pag'))): ?>
+            <button class="more-news" id="more-search"><?php echo get_theme_mod('label-news-button'); ?> </button>
+        <?php endif;?>
+
+    <?php endif;
+    wp_reset_postdata();
+
+    if ( (($_POST['event']=='click_more') && (( $fun_args['click']  == 2) || ($fun_args['paged']== $q->max_num_pages)))
+        || (($_POST['event']=='click_pag') && ($fun_args['paged']== $q->max_num_pages) )  ):
+        $paginate_args = array(
+            'end_size'     => 2,
+            'mid_size'     => 2,
+        );
+        $big = 999999999; // need an unlikely integer
+
+        ?>
+        <div class="blog-nav">
+            <?php echo paginate_links(array(
+                    //'base' => $_POST['my_url'] .'%_%',
+                   // 'format' => '?paged=%#%',
+                    'current' =>  $fun_args['paged'],
+                    'total' => $q->max_num_pages,
+                    'prev_text'    => __('<'),
+                    'next_text'    => __('>'),
+                    'mid_size'     => 2,
+                )
+            );?>
+        </div>
+    <?php endif;
+
+    if ($_POST['event']=='click_pag'):
+    endif;
+    die();
+}
+add_action( 'wp_ajax_add_search_func', 'add_search_func');
+add_action( 'wp_ajax_nopriv_add_search_func', 'add_search_func');
+
+
 
 function make_form_func()
 {
@@ -597,3 +635,72 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load file wptuts editor buttons.
  */
 require  get_template_directory() .'/wptuts-editor-buttons/wptuts.php';
+
+
+/**
+ * Autocomplete Search
+ */
+
+add_action( 'init', 'myprefix_autocomplete_init' );
+function myprefix_autocomplete_init() {
+    // Register our jQuery UI style and our custom javascript file
+    wp_register_script( 'jquery-ui', "https://code.jquery.com/ui/1.12.1/jquery-ui.js");
+    wp_register_style('myprefix-jquery-ui','http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
+    wp_register_script( 'my_acsearch', get_template_directory_uri() . '/js/myacsearch.js', array('libs','jquery-ui' ),null,true);
+    wp_localize_script( 'my_acsearch', 'MyAcSearch', array('url' => admin_url( 'admin-ajax.php' )));
+    // Function to fire whenever search form is displayed
+    add_action( 'get_search_form', 'myprefix_autocomplete_search_form' );
+
+    // Functions to deal with the AJAX request - one for logged in users, the other for non-logged in users.
+    add_action( 'wp_ajax_myprefix_autocompletesearch', 'myprefix_autocomplete_suggestions' );
+    add_action( 'wp_ajax_nopriv_myprefix_autocompletesearch', 'myprefix_autocomplete_suggestions' );
+}
+
+function myprefix_autocomplete_search_form(){
+    wp_enqueue_script( 'my_acsearch' );
+    wp_enqueue_style( 'myprefix-jquery-ui' );
+}
+
+function myprefix_autocomplete_suggestions(){
+    // Query for suggestions
+    $posts = get_posts( array(
+        's' =>$_REQUEST['term'],
+        'showposts' => 4
+    ) );
+
+    // Initialise suggestions array
+    $suggestions=array();
+
+    global $post;
+    foreach ($posts as $post): setup_postdata($post);
+        // Initialise suggestion array
+        $suggestion = array();
+
+        $suggestion['label'] = '<span>' .get_the_date() .'</span> ' .get_the_title();
+        $suggestion['link'] = get_permalink();
+
+        // Add suggestion to suggestions array
+        $suggestions[]= $suggestion;
+    endforeach;
+
+    // JSON encode and echo
+    $response = $_GET["callback"] . "(" . json_encode($suggestions) . ")";
+    echo $response;
+
+    // Don't forget to exit!
+    exit;
+}
+
+//https://code.tutsplus.com/tutorials/add-jquery-autocomplete-to-your-sites-search--wp-25155
+
+function my_acf_google_map_api( $api ){
+
+    $api['key'] = 'AIzaSyCWpDHIRvBTDtPcZj6mUk2575_Bj3kIXC0';
+
+    return $api;
+
+}
+
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+

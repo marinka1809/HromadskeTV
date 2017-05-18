@@ -1,0 +1,29 @@
+.error-404-content {
+  padding-top: 90px;
+
+  .important-news-section {
+    background-color: #eff2f7;
+  }
+
+}
+
+.error-404 {
+  text-align: center;
+
+
+  h1{
+    margin-bottom: 15px;
+    color: #171617;
+    font: 62px/1.2em GothamProBlack;
+  }
+
+  p {
+    margin-bottom: 30px;
+    color: #696e72;
+    font:16px/1.5em $font-content;
+  }
+
+  .link-front-page {
+    color: #ffffff;
+  }
+}

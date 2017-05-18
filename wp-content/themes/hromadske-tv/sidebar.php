@@ -14,7 +14,7 @@
     $args = array(
         'taxonomy'      => array( 'projects' ),
         'fields'        => 'all',
-        'hide_empty'    => false,
+        'hide_empty'    => true,
         'number'        => 5,
         'meta_key'      =>  'custom_term_meta',
     );
@@ -23,13 +23,15 @@
         <ul>
             <?php foreach( $projects_query->terms as $project ){
                 $image = get_field('image_project', $project);?>
-                <li class="item-project" data-href="<?php echo get_term_link($project);?>">
-                    <?php if( !empty($image) ): ?>
-                        <?php echo wp_get_attachment_image( $image['id'], 'thumbnails' );?>
-                    <?php endif; ?>
-                    <div class="dark-bg">
-                        <h3><?php echo $project->name; ?></h3>
-                    </div>
+                <li class="item-project">
+                    <a href="<?php echo get_term_link($project);?>">
+                        <?php if( !empty($image) ): ?>
+                            <?php echo wp_get_attachment_image( $image['id'], 'thumbnails' );?>
+                        <?php endif; ?>
+                        <div class="dark-bg">
+                            <h3><?php echo $project->name; ?></h3>
+                        </div>
+                    </a>
                 </li>
             <?php } ?>
         </ul>

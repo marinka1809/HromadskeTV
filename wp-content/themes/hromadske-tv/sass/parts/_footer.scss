@@ -5,24 +5,31 @@
 
   .site-info-top {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     padding: 40px 0;
     border-bottom: 1px solid #44505b;
+
   }
 
   .widget_nav_menu {
-    margin-bottom: auto;
-    margin-top: auto;
+    margin-bottom: 20px;
+    text-align: center;
 
     li {
       display: inline-block;
     }
 
     a {
-      padding: 10px;
-      font: 14px GothamProBold;
+      display: inline-block;
+      font: 12px GothamProBold;
       color:inherit;
       text-transform: uppercase;
+
+      &:hover {
+        color: $color-primary;
+      }
     }
   }
 
@@ -31,12 +38,13 @@
     background-color: #ffffff;
 
     &:hover {
-      background-color: $color-second;
+      background-color: $color-primary;
     }
   }
 
   .site-info {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
@@ -46,6 +54,11 @@
     width: 155px;
     height: 40px;
     overflow: hidden;
+    margin-bottom: 15px;
+  }
+
+  .social-link {
+    margin-bottom: 15px;
   }
 
   .copyright {

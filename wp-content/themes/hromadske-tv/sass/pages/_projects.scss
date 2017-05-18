@@ -12,10 +12,39 @@
     cursor: pointer;
 
     .small-content {
+      display: block;
       height: 380px;
       padding-bottom: 25px;
+      color: inherit;
       border-bottom: 1px solid #eeeeee;
       overflow: hidden;
+
+      .img-wrapper {
+        position: relative;
+        display: block;
+
+        &:after {
+          content: "";
+          position: absolute;
+          left:0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          transition: all ease 0.5s;
+        }
+      }
+
+      &:hover {
+        .img-wrapper:after {
+          background-color: #000000;
+          opacity: 0.4;
+          transition: all ease 0.5s;
+        }
+
+        h3 {
+          color: $color-second-text;
+        }
+      }
     }
 
     h3 {
@@ -31,15 +60,25 @@
 
   .big-item-project {
     margin-bottom: 60px;
-    padding: 0;
-    border-radius: 8px;
-    overflow: hidden;
+    padding: 0 15px;
     color: #ffffff;
     text-align: center;
     cursor: pointer;
 
     .content-block {
+      display: block;
       height: 450px;
+      color: inherit;
+      overflow: hidden;
+      border-radius: 8px;
+
+      &:hover {
+        .dark-bg {
+          background-color: rgba(0, 0, 0, 0.6);
+          transition: all ease 0.5s;
+        }
+      }
+
     }
 
     .dark-bg {
@@ -47,8 +86,9 @@
       display: flex;
       align-items: center;
       padding: 40px 0;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.4);
       overflow: hidden;
+      transition: all ease 0.5s;
     }
 
     h3 {

@@ -4,13 +4,9 @@
   color: #171617;
   font: 20px GothamProRegular;
 
-  .row {
-    margin: 0 -40px;
-  }
-
-  main,
-  aside {
-    padding: 0 40px;
+  main
+  {
+    padding-right: 65px;
   }
 
   aside {
@@ -23,25 +19,7 @@
     font: 48px GothamProBlack;
   }
 
-  .more-news {
-    display: block;
-    width: 100%;
-    margin-top: -4px;
-    padding: 0 10px;
-    font: 14px/4.5em GothamProBold;
-    color: #ffffff;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: $color-primary;
-    border: none;
-    border-radius: 8px;
 
-    &:after {
-      content: "\f063";
-      margin-left: 1em;
-      font-family: FontAwesome;
-    }
-  }
 
   .blog-nav {
     margin-top: 50px;
@@ -49,16 +27,28 @@
 }
 
 .list-news {
+  transition: height ease 1s;
 
   li {
-    padding: 30px 0;
-    border-bottom: 1px solid  #eeeeee;
 
     article {
-      display: flex;
+      margin: 0;
 
-      a{
+      a {
+        display: flex;
+        padding: 30px 0;
         color: inherit;
+        border-bottom: 1px solid  #eeeeee;
+
+        h2{
+          line-height: 1.2em;
+        }
+
+        &:hover {
+          h2 {
+            color: $color-second-text;
+          }
+        }
       }
     }
   }
@@ -94,4 +84,33 @@
     color: #bfbfbf;
     font-size: 12px;
   }
+}
+
+.more-news {
+  display: block;
+  width: 100%;
+  margin-top: -4px;
+  padding: 0 10px;
+  font: 14px/4.5em GothamProBold;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $color-primary;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:after {
+    content: "\e904";
+    margin-left: 12px;
+    font-family: 'icomoon';
+    font-size: 11px;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  &:hover:after {
+    margin-left: 22px;
+  }
+
+
 }

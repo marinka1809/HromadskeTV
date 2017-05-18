@@ -1,5 +1,6 @@
-.donate-content {
-  padding: 100px 0 120px;
+.donate-content,
+.reports-content {
+  padding: 80px 0 120px;
 
   header {
     margin-bottom: 60px;
@@ -57,15 +58,36 @@
       margin-bottom: 30px;
       padding: 0 50px 0 20px;
       font: 14px/4em GothamProBold;
-      color: #a6b6c8;
+      color: #171617;
       text-transform: uppercase;
       border-radius: 4px;
       border: 1px solid #e5e5e5;
       background-color: #ffffff;
+
+      &::-webkit-input-placeholder,
+      &::-webkit-input-placeholder {
+        color: #a6b6c8;
+      }
+
+      &::-moz-placeholder,
+      &::-moz-placeholder {
+        color: #a6b6c8;
+      }
+
+      &:-moz-placeholder,
+      &:-moz-placeholder {
+        color: #a6b6c8;
+      }
+
+      &:-ms-input-placeholder,
+      &:-ms-input-placeholder {
+        color: #a6b6c8;
+      }
     }
 
     .price-label {
       position: absolute;
+      top: 0;
       right: 20px;
       font: 15px/4em GothamProBold;
       color: #171617;
@@ -81,7 +103,36 @@
       border-radius: 26px;
       border: 0;
       background-color: $color-primary;
+      transition: all ease 0.25s;
+
+      &:hover {
+        padding: 0 31px;
+      }
     }
 
+  }
+
+  .file-link {
+    position: relative;
+    display: block;
+    margin-left: 35px;
+    padding: 35px 0;
+    font: 20px/1.2em GothamProBold;
+    color: #343434;
+    border-bottom: 1px solid #eeeeee;
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      transform:  translateY(-50%);
+      left: -35px;
+      content: "\e900";
+      font:15px 'icomoon';
+      color: #bebebe;
+    }
+
+    &:hover {
+      color: $color-second-text;
+    }
   }
 }

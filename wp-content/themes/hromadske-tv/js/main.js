@@ -2,69 +2,40 @@ $=jQuery;
 
 $(document).ready(function(){
 
-    artificialLink  (".item-important-posts");
-    artificialLink  (".related-item");
-    artificialLink  (".item-project");
-    artificialLink  (".big-item-project");
-
-    artificialLink  (".list-stories li");
-
-    artificialLink  (".list-episodes li");
-
-    function artificialLink(element) {
-
-        $(element).on("click", function (e) {
-            if (!(e.target.getAttribute('href')== null)) {
-                href= e.target.getAttribute('href');
-            }
-            else {
-                href = $(this).attr("data-href");
-            }
-            window.location.href=href;
-            e.preventDefault();
-        });
-    }
-
     $(".item-important-posts").dotdotdot({
-        //	configuration goes here
     });
 
     $(".related-item").dotdotdot({
-        //	configuration goes here
     });
 
     $(".front-project-section .item-project").dotdotdot({
-        //	configuration goes here
     });
 
     $(".list-stories article.regular").dotdotdot({
-        //	configuration goes here
     });
 
     $(".list-stories .dark-bg").dotdotdot({
-        //	configuration goes here
     });
 
     $(".list-episodes article.regular").dotdotdot({
-        //	configuration goes here
     });
 
     $(".list-episodes .dark-bg").dotdotdot({
-        //	configuration goes here
     });
 
     $(".list-projects .small-content").dotdotdot({
-        //	configuration goes here
     });
 
 
     $('.gallery-columns-1').slick({
+        infinite: false,
         centerMode: true,
         centerPadding: '25%',
         slidesToShow: 1,
-        autoplay: true,
+        //autoplay: true,
        // dots: true,
         });
+
     $(".gallery-columns-1 .gallery-item").append('<span class="pagingInfo"></span>');
     var $status = $('.pagingInfo');
     var $slickElement = $('.gallery-columns-1');
@@ -75,42 +46,72 @@ $(document).ready(function(){
         $status.text(i + '/' + slick.slideCount);
     });
 
+    $(function() {
+        var pull 		= $('.burger');
+        menu 		= $('.toggle-menu');
+        menuHeight	= menu.height();
+
+        $(pull).on('click', function(e) {
+
+            menu.slideToggle();
+        });
+
+        $(window).resize(function(){
+            var w = $(window).width();
+            if(w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+            }
+        });
+    });
+
+    var $searchView = $('.menu-search-container');
+    var $menu = $('#site-navigation a,#menu-search');
+    var $fadeScreen = $('.fade-screen');
+
+    $('#menu-search, .fade-screen,.site-header .menu-search-close').on('click', function(e) {
+
+        $searchView.toggleClass('active');
+
+        setTimeout(function(){
+            $searchView.children().find('input').focus();
+        }, 1100);
+
+        $fadeScreen.fadeToggle();
+        $menu.removeClass('is-closed');
+        $menu.toggleClass('hidden');
+
+        e.preventDefault();
+    });
+
+    $('.fade-screen,.site-header .menu-search-close').on('click', function(e) {
+        $menu.toggleClass('is-closed');
+        e.preventDefault();
+    });
+
+    $(' .search-page .menu-search-close').on('click', function(e) {
+        e.preventDefault();
+        $('.search-page .menu-search-input').val('');
+    });
 
 
 
-    // var $gallery = $('.gallery-columns-1');
-    // var slideCount = null;
-    //
-    // $gallery.on('init', function(event, slick){
-    //     slideCount = slick.slideCount;
-    //     console.log("slideCount" +slideCount);
-    //     $(".gallery-columns-1 .gallery-item").append("<div class='index'><span class='current'></span>/" + slideCount +"</div>");
-    //     setCurrentSlideNumber(slick.currentSlide);
-    // });
-    //
-    // $gallery.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-    //     setCurrentSlideNumber(nextSlide);
-    // });
-    //
-    //
-    // function setCurrentSlideNumber(currentSlide) {
-    //
-    //     console.log(currentSlide + 1);
-    //     var $el = $('.index').find('.current');
-    //     $el.text(currentSlide + 1);
-    // }
-
-
-
+    $('#up').click(function() {
+        $('html, body').animate({scrollTop: 0}, 'slow');
+        return false;
+    })
 });
 
 $(window).scroll(function() {
-    if ($(this).scrollTop() > 1){
+    if ($(this).scrollTop() > 200){
         $('#masthead').addClass("sticky");
+        $('#up').fadeIn();
     }
-    else{
+    else {
         $('#masthead').removeClass("sticky");
+        $('#up').fadeOut();
     }
+
+
 });
 
 

@@ -29,8 +29,10 @@ get_header();?>
                     var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
                     var current_page = <?php echo get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1?>;
                     var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
+                    var label_button = ' <?php echo get_theme_mod('label-news-button'); ?>';
+
                 </script>
-                <button class="more-news"> <?php echo get_theme_mod('label-news-button'); ?> </button>
+                <button class="more-news" id="more-news"> <?php echo get_theme_mod('label-news-button'); ?> </button>
 
             <?php   else :
                 get_template_part( 'template-parts/content', 'none' );

@@ -17,14 +17,14 @@ if ($tags) :
                 <ul class="row ">
                     <?php while ( $relatedPosts->have_posts() ) : $relatedPosts->the_post();
                         ?>
-                        <li class="col-sm-6 col-md-3 related-item" data-href="<?php the_permalink(); ?>">
-                            <div class="item-wrapper">
+                        <li class="col-sm-6 col-md-3 related-item" >
+                            <a class="item-wrapper" href="<?php the_permalink(); ?>">
                                 <div class="img-wrapper">
                                     <?php  the_post_thumbnail('thumbnails');?>
                                 </div>
                                 <h3><?php the_title();?></h3>
                                 <?php the_excerpt(); ?>
-                            </div>
+                            </a>
                         </li>
                     <?php endwhile;?>
                 </ul>

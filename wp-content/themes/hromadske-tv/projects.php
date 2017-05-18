@@ -10,23 +10,23 @@ get_header();
         <?php
         $args = array(
             'taxonomy'      => array( 'projects' ),
-            'orderby'       => 'name',
             'fields'        => 'all',
-            'hide_empty'    => false,
-
+            'hide_empty'    => true,
         );
         $projects_query = new WP_Term_Query( $args );
          $first_big_thumbnail = (((int)get_theme_mod('series-for-big-thumbnail')+1 )* 3)-2;
          $count_element = 1;
          $count_element_step = 1;
         ?>
+
+
         <?php  if ( $projects_query->terms ) :?>
-            <ul class="list-projects">
+            <ul class="row list-projects">
             <?php foreach( $projects_query->terms as $project ){
                 $image = get_field('image_project', $project);?>
                 <?php if ( ( $count_element == $first_big_thumbnail)||(( $count_element > $first_big_thumbnail) && ((($count_element - $first_big_thumbnail)%4)== 0))): ?>
-                    <li class="col-xs-12 big-item-project" data-href="<?php echo get_term_link($project);?>">
-                        <div class="content-block" <?php if( !empty($image) ): ?>  style="background: url('<?php echo $image['url']; ?>') 50% 50% no-repeat; background-size: cover;"  <?php endif; ?> >
+                    <li class="col-xs-12 big-item-project">
+                        <a href="<?php echo get_term_link($project);?>" class="content-block" <?php if( !empty($image) ): ?>  style="background: url('<?php echo $image['url']; ?>') 50% 50% no-repeat; background-size: cover;"  <?php endif; ?> >
                             <div class="dark-bg">
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
@@ -35,11 +35,11 @@ get_header();
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </li>
                 <?php else: ?>
-                    <li class="col-md-4 item-project" data-href="<?php echo get_term_link($project);?>">
-                        <div class="small-content">
+                    <li class="col-md-4 item-project">
+                        <a href="<?php echo get_term_link($project);?>" class="small-content">
                             <div class="img-wrapper">
                                 <?php if( !empty($image) ): ?>
                                     <?php echo wp_get_attachment_image( $image['id'], 'thumbnails' );?>
@@ -47,7 +47,7 @@ get_header();
                             </div>
                             <h3><?php echo $project->name; ?></h3>
                             <p><?php echo $project->description; ?></p>
-                        </div>
+                        </a>
                     </li>
                 <?php endif; ?>
                 <?php $count_element ++;

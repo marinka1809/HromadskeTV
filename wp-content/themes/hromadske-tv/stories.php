@@ -12,7 +12,7 @@ get_header();
     $ourCurrentPage = get_query_var('paged');
         $args = array(
         'post_type' => 'stories',
-        'posts_per_page' => 14,
+        'posts_per_page' => get_theme_mod('per-page-stories'),
         'paged' => $ourCurrentPage,
         );
         $queryStories = new WP_Query($args);

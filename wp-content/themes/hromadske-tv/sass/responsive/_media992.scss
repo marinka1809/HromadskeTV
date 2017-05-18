@@ -1,4 +1,48 @@
 @media screen and (min-width: 992px) {
+  .container {
+    padding: 0;
+  }
+
+  .stories-page,
+  .project-page {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .site-content {
+    padding-top: 130px;
+  }
+
+  .content-regular-page {
+    padding-top: 80px;
+    padding-bottom: 90px;
+  }
+
+  .single-project-page {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+
+  //--------------------------------HEADER----------------------
+  .site-header {
+    .burger {
+      display: none;
+    }
+
+    .toggle-menu {
+      display: flex;
+      align-items: center;
+      position: static;
+      width: auto;
+      padding: 0;
+      text-align: left;
+      box-shadow: none;
+
+      .social-link {
+          margin-right: 30px;
+      }
+    }
+  }
 
   //-------------------------WELCOME---------------------
 
@@ -7,7 +51,6 @@
     max-height: 800px;
     min-height: 500px;
     position: relative;
-
 
     .last-news {
       position: absolute;
@@ -24,30 +67,42 @@
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
         height: 100%;
         width: 100%;
-        padding: 0 35px 120px;
+        padding: 0 30px 120px;
 
-        h2,
-        article {
+        h2 {
+          display: block;
           width: 100%;
           height: auto;
-          padding: 20px 0;
+          padding: 30px 0;
           border: none;
           border-bottom: 1px solid #dedede;
+        }
+
+        article {
+          .item-news {
+            display: block;
+            width: 100%;
+            height: auto;
+            padding: 30px 0;
+            border: none;
+            border-bottom: 1px solid #dedede;
+
+          }
         }
 
         h2 {
           display: block;
         }
 
-        a.title {
+        h3.title {
           font-size: 20px;
           color: inherit;
         }
 
-        a.important-title {
+        h3.important-title {
           font-size: 20px;
         }
       }
@@ -73,6 +128,12 @@
     height: 100%;
     color: #ffffff;
 
+    .bg-dark {
+      height: 100%;
+      padding:0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
     .flex-block {
       display: flex;
       height: 100%;
@@ -97,6 +158,17 @@
 
     .item-important-posts {
       margin-bottom: 0;
+    }
+  }
+
+  //-------------------------STORY-SECTION---------------------
+  .front-story-section  {
+    .section-header {
+      margin-bottom: 110px;
+    }
+
+    h1 {
+      margin-bottom: 25px;
     }
   }
 
@@ -136,27 +208,15 @@
       }
 
       a {
+        padding: 10px 20px;
         font: 14px GothamProBold;
       }
     }
-
-    .site-info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-    }
-
-    .site-title {
-      width: 155px;
-      height: 40px;
-      overflow: hidden;
-    }
-
-    .copyright {
-      font: 14px $font-content;
-      color: #a6b6c8;
-    }
-
   }
+}
+
+//------------------page-news------------------
+.page-news {
+  padding-top: 60px;
+  padding-bottom: 120px;
 }

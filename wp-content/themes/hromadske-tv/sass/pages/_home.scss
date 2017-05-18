@@ -19,11 +19,17 @@
     font-weight: 700;
     color: inherit;
     border-bottom: 4px solid $color-primary;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
 
     &:after {
-      content: "\f061";
-      margin-left: 1em;
-      font-family: FontAwesome;
+      content: "  \e908";
+      font: normal 12px 'icomoon';
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    &:hover:after {
+      margin-left: 10px;
     }
   }
 }
@@ -54,10 +60,25 @@
       padding: 0 30px;
       color: #171617;
 
-      h2,
-      article {
-        padding: 25px 0;
+      h2 {
+        display: block;
+        padding: 30px 0;
         border-bottom: 1px solid #dedede;
+      }
+
+      article {
+        .item-news {
+          display: block;
+          padding: 30px 0;
+          border-bottom: 1px solid #dedede;
+
+          &:hover {
+            h3.title,
+            h3.important-title {
+              color: $color-second-text;
+            }
+          }
+        }
       }
 
       h2 {
@@ -66,12 +87,11 @@
         text-transform: uppercase;
       }
 
-      a.title {
+      h3.title {
         font: 14px GothamProRegular;
-        color: inherit;
       }
 
-      a.important-title {
+      h3.important-title {
         font: 14px GothamProBold;
       }
     }
@@ -87,11 +107,16 @@
       font: 14px/4.5em GothamProBold;
       color: #ffffff;
       text-transform: uppercase;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
       &:after {
-        content: "\f061";
-        margin-left: 1em;
-        font-family: FontAwesome;
+        content: " \e908";
+        font: normal 12px 'icomoon';
+        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      &:hover:after {
+        margin-left: 10px;
       }
 
     }
@@ -99,12 +124,25 @@
 }
 
 .welcome-section {
-  padding: 60px 0 30px;
   color: #ffffff;
+
+  .bg-dark {
+    padding: 60px 0 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 
   h1 {
     margin-bottom: 25px;
     font: 24px GothamProBlack;
+
+
+    a {
+      transition: all ease 0.5s;
+
+      &:hover {
+        color: $color-second-text;
+      }
+    }
   }
 
   p {
@@ -124,9 +162,15 @@
     cursor: pointer;
 
     .item-wrapper {
+      display: block;
       height: 100%;
       padding-bottom: 20px;
       border-bottom: 1px solid #eeeeee;
+      &:hover {
+        h3 {
+          color: $color-second-text;
+        }
+      }
     }
 
     h3 {
@@ -147,6 +191,11 @@
 .front-story-section  {
   color: #ffffff;
 
+  .bg-dark {
+    padding: 60px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
   .section-header {
     opacity: 0.75;
   }
@@ -154,6 +203,14 @@
   h1 {
     font: 24px/1.2em GothamProBlack;
     margin-bottom: 30px;
+
+    a {
+      transition: all ease 0.5s;
+
+      &:hover {
+        color: $color-second-text;
+      }
+    }
   }
 
   p {
@@ -186,6 +243,16 @@
   .item-project {
     height: 390px;
     cursor: pointer;
+
+    a {
+      display: block;
+
+      &:hover {
+        h3 {
+          color: $color-second-text;
+        }
+      }
+    }
   }
 
   h3 {
@@ -212,6 +279,11 @@
     color: #171617;
   }
 
+  ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
 
   h2 {
     margin-bottom: 20px;
@@ -223,7 +295,11 @@
     text-align: center;
 
     .wrapper {
-      padding: 45px 15px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      //padding: 45px 15px;
       border-radius: 2px;
       border: 1px solid #e2e7eb;
     }

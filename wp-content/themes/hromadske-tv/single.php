@@ -31,8 +31,8 @@ get_header(); ?>
                 $tag_block = '<div class="tags-list">' . get_the_term_list( $post->ID, 'episodes-tags', '', '', '' ) .'</div>';
             endif;
 
-            $content = explode('<div class="et_social_inline et_social_mobile_on et_social_inline_bottom">', $content, 2);
-            $new_content = $content[0] .$tag_block .'<div class="et_social_inline et_social_mobile_on et_social_inline_bottom">'  .$content[1];
+            $content = explode('<div class="getsocial gs-inline-group', $content, 2);
+            $new_content = $content[0] .$tag_block .'<div class="getsocial gs-inline-group'  .$content[1];
 
         return $new_content;
         }?>

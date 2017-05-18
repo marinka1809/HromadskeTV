@@ -326,6 +326,33 @@ add_action('customize_register', function($customizer){
     );
 
     /**
+     * Stories page
+     */
+    $customizer->add_section(
+        'stories-page-settings',
+        array(
+            'title' => esc_html__( 'Stories page settings', 'hromadske-tv' ),
+        )
+    );
+
+
+    $customizer->add_setting(
+        'per-page-stories',
+        array('default' => '21')
+    );
+
+    $customizer->add_control(
+        'per-page-stories',
+        array(
+            'label' => esc_html__('Number of stories per page:', 'hromadske-tv' ) ,
+            'section' => 'stories-page-settings',
+            'type' => 'number',
+        )
+    );
+
+
+
+    /**
      * News
      */
     $customizer->add_section(
@@ -412,9 +439,24 @@ add_action('customize_register', function($customizer){
             $customizer,
             'background-page-title',
             array(
-                'label' => 'Logo for footer',
+                'label' => esc_html__( 'Logo for footer', 'hromadske-tv' ),
                 'section' => 'title_tagline',
                 'settings' => 'footer-logo'
+            )
+        )
+    );
+
+    //------------Scroll up image arrow---------------
+
+    $customizer->add_setting('scroll-up');
+    $customizer->add_control(
+        new WP_Customize_Image_Control(
+            $customizer,
+            'scroll-up-image',
+            array(
+                'label' => esc_html__( 'Image arrow for scroll up:', 'hromadske-tv' ),
+                'section' => 'title_tagline',
+                'settings' => 'scroll-up'
             )
         )
     );

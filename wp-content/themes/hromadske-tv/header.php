@@ -15,8 +15,8 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
-        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
 
         <?php wp_head(); ?>
     </head>
@@ -53,15 +53,27 @@
                     </div><!-- .site-branding -->
 
                     <nav id="site-navigation" class="main-navigation" role="navigation">
-                        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="fa fa-bars"></span></button>
                         <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
                     </nav><!-- #site-navigation -->
 
-                    <?php get_template_part( 'template-parts/social-link' ); ?>
 
-                    <a class="link-donate" href="<?php echo get_page_link(get_theme_mod('page-donate') ); ?>"><?php echo get_theme_mod('inscription-donate'); ?></a>
+                    <a id="menu-search" class="icon-search" href="#"></a>
+                    <?php get_search_form()?>
+
+                    <div class="toggle-container" id="toggle-container">
+                        <input class="burger-check" id="burger-check" type="checkbox">
+                        <label for="burger-check" class="burger"></label>
+                        <div class="toggle-menu">
+                            <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+                            <?php get_search_form()?>
+                            <?php get_template_part( 'template-parts/social-link' ); ?>
+                            <a class="link-donate" href="<?php echo get_page_link(get_theme_mod('page-donate') ); ?>"><?php echo get_theme_mod('inscription-donate'); ?></a>
+                        </div>
+                    </div>
+
+
                 </div>
             </div><!-- .container -->
         </header><!-- #masthead -->
-
+        <div class="fade-screen"></div>
         <div id="content" class="site-content">

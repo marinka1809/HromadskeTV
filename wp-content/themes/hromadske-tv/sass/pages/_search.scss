@@ -1,0 +1,91 @@
+.search-page {
+  padding: 65px 0 120px;
+  width: 770px;
+  max-width: 100%;
+  margin: 0 auto;
+  color: #171617;
+  font: 20px GothamProRegular;
+
+  .blog-nav {
+    margin-top: 50px;
+  }
+
+  .menu-search-container {
+    .searchform {
+      display: flex;
+      margin-bottom: 30px;
+      padding: 18px 25px;
+      border: 1px solid #eeeeee;
+      border-radius: 82px;
+    }
+
+    .submit {
+      color: #bebebe;
+      font-size: 14px;
+      margin: 0;
+
+      &:hover {
+        color: #171617;
+      }
+    }
+
+    .menu-search-close {
+      display: inline-flex;
+      align-items: center;
+      color: #bebebe;
+      font-size: 14px;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    .menu-search-input {
+      width: 100%;
+      padding: 0 15px 0 15px;
+    }
+  }
+
+  .search-nav {
+    margin-bottom: 15px;
+    font: 16px GothamProBold;
+    color: #171617;
+    border-bottom: 1px solid #eeeeee;
+
+    a {
+      margin-right: 30px;
+      padding: 15px 0;
+      color: inherit;
+      text-transform: uppercase;
+      border-radius: 0;
+      background-color: transparent;
+    }
+
+    li.active > a,
+    li.active > a:focus,
+    li.active > a:hover,
+    li > a:focus,
+    li > a:hover {
+      border-bottom: 2px solid $color-primary;
+      color: inherit;
+      background-color: transparent;
+    }
+
+    li > a:focus,
+    li > a:hover {
+      border-color: #bebebe;
+      color: inherit;
+      background-color: transparent;
+    }
+
+  }
+
+  .count_post {
+    display: block;
+    margin-bottom: 20px;
+    font: 14px $font-content;
+    color: #696e72;
+    opacity: 0.8;
+
+  }
+}
