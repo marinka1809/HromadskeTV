@@ -6,7 +6,7 @@ if ($tags) :
         'tag__in' => $tag_ids, // Sort by Tags
         'orderby'=>rand,
         'post__not_in' => array($post->ID),
-        'posts_per_page' => 4,
+        'showposts' => 4,
     );
     $relatedPosts = new WP_Query($args);
 

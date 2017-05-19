@@ -325,6 +325,20 @@ add_action('customize_register', function($customizer){
         )
     );
 
+    $customizer->add_setting(
+        'per-page-episodes',
+        array('default' => '21')
+    );
+
+    $customizer->add_control(
+        'per-page-episodes',
+        array(
+            'label' => esc_html__('Number of episodes per page:', 'hromadske-tv' ) ,
+            'section' => 'project-page-settings',
+            'type' => 'number',
+        )
+    );
+
     /**
      * Stories page
      */

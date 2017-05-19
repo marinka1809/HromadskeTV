@@ -2,7 +2,7 @@ jQuery(document).ready(function($){
 
     var count_click = 0;
     $(document).on('click', '#more-news', function(){
-        $(this).text('Загружаю...');
+        $(this).text('Завантажую...');
         this.disabled=true;
         var my_url = window.location.href;
         count_click ++;
@@ -48,7 +48,8 @@ jQuery(document).ready(function($){
     var paged_episode = 1;
 
     $(document).on('click', '#more-search', function(){
-        $(this).text('Загружаю...');
+        $(this).text('Завантажую...');
+        this.disabled=true;
         var current_page = 0;
         var count_click_search = 0;
         var tab ='#' + $(this).parent().attr('id');
@@ -98,6 +99,7 @@ jQuery(document).ready(function($){
                 if (data) {
 
                     $(button).text('Більше новин').before(data); //add new posts
+                    $(button).removeAttr("disabled");
 
                     if (current_page == max_pages) $(button).remove(); // Delete button
                     if (count_click_search == 2) $(button).remove(); // Delete button

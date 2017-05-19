@@ -325,24 +325,41 @@ $burger--thickness: 4px;
   }
 }
 
-
+// ----------------------------
+// Search Autocomplete
+// ----------------------------
 ul.ui-autocomplete {
-  z-index: 5;
+  z-index: 2;
 }
 
 ul.ui-menu {
-  padding: 60px 20px 45px 40px;
+  padding: 45px 50px 30px 60px;
   background: #eff2f7;
 
   li.ui-menu-item {
-    .ui-menu-item-wrapper {
+
+    a {
+      display: flex;
+      align-items: center;
       padding: 15px 0;
       background: #eff2f7;
       border-bottom: 1px solid #dedede;
     }
+
+    .time {
+      margin-right: 40px;
+      font:700 14px $font-content;
+      color: #a6b6c8;
+    }
+
+    h4 {
+      font:14px/20px "GothamProMedium";
+      color: #343434;
+    }
+
   }
 }
 
 ul.ui-widget-content {
-  //background: #eff2f7;
+  border: 0;
 }

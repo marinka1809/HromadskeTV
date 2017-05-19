@@ -720,15 +720,33 @@ header.sticky {
     transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out; }
 
 ul.ui-autocomplete {
-  z-index: 5; }
+  z-index: 2; }
 
 ul.ui-menu {
-  padding: 60px 20px 45px 40px;
+  padding: 45px 50px 30px 60px;
   background: #eff2f7; }
-  ul.ui-menu li.ui-menu-item .ui-menu-item-wrapper {
+  ul.ui-menu li.ui-menu-item a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 15px 0;
     background: #eff2f7;
     border-bottom: 1px solid #dedede; }
+  ul.ui-menu li.ui-menu-item .time {
+    margin-right: 40px;
+    font: 700 14px "Open Sans", sans-serif;
+    color: #a6b6c8; }
+  ul.ui-menu li.ui-menu-item h4 {
+    font: 14px/20px "GothamProMedium";
+    color: #343434; }
+
+ul.ui-widget-content {
+  border: 0; }
 
 .site-footer {
   color: #ffffff;
@@ -1483,6 +1501,8 @@ ul.ui-menu {
   .single-content .youtube-wrapper {
     margin-top: 60px;
     margin-bottom: 60px; }
+  .single-content pre {
+    background-color: #ffffff; }
   .single-content figure {
     margin-top: 60px;
     margin-bottom: 50px;
@@ -1960,6 +1980,18 @@ ul.ui-menu {
     font: 16px/1.5em "Open Sans", sans-serif; }
   .error-404 .link-front-page {
     color: #ffffff; }
+
+.archive-content {
+  padding-bottom: 120px; }
+  .archive-content header {
+    margin-bottom: 80px;
+    padding: 50px 0;
+    text-align: center;
+    background-color: #eff2f7; }
+    .archive-content header h1 {
+      font: bold 32px/40px "Open Sans", sans-serif;
+      color: #121212;
+      text-transform: uppercase; }
 
 @media screen and (min-width: 768px) {
   .site-content {

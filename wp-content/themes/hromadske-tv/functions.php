@@ -641,27 +641,27 @@ require  get_template_directory() .'/wptuts-editor-buttons/wptuts.php';
  * Autocomplete Search
  */
 
-add_action( 'init', 'myprefix_autocomplete_init' );
-function myprefix_autocomplete_init() {
+add_action( 'init', 'hromadske_autocomplete_init' );
+function hromadske_autocomplete_init() {
     // Register our jQuery UI style and our custom javascript file
     wp_register_script( 'jquery-ui', "https://code.jquery.com/ui/1.12.1/jquery-ui.js");
-    wp_register_style('myprefix-jquery-ui','http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
+    wp_register_style('hromadske-jquery-ui','http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
     wp_register_script( 'my_acsearch', get_template_directory_uri() . '/js/myacsearch.js', array('libs','jquery-ui' ),null,true);
     wp_localize_script( 'my_acsearch', 'MyAcSearch', array('url' => admin_url( 'admin-ajax.php' )));
     // Function to fire whenever search form is displayed
-    add_action( 'get_search_form', 'myprefix_autocomplete_search_form' );
+    add_action( 'get_search_form', 'hromadske_autocomplete_search_form' );
 
     // Functions to deal with the AJAX request - one for logged in users, the other for non-logged in users.
-    add_action( 'wp_ajax_myprefix_autocompletesearch', 'myprefix_autocomplete_suggestions' );
-    add_action( 'wp_ajax_nopriv_myprefix_autocompletesearch', 'myprefix_autocomplete_suggestions' );
+    add_action( 'wp_ajax_hromadske_autocompletesearch', 'hromadske_autocomplete_suggestions' );
+    add_action( 'wp_ajax_nopriv_hromadske_autocompletesearch', 'hromadske_autocomplete_suggestions' );
 }
 
-function myprefix_autocomplete_search_form(){
+function hromadske_autocomplete_search_form(){
     wp_enqueue_script( 'my_acsearch' );
-    wp_enqueue_style( 'myprefix-jquery-ui' );
+    wp_enqueue_style( 'hromadske-jquery-ui' );
 }
 
-function myprefix_autocomplete_suggestions(){
+function hromadske_autocomplete_suggestions(){
     // Query for suggestions
     $posts = get_posts( array(
         's' =>$_REQUEST['term'],
@@ -676,9 +676,9 @@ function myprefix_autocomplete_suggestions(){
         // Initialise suggestion array
         $suggestion = array();
 
-        $suggestion['label'] = '<span>' .get_the_date() .'</span> ' .get_the_title();
+        $suggestion['label'] = get_the_title();
         $suggestion['link'] = get_permalink();
-
+        $suggestion['data'] = get_the_date();
         // Add suggestion to suggestions array
         $suggestions[]= $suggestion;
     endforeach;
@@ -691,6 +691,10 @@ function myprefix_autocomplete_suggestions(){
     exit;
 }
 
+
+
+//--------GOOGLE MAP API---------------------
+//-------------------------------------------
 //https://code.tutsplus.com/tutorials/add-jquery-autocomplete-to-your-sites-search--wp-25155
 
 function my_acf_google_map_api( $api ){
@@ -704,3 +708,27 @@ function my_acf_google_map_api( $api ){
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
+//----------POSTS PER PAGE for ARCHIVE----------------------
+//-------------------------------------------------
+add_action('pre_get_posts', 'hwl_archive_pagesize', 1 );
+
+function hwl_archive_pagesize( $query ) {
+
+    if( $query->is_archive ){
+        $query->set( 'posts_per_page', 16 );
+        if(  $query->is_tax == 'projects' ) {
+            $query->set('posts_per_page', get_theme_mod('per-page-episodes'));
+        }
+    }
+
+}
+
+
+//----------UPLOAD SVG----------------------
+//-------------------------------------------------
+
+function cc_mime_types( $mimes ){
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );

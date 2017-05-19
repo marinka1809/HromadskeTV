@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-    var acs_action = 'myprefix_autocompletesearch';
+    var acs_action = 'hromadske_autocompletesearch';
 
     $("#s").autocomplete({
         source: function (req, response) {
@@ -9,6 +9,10 @@ jQuery(document).ready(function ($) {
             window.location.href = ui.item.link;
         },
         minLength: 2,
-        html: true
-    });
+    }).data("ui-autocomplete")._renderItem = function (ul, item) {
+        return $("<li></li>")
+            .data("item.autocomplete", item)
+            .append("<a><span class='time'>"  + item.data + "</span><h4>" + item.label + "</h4></a>")
+            .appendTo(ul);
+    }
 });

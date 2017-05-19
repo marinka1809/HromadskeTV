@@ -60,7 +60,7 @@ function register_post_types(){
         'query_var'          => true,
         'capability_type'    => 'post',
         'supports'            => array('title','editor','excerpt','thumbnail','custom-fields'), // 'title','editor','author','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-        'taxonomies'          => array('projects', 'episodes-tags'),
+        'taxonomies'          => array('episodes-tags', 'projects'),
         'has_archive'         => true
     ) );
 
@@ -93,9 +93,10 @@ function register_post_types(){
  */
 add_action('init', 'create_taxonomy');
 function create_taxonomy(){
+
     $labels_episodes = array(
         'name'              => esc_html__('Tags for episod', 'hromadske-tv'),
-        'singular_name'     => esc_html__('Tag', 'hromadske-tv'),
+        'singular_name'     => esc_html__('Tag episod', 'hromadske-tv'),
         'search_items'      => esc_html__('Search tag', 'hromadske-tv'),
         'all_items'         => esc_html__('All tags', 'hromadske-tv'),
         'edit_item'         => esc_html__('Edit tag', 'hromadske-tv'),
@@ -121,7 +122,7 @@ function create_taxonomy(){
 
     $labels = array(
         'name'              => esc_html__('Tags for stories', 'hromadske-tv'),
-        'singular_name'     => esc_html__('Tag', 'hromadske-tv'),
+        'singular_name'     => esc_html__('Tag stories', 'hromadske-tv'),
         'search_items'      => esc_html__('Search tag', 'hromadske-tv'),
         'all_items'         => esc_html__('All tags', 'hromadske-tv'),
         'edit_item'         => esc_html__('Edit tag', 'hromadske-tv'),
