@@ -1,4 +1,5 @@
-.error-404-content {
+.error-404-content,
+.news-sent-content {
   padding-top: 90px;
 
   .important-news-section {
@@ -7,7 +8,8 @@
 
 }
 
-.error-404 {
+.error-404,
+.news-sent {
   text-align: center;
 
 
@@ -25,5 +27,11 @@
 
   .link-front-page {
     color: #ffffff;
+  }
+}
+
+.news-sent {
+  h1{
+    font: 48px/1.2em GothamProBlack;
   }
 }

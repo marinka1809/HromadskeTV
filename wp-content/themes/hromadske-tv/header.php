@@ -69,6 +69,9 @@
                             <?php get_template_part( 'template-parts/social-link' ); ?>
                             <a class="link-donate" href="<?php echo get_page_link(get_theme_mod('page-donate') ); ?>"><?php echo get_theme_mod('inscription-donate'); ?></a>
                         </div>
+                        <span class="si-icon si-icon-hamburger-cross" data-icon-name="hamburgerCross">
+
+                        </span>
                     </div>
 
 

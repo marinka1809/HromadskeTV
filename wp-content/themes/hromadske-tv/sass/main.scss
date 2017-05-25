@@ -431,11 +431,17 @@ aside {
 
 //--------REGULAR PAGE------------------------
 //---------------------------------------------
+
+.page-id-31 {
+  h1 {
+    text-align: center;
+  }
+}
 .content-regular-page {
 
   padding-top: 80px;
   padding-bottom: 90px;
-  font:18px/1.7em $font-content;
+  font: 18px/1.7em $font-content;
   color: #242729;
 
   strong {
@@ -452,6 +458,8 @@ aside {
     margin-bottom: 20px;
     color: #171617;
   }
+
+
 
   h2 {
     font: 800 2em/1.2em $font-content;
@@ -476,7 +484,7 @@ aside {
     background-position: 0 25px;
     transition: all .4s ease;
 
-    &:hover{
+    &:hover {
       background-image: linear-gradient(270deg, #ffdada, #ffdada);
       background-position: 0 0;
     }
@@ -491,6 +499,173 @@ aside {
     list-style: disc;
     padding-left: 50px;
   }
+
+  //-----------------------form------------------------
+
+  .gform_wrapper {
+    width: 570px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    span.gform_description {
+      margin-bottom: 100px;
+      font: 16px/24px $font-content;
+      color: #696e72;
+      text-align: center;
+    }
+
+    ul.gform_fields{
+
+      li.gfield {
+        position: relative;
+      }
+
+      li.gfield.gfield_html {
+        margin-bottom: 35px;
+
+        p {
+          margin-bottom: 15px;
+          font:14px/20px $font-content;
+          opacity: 0.8;
+          color: #696e72;
+        }
+      }
+    }
+
+    .top_label .gfield_label {
+      margin-left: 25px;
+      font: 14px/2em GothamProBold;
+      color: #a6b6c8;
+      text-transform: uppercase;
+    }
+
+    input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+    textarea {
+      padding: 20px 25px;
+      font-family:18px/1.2em $font-content;
+      color: #171617;
+      border-radius: 8px;
+      border: 1px solid #e5e5e5;
+      outline: none;
+
+      &:focus {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    }
+    .ginput_container_fileupload {
+      margin-bottom: 40px;
+    }
+
+    .gform_fileupload_multifile {
+
+      .gform_drop_area {
+        height: 60px;
+        padding: 25px;
+        border: 1px solid #e5e5e5;
+        color: #171617;
+        margin-bottom: 5px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+
+        &:focus {
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+
+    span.gform_drop_instructions {
+      display: none;
+    }
+
+    input.button.gform_button_select_files {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0 30px;
+      font: 15px GothamProBold;
+      color: #171617;
+      border-radius: 0 8px 8px 0;
+      border: 0;
+      border-left: 1px solid #e5e5e5;
+      background-color: #eff2f7;
+
+
+    }
+
+    .gfield_required {
+       display: none;
+     }
+
+
+
+    #gform_preview_1_10 {
+      position: absolute;
+      top: 53px;
+      left: 20px;
+    }
+
+    .ginput_preview{
+      position: relative;
+      //padding-right: 25px;
+      color: #171617;
+      font-family: 18px $font-content;
+
+      strong {
+        font-weight: 400;
+
+        &:after {
+         // position: absolute;
+         // top: 50%;
+         // transform:  translateY(-50%);
+          margin-left: 10px;
+          content:"\e90f";
+          font: 16px 'icomoon';
+          color: #a6b6c8;
+        }
+      }
+
+
+      &:hover {
+        strong:after {
+          color: $color-primary;
+        }
+      }
+    }
+
+    .gform_delete {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      transform:  translateY(-50%);
+      right: 0;
+      opacity: 0;
+
+    }
+
+    .gform_footer {
+      text-align: center;
+
+      input[type="submit"] {
+        padding: 0 30px;
+        color: #ffffff;
+        font:15px/48px GothamProBold;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 26px;
+        background-color: #f6921e;
+        transition: all 0.5s ease;
+
+        &:hover {
+          padding: 0 36px;
+        }
+      }
+    }
+  }
+
+
+
 }
 
 //--------Google map------------------------
@@ -537,3 +712,6 @@ aside {
 @import "responsive/media992";
 @import "responsive/media1200";
 @import "responsive/media1400";
+
+
+

@@ -26,14 +26,13 @@ $(document).ready(function(){
     $(".list-projects .small-content").dotdotdot({
     });
 
+    $('.gform_button_select_files').val('Додати файл');
 
     $('.gallery-columns-1').slick({
         infinite: false,
         centerMode: true,
         centerPadding: '25%',
         slidesToShow: 1,
-        //autoplay: true,
-       // dots: true,
         });
 
     $(".gallery-columns-1 .gallery-item").append('<span class="pagingInfo"></span>');

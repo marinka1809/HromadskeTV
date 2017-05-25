@@ -355,6 +355,9 @@ aside {
     font: 22px/1.5em "Open Sans", sans-serif;
     opacity: 0.8; }
 
+.page-id-31 h1 {
+  text-align: center; }
+
 .content-regular-page {
   padding-top: 80px;
   padding-bottom: 90px;
@@ -399,6 +402,115 @@ aside {
   .content-regular-page ul {
     list-style: disc;
     padding-left: 50px; }
+  .content-regular-page .gform_wrapper {
+    width: 570px;
+    max-width: 100%;
+    margin: 0 auto; }
+    .content-regular-page .gform_wrapper span.gform_description {
+      margin-bottom: 100px;
+      font: 16px/24px "Open Sans", sans-serif;
+      color: #696e72;
+      text-align: center; }
+    .content-regular-page .gform_wrapper ul.gform_fields li.gfield {
+      position: relative; }
+    .content-regular-page .gform_wrapper ul.gform_fields li.gfield.gfield_html {
+      margin-bottom: 35px; }
+      .content-regular-page .gform_wrapper ul.gform_fields li.gfield.gfield_html p {
+        margin-bottom: 15px;
+        font: 14px/20px "Open Sans", sans-serif;
+        opacity: 0.8;
+        color: #696e72; }
+    .content-regular-page .gform_wrapper .top_label .gfield_label {
+      margin-left: 25px;
+      font: 14px/2em GothamProBold;
+      color: #a6b6c8;
+      text-transform: uppercase; }
+    .content-regular-page .gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+    .content-regular-page .gform_wrapper textarea {
+      padding: 20px 25px;
+      font-family: 18px/1.2em "Open Sans", sans-serif;
+      color: #171617;
+      -webkit-border-radius: 8px;
+              border-radius: 8px;
+      border: 1px solid #e5e5e5;
+      outline: none; }
+      .content-regular-page .gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]):focus,
+      .content-regular-page .gform_wrapper textarea:focus {
+        -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+    .content-regular-page .gform_wrapper .ginput_container_fileupload {
+      margin-bottom: 40px; }
+    .content-regular-page .gform_wrapper .gform_fileupload_multifile .gform_drop_area {
+      height: 60px;
+      padding: 25px;
+      border: 1px solid #e5e5e5;
+      color: #171617;
+      margin-bottom: 5px;
+      background-color: #ffffff;
+      -webkit-border-radius: 8px;
+              border-radius: 8px;
+      overflow: hidden; }
+      .content-regular-page .gform_wrapper .gform_fileupload_multifile .gform_drop_area:focus {
+        -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+    .content-regular-page .gform_wrapper span.gform_drop_instructions {
+      display: none; }
+    .content-regular-page .gform_wrapper input.button.gform_button_select_files {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0 30px;
+      font: 15px GothamProBold;
+      color: #171617;
+      -webkit-border-radius: 0 8px 8px 0;
+              border-radius: 0 8px 8px 0;
+      border: 0;
+      border-left: 1px solid #e5e5e5;
+      background-color: #eff2f7; }
+    .content-regular-page .gform_wrapper .gfield_required {
+      display: none; }
+    .content-regular-page .gform_wrapper #gform_preview_1_10 {
+      position: absolute;
+      top: 53px;
+      left: 20px; }
+    .content-regular-page .gform_wrapper .ginput_preview {
+      position: relative;
+      color: #171617;
+      font-family: 18px "Open Sans", sans-serif; }
+      .content-regular-page .gform_wrapper .ginput_preview strong {
+        font-weight: 400; }
+        .content-regular-page .gform_wrapper .ginput_preview strong:after {
+          margin-left: 10px;
+          content: "\e90f";
+          font: 16px 'icomoon';
+          color: #a6b6c8; }
+      .content-regular-page .gform_wrapper .ginput_preview:hover strong:after {
+        color: #f6921e; }
+    .content-regular-page .gform_wrapper .gform_delete {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      right: 0;
+      opacity: 0; }
+    .content-regular-page .gform_wrapper .gform_footer {
+      text-align: center; }
+      .content-regular-page .gform_wrapper .gform_footer input[type="submit"] {
+        padding: 0 30px;
+        color: #ffffff;
+        font: 15px/48px GothamProBold;
+        text-transform: uppercase;
+        border: none;
+        -webkit-border-radius: 26px;
+                border-radius: 26px;
+        background-color: #f6921e;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease; }
+        .content-regular-page .gform_wrapper .gform_footer input[type="submit"]:hover {
+          padding: 0 36px; }
 
 .acf-map {
   width: 100%;
@@ -1963,23 +2075,32 @@ ul.ui-widget-content {
     color: #696e72;
     opacity: 0.8; }
 
-.error-404-content {
+.error-404-content,
+.news-sent-content {
   padding-top: 90px; }
-  .error-404-content .important-news-section {
+  .error-404-content .important-news-section,
+  .news-sent-content .important-news-section {
     background-color: #eff2f7; }
 
-.error-404 {
+.error-404,
+.news-sent {
   text-align: center; }
-  .error-404 h1 {
+  .error-404 h1,
+  .news-sent h1 {
     margin-bottom: 15px;
     color: #171617;
     font: 62px/1.2em GothamProBlack; }
-  .error-404 p {
+  .error-404 p,
+  .news-sent p {
     margin-bottom: 30px;
     color: #696e72;
     font: 16px/1.5em "Open Sans", sans-serif; }
-  .error-404 .link-front-page {
+  .error-404 .link-front-page,
+  .news-sent .link-front-page {
     color: #ffffff; }
+
+.news-sent h1 {
+  font: 48px/1.2em GothamProBlack; }
 
 .archive-content {
   padding-bottom: 120px; }
