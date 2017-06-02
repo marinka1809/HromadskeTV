@@ -9,14 +9,14 @@
 ?>
 
 <aside id="secondary" class="col-sm-3" role="complementary">
-    <h1>Проекти</h1>
+    <h1><?php esc_html_e('Projects', 'hromadske-tv') ?></h1>
     <?php
     $args = array(
         'taxonomy'      => array( 'projects' ),
         'fields'        => 'all',
         'hide_empty'    => true,
         'number'        => 5,
-        'meta_key'      =>  'custom_term_meta',
+        'meta_key'      => 'custom_term_meta',
     );
     $projects_query = new WP_Term_Query( $args );
     if ( $projects_query->terms ) :?>

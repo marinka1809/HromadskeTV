@@ -166,6 +166,8 @@ main {
 
 .link-donate {
 
+  color: $color-second;
+
   &:visited,
   &:active {
     color: $color-second;
@@ -715,3 +717,22 @@ aside {
 
 
 
+//-------------------------------------
+
+.si-icons span {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 40px 30px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.si-icons-hover span {
+  width: 128px;
+  height: 128px;
+  margin: 50px 40px;
+}
+
+.no-svg .si-icon-hamburger, .no-svg .si-icon-hamburger-cross { background-image: url('../png/hamburger.png') }

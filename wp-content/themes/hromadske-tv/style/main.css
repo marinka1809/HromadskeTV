@@ -173,12 +173,13 @@ main h1 {
   .link-front-page:hover {
     padding: 0 36px; }
 
-.link-donate:visited, .link-donate:active {
+.link-donate {
   color: #f61e1e; }
-
-.link-donate:hover {
-  color: #ffffff;
-  background-color: #f61e1e; }
+  .link-donate:visited, .link-donate:active {
+    color: #f61e1e; }
+  .link-donate:hover {
+    color: #ffffff;
+    background-color: #f61e1e; }
 
 .link-detailed {
   padding: 0 30px;
@@ -1124,30 +1125,31 @@ ul.ui-widget-content {
             justify-content: space-between; }
   .front-social-section h2 {
     margin-bottom: 20px;
-    font: 14px GothamProBold;
+    font: 26px/30px GothamProBold;
     color: #171617; }
-  .front-social-section #text-5 {
-    text-align: center; }
-    .front-social-section #text-5 .wrapper {
-      height: 100%;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-border-radius: 2px;
-              border-radius: 2px;
-      border: 1px solid #e2e7eb; }
-    .front-social-section #text-5 .color {
-      color: #f61e1e; }
+  .front-social-section .wrapper {
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 40px 60px;
+    -webkit-border-radius: 2px;
+            border-radius: 2px;
+    border: 1px solid #e2e7eb; }
+  .front-social-section .color-blue {
+    color: #2d4486; }
+  .front-social-section .color-red {
+    color: #d20c05; }
 
 .page-news {
   padding-top: 60px;
@@ -2503,3 +2505,20 @@ ul.ui-widget-content {
 .page-news {
   padding-top: 60px;
   padding-bottom: 120px; }
+
+.si-icons span {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 40px 30px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.si-icons-hover span {
+  width: 128px;
+  height: 128px;
+  margin: 50px 40px; }
+
+.no-svg .si-icon-hamburger, .no-svg .si-icon-hamburger-cross {
+  background-image: url("../png/hamburger.png"); }

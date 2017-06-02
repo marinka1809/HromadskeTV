@@ -2,19 +2,19 @@
     tinymce.create('tinymce.plugins.Wptuts', {
         init : function(ed, url) {
             ed.addButton('background-text', {
-                title : 'Add background for text',
+                title : wptuts_plugin.background_text_title,
                 cmd : 'background-text',
                 image : url + '/text_bacgraund.png'
             });
 
             ed.addButton('quote-type1', {
-                title : 'Quote type 1',
+                title : wptuts_plugin.quote_type1_title,
                 cmd : 'quote-type1',
                 image : url + '/quote1.png'
             });
 
             ed.addButton('quote-type2', {
-                title : 'Add shortcode: quote type 2',
+                title : wptuts_plugin.quote_type2_title,
                 cmd : 'quote-type2',
                 image : url + '/quote2.png'
 
@@ -37,20 +37,46 @@
             ed.addCommand('quote-type2', function() {
                 var selected_text = ed.selection.getContent();
                 ed.windowManager.open({
-                    title: 'Add autor?',
-                    body: [{
+                   title: wptuts_plugin.form_title,
+                   body: [{
                         type: 'textbox',
                         name: 'name',
-                        label: 'Name'
+                        label: wptuts_plugin.label_name
                     },{
-                        type: 'textbox',
-                        name: 'link',
-                        label: 'Photo URL'
-                    },{
+                       type: 'button',
+                       name: 'select-file',
+                       text: wptuts_plugin.label_button,
+                       onclick: function() {
+                           window.mb = window.mb || {};
+
+                           window.mb.frame = wp.media({
+                               library : {
+                                   type : 'image'
+                               },
+                               multiple: false
+                           });
+
+                           window.mb.frame.on('select', function() {
+                               var json = window.mb.frame.state().get('selection').first().toJSON();
+                               if (0 > jQuery.trim(json.url.length)) {
+                                   return;
+                               }
+
+                               jQuery('#photo-url').val(json.url);
+                           });
+
+                           window.mb.frame.open();
+                       }
+                   },{
+                       type: 'textbox',
+                       name: 'link',
+                       label: wptuts_plugin.label_url,
+                       id: 'photo-url'
+                   },{
                         type: 'textbox',
                         name: 'description',
-                        label: 'Description'
-                    }],
+                        label: wptuts_plugin.label_description
+                   }],
                     onsubmit: function( e ) {
                         var author_name = e.data.name ;
                         var author_photo = e.data.link ;
@@ -63,7 +89,6 @@
                         }
                     }
                 });
-
             });
         }
         // ... Hidden code

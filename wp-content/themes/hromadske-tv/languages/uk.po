@@ -1,0 +1,558 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: hromadske-tv\n"
+"POT-Creation-Date: 2017-06-02 23:17+0300\n"
+"PO-Revision-Date: 2017-06-02 23:30+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_n:1,2;_e;esc_attr__;esc_attr_e;esc_html__;"
+"esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+
+#: 404.php:18
+msgid "Page not found"
+msgstr "Сторінку не знайдено"
+
+#: 404.php:19 news_sent.php:16
+msgid "On home page"
+msgstr "На головну"
+
+#: comments.php:40 comments.php:61
+msgid "Comment navigation"
+msgstr "Коментар навігації"
+
+#: comments.php:43 comments.php:64
+msgid "Older Comments"
+msgstr "Старі коментарі"
+
+#: comments.php:44 comments.php:65
+msgid "Newer Comments"
+msgstr "Нові коментарі"
+
+#: comments.php:78
+msgid "Comments are closed."
+msgstr "Коментарі вимкнено."
+
+#: functions.php:48
+msgid "Primary"
+msgstr "Головне"
+
+#: functions.php:104
+msgid "Footer"
+msgstr "Футер"
+
+#: functions.php:106 functions.php:115
+msgid "Add widgets here."
+msgstr "Додайте сюди віджет."
+
+#: functions.php:113
+msgid "Social section"
+msgstr "Секція соціальних мереж"
+
+#: functions.php:161
+msgid "Choice of cap"
+msgstr "Вибір типу заголовка"
+
+#: functions.php:162 functions.php:163 functions.php:164
+msgid "Additional notation"
+msgstr "Додаткові позначки"
+
+#: functions.php:167
+msgid "Section of bank details"
+msgstr "Розділ банківських реквізитів"
+
+#: functions.php:168
+msgid "Online payment section"
+msgstr "Розділ онлайн платежу"
+
+#: functions.php:177
+msgid "Appearance of title for single page:"
+msgstr "Зовнішній вигляд заголовка для сторінки:"
+
+#: functions.php:179
+msgid "image"
+msgstr "зображення"
+
+#: functions.php:180
+msgid "video"
+msgstr "відеозапис"
+
+#: functions.php:181
+msgid "clean"
+msgstr "пустий"
+
+#: functions.php:184
+msgid "Url video:"
+msgstr "Адреса(url ) відеозапису:"
+
+#: functions.php:198
+msgid "Important"
+msgstr "Важливо"
+
+#: functions.php:202
+msgid "Updated"
+msgstr "Оновлено"
+
+#: functions.php:216
+msgid "Stick front page"
+msgstr "Закріпити на головну сторінку"
+
+#: functions.php:220 functions.php:234
+msgid "Big Thumbnail"
+msgstr "Великий шаблон"
+
+#: functions.php:245 functions.php:263
+msgid "Title for section"
+msgstr "Заголовок ля секцї"
+
+#: functions.php:250
+msgid "Bank detailsn:"
+msgstr "Банківські реквізити:"
+
+#: functions.php:268
+msgid "Placeholder text for the input field of sum"
+msgstr "Текст placeholder для поля введення суми"
+
+#: functions.php:273
+msgid "Label for submit button:"
+msgstr "Напис для кнопки відправки:"
+
+#: functions.php:282
+msgid "Public key:"
+msgstr "Відкритий ключ (public key):"
+
+#: functions.php:287
+msgid "Private key:"
+msgstr "Секретний ключ (private key:):"
+
+#: functions.php:292
+msgid "Purpose of payment:"
+msgstr "Призначення платежу:"
+
+#: functions.php:331 functions.php:343
+msgid "Stick project"
+msgstr "Закрыплений проект"
+
+#: functions.php:426
+msgid "Add background for text"
+msgstr "Додати фон для тексту"
+
+#: functions.php:427
+msgid "Quote type 1"
+msgstr "Цитата 1-го типу"
+
+#: functions.php:428
+msgid "Add shortcode: quote type 2"
+msgstr "Додати шорткод: цитата 2-го типу"
+
+#: functions.php:429
+msgid "Add autor?"
+msgstr "Додати автора?"
+
+#: functions.php:430
+msgid "Name"
+msgstr "Ім`я"
+
+#: functions.php:431
+msgid "Photo URL"
+msgstr " URL фотографії"
+
+#: functions.php:432
+msgid "Upload/select File"
+msgstr "Завантаження/вибір файлу"
+
+#: functions.php:433
+msgid "Description"
+msgstr "Опис"
+
+#: functions.php:509 functions.php:585 stories.php:34 tag.php:37
+#: taxonomy-projects.php:49 taxonomy.php:37
+msgid "<"
+msgstr "<"
+
+#: functions.php:510 functions.php:586 stories.php:35 tag.php:38
+#: taxonomy-projects.php:50 taxonomy.php:38
+msgid ">"
+msgstr ">"
+
+#: functions.php:553
+#, php-format
+msgid "Found 1 result"
+msgid_plural "Found %s results"
+msgstr[0] "Знайдено 1 результат"
+msgstr[1] "Знайдено %s результати"
+msgstr[2] "Знайдено %s результатів"
+
+#: inc/custom-post-type.php:22
+msgid "Stories"
+msgstr "Історії"
+
+#: inc/custom-post-type.php:23
+msgid "Story"
+msgstr "Історія"
+
+#: inc/custom-post-type.php:24 inc/custom-post-type.php:49
+#: inc/custom-post-type.php:74
+msgid "Add new"
+msgstr "Додати нове"
+
+#: inc/custom-post-type.php:25
+msgid "Add new story"
+msgstr "Додати нову історію"
+
+#: inc/custom-post-type.php:26
+msgid "Edit story"
+msgstr "Редагувати історію"
+
+#: inc/custom-post-type.php:27
+msgid "New story"
+msgstr "Нова исторія"
+
+#: inc/custom-post-type.php:47
+msgid "Episodes"
+msgstr "Епізоди"
+
+#: inc/custom-post-type.php:48
+msgid "Episode"
+msgstr "Епізод"
+
+#: inc/custom-post-type.php:50
+msgid "Add new episode"
+msgstr "Додати новий епізод"
+
+#: inc/custom-post-type.php:51
+msgid "Edit episode"
+msgstr "Редагувати епізод"
+
+#: inc/custom-post-type.php:52
+msgid "New episode"
+msgstr "Новій епізод"
+
+#: inc/custom-post-type.php:72
+msgid "Employees"
+msgstr "Співробітники"
+
+#: inc/custom-post-type.php:73
+msgid "Employee"
+msgstr "Співробітник"
+
+#: inc/custom-post-type.php:75
+msgid "Add new employee"
+msgstr "Додати нового співробітника"
+
+#: inc/custom-post-type.php:76
+msgid "Edit employee"
+msgstr "Редагувати дані співробітника"
+
+#: inc/custom-post-type.php:77
+msgid "New employee"
+msgstr "Новій співробітник"
+
+#: inc/custom-post-type.php:98
+msgid "Tags for episod"
+msgstr "Позначки епізоду"
+
+#: inc/custom-post-type.php:99
+msgid "Tag episod"
+msgstr "Позначка епізоду"
+
+#: inc/custom-post-type.php:100 inc/custom-post-type.php:126
+msgid "Search tag"
+msgstr "Пошук позначок"
+
+#: inc/custom-post-type.php:101 inc/custom-post-type.php:127
+msgid "All tags"
+msgstr "Всі позначки"
+
+#: inc/custom-post-type.php:102 inc/custom-post-type.php:128
+msgid "Edit tag"
+msgstr "Редагувати позначку"
+
+#: inc/custom-post-type.php:103 inc/custom-post-type.php:129
+msgid "Update tag"
+msgstr "Оновити позначку"
+
+#: inc/custom-post-type.php:104 inc/custom-post-type.php:130
+msgid "Add New tag"
+msgstr "Додати нову позначку"
+
+#: inc/custom-post-type.php:105 inc/custom-post-type.php:131
+msgid "New tag Name"
+msgstr "New tag Name"
+
+#: inc/custom-post-type.php:124
+msgid "Tags for stories"
+msgstr "Позначки історій"
+
+#: inc/custom-post-type.php:125
+msgid "Tag stories"
+msgstr "Позначка історій"
+
+#: inc/custom-post-type.php:150 sidebar.php:12
+msgid "Projects"
+msgstr "Проекти"
+
+#: inc/custom-post-type.php:151
+msgid "Project"
+msgstr "Проект"
+
+#: inc/custom-post-type.php:152
+msgid "Search project"
+msgstr "Пошук проекту"
+
+#: inc/custom-post-type.php:153
+msgid "All Projects"
+msgstr "Всі проекти"
+
+#: inc/custom-post-type.php:154
+msgid "Edit project"
+msgstr "Редагувати проект"
+
+#: inc/custom-post-type.php:155
+msgid "Update project"
+msgstr "Оновити проект"
+
+#: inc/custom-post-type.php:156
+msgid "Add New project"
+msgstr "Додати новій проект"
+
+#: inc/custom-post-type.php:163
+msgid ""
+"There are various projects in which studies, projects continue to expand new "
+"episodes"
+msgstr ""
+"Існують різні проекти, в межах яких проводяться розслідування. Проекти "
+"постійно доповнюються новими епізодами"
+
+#: inc/customizer.php:44
+msgid "Settings for front page"
+msgstr "Налаштування для головної сторінки"
+
+#: inc/customizer.php:45
+msgid "Titles and label buttons for front page."
+msgstr "Заголовки та надписи кнопок, для головної сторінки."
+
+#: inc/customizer.php:51
+msgid "Titles sections"
+msgstr "Заголовки секцій"
+
+#: inc/customizer.php:52
+msgid "Titles section for front page."
+msgstr "Заголовки секцій для головної сторінки."
+
+#: inc/customizer.php:64
+msgid "Title for the last news section"
+msgstr "Заголовок для розділу останніх новин"
+
+#: inc/customizer.php:77
+msgid "Title for the important news section"
+msgstr "Заголовок для розділу важливих новин"
+
+#: inc/customizer.php:90
+msgid "Title for the stories section"
+msgstr "Заголовок для розділу історій"
+
+#: inc/customizer.php:103
+msgid "Title for the section donate"
+msgstr "Заголовок для розділу пожертвувань"
+
+#: inc/customizer.php:116
+msgid "Title for the project section"
+msgstr "Заголовок для розділу проектів"
+
+#: inc/customizer.php:129
+msgid "Title for the section social networking"
+msgstr "Заголовок для розділу соціальніх мереж"
+
+#: inc/customizer.php:137
+msgid "Button donations"
+msgstr "Кнопка пожертвувань"
+
+#: inc/customizer.php:149
+msgid "Inscription:"
+msgstr "Напис:"
+
+#: inc/customizer.php:161
+msgid "Select page:"
+msgstr "Вибір сторінки:"
+
+#: inc/customizer.php:170
+msgid "Button labels"
+msgstr "Написи для кнопок"
+
+#: inc/customizer.php:182
+msgid "Inscription for type buttons: continue reading the article."
+msgstr "Написи для кнопок типу: продовжути читати статтю."
+
+#: inc/customizer.php:195
+msgid "Inscription for type buttons: see all articles of this type"
+msgstr "Написи для кнопок типу: переглянути всі статті цього типу"
+
+#: inc/customizer.php:207
+msgid "Social links section"
+msgstr "Секція соціальних посилань"
+
+#: inc/customizer.php:208
+msgid ""
+"If you need to add a link to the site, add the address in the appropriate "
+"field, if the link is not needed just do not fill the field."
+msgstr ""
+"Якщо вам потрібно додати посилання на соціальні мережі,- додайте адрес у "
+"відповідне поле, якщо посилання не потрібно - просто не заповнюйте поле."
+
+#: inc/customizer.php:219
+msgid "Vk:"
+msgstr "Vk:"
+
+#: inc/customizer.php:232
+msgid "Facebook:"
+msgstr "Facebook:"
+
+#: inc/customizer.php:245
+msgid "Google +:"
+msgstr "Google +:"
+
+#: inc/customizer.php:258
+msgid "Youtube:"
+msgstr "Youtube:"
+
+#: inc/customizer.php:271
+msgid "Tumblr:"
+msgstr "Tumblr:"
+
+#: inc/customizer.php:284
+msgid "RSS:"
+msgstr "RSS:"
+
+#: inc/customizer.php:297
+msgid "Twitter:"
+msgstr "Twitter:"
+
+#: inc/customizer.php:309
+msgid "Project page settings"
+msgstr "Налаштування сторінки проектів"
+
+#: inc/customizer.php:321
+msgid "From which series to begin to display big thumbnail:"
+msgstr "З якого ряду почати показувати великий шаблон:"
+
+#: inc/customizer.php:336
+msgid "Number of episodes per page:"
+msgstr "Кількість епізодів на одній сторінці:"
+
+#: inc/customizer.php:348
+msgid "Stories page settings"
+msgstr "Налаштування сторінки історій"
+
+#: inc/customizer.php:361
+msgid "Number of stories per page:"
+msgstr "Кількість історій на одній сторінці:"
+
+#: inc/customizer.php:375
+msgid "News settings"
+msgstr "Налаштування новин"
+
+#: inc/customizer.php:387
+msgid "Label for important news:"
+msgstr "Напис для важливих новин:"
+
+#: inc/customizer.php:401
+msgid "Label for updated news:"
+msgstr "Напис для оновлених новин:"
+
+#: inc/customizer.php:415
+msgid "Icon for news with video:"
+msgstr "Іконка для новин, які містять відеозапиc:"
+
+#: inc/customizer.php:416
+msgid "Insert here the class icons with Font Awesome"
+msgstr "Вставте тут клас потрібної іконки, з іконочного шрифта"
+
+#: inc/customizer.php:429
+msgid "Inscription for type button more news."
+msgstr "Напис для кнопки, типу, більше новин."
+
+#: inc/customizer.php:442
+msgid "Title for section Related posts"
+msgstr "Заголовок для секції схожих записів"
+
+#: inc/customizer.php:456
+msgid "Logo for footer"
+msgstr "Логотип для футера"
+
+#: inc/customizer.php:471
+msgid "Image arrow for scroll up:"
+msgstr "Зображення стрілки для прокрутки вгору:"
+
+#: inc/template-tags.php:50 inc/template-tags.php:56
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:52
+#, php-format
+msgid "Posted in %1$s"
+msgstr "Posted in %1$s"
+
+#: inc/template-tags.php:58
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Tagged %1$s"
+
+#: inc/template-tags.php:65
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+
+#: inc/template-tags.php:72 template-parts/content-page.php:34
+#, php-format
+msgid "Edit %s"
+msgstr "Edit %s"
+
+#: searchform.php:6
+msgid "Search ..."
+msgstr "Пошук ..."
+
+#: tag.php:20 taxonomy.php:20
+#, php-format
+msgid "#%s"
+msgstr "#%s"
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Нічого не знайдено"
+
+#: template-parts/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Вибачте, але нічого не відповідає умовам пошуку. Будь ласка, спробуйте ще "
+"раз з іншими ключовими словами."
+
+#: template-parts/content-none.php:30
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Здається, ми не можемо знайти те, що ви шукаєте. Можливо, пошук може "
+"допомогти."
+
+#: template-parts/content-page.php:22
+msgid "Pages:"
+msgstr "Cторінки:"

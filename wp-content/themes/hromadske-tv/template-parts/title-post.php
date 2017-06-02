@@ -29,11 +29,13 @@
           <h1> <?php the_title(); ?> </h1>
           <?php the_excerpt(); ?>
             <?php
-            $time_string = '<time class="entry-date published updated" datetime="%1$s">' .date('l, d F Y') .'</time>';
+
+
+            $time_string = '<time class="entry-date published updated" datetime="%1$s"> %2$s </time>';
 
             $time_string = sprintf( $time_string,
                 esc_attr( get_the_date( 'c' ) ),
-                esc_html( get_the_date() )
+                date_i18n( 'l, d F Y',  strtotime( get_the_date( ) ) )
             );
             ?>
             <?php echo $time_string ;?>

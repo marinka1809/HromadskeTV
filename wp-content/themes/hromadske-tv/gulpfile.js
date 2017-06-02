@@ -35,7 +35,9 @@ gulp.task('scripts', function() {
         'libs/bootstrap/dist/js/bootstrap.min.js', // bootstrap
         'libs/dotdotdot-master/jquery.dotdotdot.min.js',
         'libs/jQuery-autoComplete-master/jquery.auto-complete.min.js', // autoComplete
-        'libs/slick/slick.min.js' // Slick slider
+        'libs/slick/slick.min.js', // Slick slider
+        'libs/snap.svg-min.js', //
+        'libs/modernizr.custom.js', //
     ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл

@@ -154,7 +154,6 @@ function create_taxonomy(){
         'edit_item'         => esc_html__('Edit project', 'hromadske-tv'),
         'update_item'       => esc_html__('Update project', 'hromadske-tv'),
         'add_new_item'      => esc_html__('Add New project', 'hromadske-tv'),
-        'new_item_name'     => esc_html__('New project Name', 'hromadske-tv'),
         'parent_item'       => null,
         'parent_item_colon' => null,
     );

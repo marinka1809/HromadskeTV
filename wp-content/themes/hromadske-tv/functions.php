@@ -113,7 +113,7 @@ function hromadske_tv_widgets_init() {
         'name'          => esc_html__( 'Social section', 'hromadske-tv' ),
         'id'            => 'social-sections',
         'description'   => esc_html__( 'Add widgets here.', 'hromadske-tv' ),
-        'before_widget' => '<li id="%1$s" class="col-sm-offset-3 col-sm-6 col-md-offset-0 col-md-4 widget %2$s"> <div class="wrapper">',
+        'before_widget' => '<li id="%1$s" class="col-sm-offset-3 col-sm-6 col-md-offset-0 widget %2$s"> <div class="wrapper">',
         'after_widget'  => '</div></li>',
         'before_title'  => '<h2 class="widget-title-social">',
         'after_title'   => '</h2>',
@@ -150,6 +150,8 @@ function hromadske_tv_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
     wp_enqueue_script( 'libs', get_template_directory_uri() . '/js/libs.min.js', array(),  false );
+    wp_enqueue_script( 'svgicons-config', get_template_directory_uri() . '/svgicon/js/svgicons-config.js', array(),  false );
+    wp_enqueue_script( 'svgicons', get_template_directory_uri() . '/svgicon/js/svgicons.js', array(),  false );
     wp_enqueue_script( 'main-script', get_template_directory_uri() . '/js/main.js', array(),  false );
 }
 add_action( 'wp_enqueue_scripts', 'hromadske_tv_scripts' );
@@ -162,8 +164,8 @@ function my_extra_fields() {
     add_meta_box( 'episodes_extra_fields', esc_html__( 'Additional notation', 'hromadske-tv'), 'episodes_extra_fields_box', 'episodes', 'side', 'high'  );
     global $post;
     if ( $post->post_name == donate ) {
-        add_meta_box( 'bank_details', 'Section of bank details', 'bank_details_box_func', 'page', 'normal', 'high'  );
-        add_meta_box( 'online_payment', 'Online payment section', 'online_payment_box_func', 'page', 'normal', 'high'  );
+        add_meta_box( 'bank_details',  esc_html__('Section of bank details', 'hromadske-tv'), 'bank_details_box_func', 'page', 'normal', 'high'  );
+        add_meta_box( 'online_payment',  esc_html__('Online payment section', 'hromadske-tv'), 'online_payment_box_func', 'page', 'normal', 'high'  );
     };
 }
 add_action('add_meta_boxes', 'my_extra_fields', 1);
@@ -172,14 +174,14 @@ add_action('add_meta_boxes', 'my_extra_fields', 1);
 function choice_cap_func( $post ){
     ?>
     <ul>
-        <li>Appearance of title for single page: <?php $mark_v = get_post_meta($post->ID, 'content-cap', 1); ?></li>
+        <li><?php esc_html_e('Appearance of title for single page:', 'hromadske-tv') ?><?php $mark_v = get_post_meta($post->ID, 'content-cap', 1); ?></li>
         <li>
-            <label><input type="radio" name="extra[content-cap]" value="image" <?php checked( $mark_v, 'image' ); ?> /> image</label>
-            <label><input type="radio" name="extra[content-cap]" value="video" <?php checked( $mark_v, 'video' ); ?> /> video</label>
-            <label><input type="radio" name="extra[content-cap]" value="clean" <?php checked( $mark_v, 'clean' ); ?> /> clean</label>
+            <label><input type="radio" name="extra[content-cap]" value="image" <?php checked( $mark_v, 'image' ); ?> /> <?php esc_html_e('image', 'hromadske-tv') ?></label>
+            <label><input type="radio" name="extra[content-cap]" value="video" <?php checked( $mark_v, 'video' ); ?> /> <?php esc_html_e('video', 'hromadske-tv') ?></label>
+            <label><input type="radio" name="extra[content-cap]" value="clean" <?php checked( $mark_v, 'clean' ); ?> /> <?php esc_html_e('clean', 'hromadske-tv') ?></label>
         </li>
         <li>
-            <label>Url video: <input type="text" name="extra[url-video]" value="<?php echo get_post_meta($post->ID, 'url-video', 1); ?>" style="width:70%" /></label>
+            <label><?php esc_html_e('Url video:', 'hromadske-tv') ?> <input type="text" name="extra[url-video]" value="<?php echo get_post_meta($post->ID, 'url-video', 1); ?>" style="width:70%" /></label>
         </li>
     </ul>
 
@@ -240,12 +242,12 @@ function episodes_extra_fields_box( $episodes ){
 function bank_details_box_func( $post ){ ?>
     <ul>
         <li>
-            <label>Title for section
+            <label> <?php esc_html_e( 'Title for section', 'hromadske-tv' ); ?>
                 <input type="text" name="extra[title-bank_details]" value="<?php echo get_post_meta($post->ID, 'title-bank_details', 1); ?>" style="width:50%" />
             </label>
         </li>
         <li>
-            <label>Bank detailsn:
+            <label><?php esc_html_e( 'Bank detailsn:', 'hromadske-tv' ); ?>
                 <textarea type="text" rows="5" name="extra[bank_details]" style="width:100%;"><?php echo get_post_meta($post->ID, 'bank_details', 1); ?></textarea>
             </label>
         </li>
@@ -258,17 +260,17 @@ function bank_details_box_func( $post ){ ?>
 function online_payment_box_func( $post ){ ?>
     <ul>
         <li>
-            <label>Title for section
+            <label><?php esc_html_e( 'Title for section', 'hromadske-tv' ); ?>
                 <input type="text" name="extra[title-online_payment]" value="<?php echo get_post_meta($post->ID, 'title-online_payment', 1); ?>" style="width:50%" />
             </label>
         </li>
         <li>
-            <label>Placeholder text for the input field of sum
+            <label><?php esc_html_e( 'Placeholder text for the input field of sum', 'hromadske-tv' ); ?>
                 <input type="text" name="extra[placeholder-sum]" value="<?php echo get_post_meta($post->ID, 'placeholder-sum', 1); ?>" style="width:50%" />
             </label>
         </li>
         <li>
-            <label>Label for submit button:
+            <label> <?php esc_html_e( 'Label for submit button:', 'hromadske-tv' ); ?>
                 <input type="text" name="extra[label-submit]" value="<?php echo get_post_meta($post->ID, 'label-submit', 1); ?>" style="width:50%" />
             </label>
         </li>
@@ -277,17 +279,17 @@ function online_payment_box_func( $post ){ ?>
         <legend>Setting for ligpay</legend>
         <ul>
             <li>
-                <label>Public key:
+                <label><?php esc_html_e( 'Public key:', 'hromadske-tv' ); ?>
                     <input type="text" name="extra[public-key]" value="<?php echo get_post_meta($post->ID, 'public-key', 1); ?>" style="width:50%" />
                 </label>
             </li>
             <li>
-                <label>Private key:
+                <label><?php esc_html_e( 'Private key:', 'hromadske-tv' ); ?>
                     <input type="text" name="extra[private-key]" value="<?php echo get_post_meta($post->ID, 'private-key', 1); ?>" style="width:50%" />
                 </label>
             </li>
             <li>
-                <label>Purpose of payment:
+                <label> <?php esc_html_e( 'Purpose of payment:', 'hromadske-tv' ); ?>
                     <textarea type="text" name="extra[purpose-payment]" style="width:100%;height:50px;"><?php echo get_post_meta($post->ID, 'purpose-payment', 1); ?></textarea>
                 </label>
             </li>
@@ -399,6 +401,7 @@ add_action( 'init', 'wptuts_buttons' );
 function wptuts_buttons() {
     add_filter( "mce_external_plugins", "wptuts_add_buttons" );
     add_filter( 'mce_buttons', 'wptuts_register_buttons' );
+    add_action('after_wp_tiny_mce', 'hromadske_wpdialog_contents');
 }
 function wptuts_add_buttons( $plugin_array ) {
     $plugin_array['wptuts'] = get_template_directory_uri() . '/wptuts-editor-buttons/wptuts-plugin.js';
@@ -407,6 +410,32 @@ function wptuts_add_buttons( $plugin_array ) {
 function wptuts_register_buttons( $buttons ) {
     array_push( $buttons, 'background-text', 'quote-type1', 'quote-type2' ); // dropcap', 'recentposts
     return $buttons;
+}
+
+foreach ( array('post.php','post-new.php') as $hook ) {
+    add_action( "admin_head-$hook", 'my_admin_head' );
+}
+/**
+ * Localize Script
+ */
+function my_admin_head() {
+    ?>
+    <!-- TinyMCE Shortcode Plugin -->
+    <script type='text/javascript'>
+        var wptuts_plugin = {
+            'background_text_title' : '<?php _e( 'Add background for text', 'hromadske-tv' ) ?>',
+            'quote_type1_title' : '<?php _e( 'Quote type 1', 'hromadske-tv' ) ?>',
+            'quote_type2_title' : '<?php _e( 'Add shortcode: quote type 2', 'hromadske-tv' ) ?>',
+            'form_title' : '<?php _e( 'Add autor?', 'hromadske-tv' ) ?>',
+            'label_name': '<?php _e( 'Name', 'hromadske-tv' ) ?>',
+            'label_url': '<?php _e( 'Photo URL', 'hromadske-tv' ) ?>',
+            'label_button': '<?php _e( 'Upload/select File', 'hromadske-tv' ) ?>',
+            'label_description': '<?php _e( 'Description', 'hromadske-tv')?>',
+
+        };
+    </script>
+    <!-- TinyMCE Shortcode Plugin -->
+    <?php
 }
 
 
@@ -443,7 +472,6 @@ function wp_quote_type2_func( $atts, $content) {
 }
 
 function admin_ajax() {
-  // wp_enqueue_script('libs');
    wp_enqueue_script( 'ajax-script', get_theme_file_uri( '/js/ajax-script.js' ), array('libs') );
 }
 add_action('wp_enqueue_scripts', 'admin_ajax');
@@ -522,7 +550,7 @@ function add_search_func()
         if (($_POST['event']=='show.tab') || ($_POST['event']=='click_pag')): ?>
             <span class="count_post" data-count="<?php echo $q->max_num_pages; ?>">
                 <?php $count = $q->found_posts;
-                echo 'Знайдено ' .$count .' результатів'; ?>
+                echo sprintf( _n( 'Found 1 result', 'Found %s results', $count, 'hromadske-tv' ), $count ); ?>
             </span>
         <?php endif; ?>
         <ul class="list-news">
@@ -732,3 +760,39 @@ function cc_mime_types( $mimes ){
     return $mimes;
 }
 add_filter( 'upload_mimes', 'cc_mime_types' );
+
+
+
+//----------TRANSLATE MONTH----------------------
+//-------------------------------------------------
+function true_ukrainian_date_forms($the_date = '') {
+    if ( substr_count($the_date , '---') > 0 ) {
+        return str_replace('---', '', $the_date);
+    }
+    $replacements = array(
+        "Січень" => "січня",
+        "Лютий" => "лютого",
+        "Березень" => "березня",
+        "Квітень" => "квітня",
+        "Травень" => "травня",
+        "Червень" => "червня",
+        "Липень" => "липня",
+        "Серпень" => "серпня",
+        "Вересень" => "вересня",
+        "Жовтень" => "жовтня",
+        "Листопад" => "листопада",
+        "Грудень" => "грудня"
+    );
+    return strtr($the_date, $replacements);
+}
+
+add_filter('the_time', 'true_ukrainian_date_forms');
+add_filter('get_the_time', 'true_ukrainian_date_forms');
+add_filter('the_date', 'true_ukrainian_date_forms');
+add_filter('get_the_date', 'true_ukrainian_date_forms');
+add_filter('the_modified_time', 'true_ukrainian_date_forms');
+add_filter('get_the_modified_date', 'true_ukrainian_date_forms');
+add_filter('get_post_time', 'true_ukrainian_date_forms');
+add_filter('get_comment_date', 'true_ukrainian_date_forms');
+add_filter('get_comment_date', 'true_ukrainian_date_forms');
+add_filter('date_i18n', 'true_ukrainian_date_forms');

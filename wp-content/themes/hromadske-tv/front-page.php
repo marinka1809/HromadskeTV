@@ -181,6 +181,10 @@ get_header(); ?>
                             } ?>
                         </ul>
                     </div>
+                    <section class="si-icons si-icons-default">
+                        <span class="si-icon si-icon-hamburger-cross" data-icon-name="hamburgerCross"></span>
+                        <!-- ... -->
+                    </section>
                 </section>
             <?php endif;?>
             <?php wp_reset_postdata();?>

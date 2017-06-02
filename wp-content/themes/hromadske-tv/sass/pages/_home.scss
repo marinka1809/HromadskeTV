@@ -287,25 +287,26 @@
 
   h2 {
     margin-bottom: 20px;
-    font: 14px GothamProBold;
+    font: 26px/30px GothamProBold;
     color: #171617;
   }
 
-  #text-5 {
-    text-align: center;
-
-    .wrapper {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      //padding: 45px 15px;
-      border-radius: 2px;
-      border: 1px solid #e2e7eb;
-    }
-
-    .color {
-      color: $color-second;
-    }
+  .wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 60px;
+    border-radius: 2px;
+    border: 1px solid #e2e7eb;
   }
+
+  .color-blue {
+    color: #2d4486;
+    }
+
+  .color-red {
+    color: #d20c05;
+  }
+
 }

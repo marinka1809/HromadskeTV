@@ -97,7 +97,16 @@ $(document).ready(function(){
     $('#up').click(function() {
         $('html, body').animate({scrollTop: 0}, 'slow');
         return false;
-    })
+    });
+
+
+
+    (function() {
+        // initialize all
+        [].slice.call( document.querySelectorAll( '.si-icons-default > .si-icon' ) ).forEach( function( el ) {
+            var svgicon = new svgIcon( el, svgIconConfig );
+        } );
+    })();
 });
 
 $(window).scroll(function() {
@@ -112,5 +121,4 @@ $(window).scroll(function() {
 
 
 });
-
 
