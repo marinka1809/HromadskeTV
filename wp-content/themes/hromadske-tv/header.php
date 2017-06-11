@@ -61,11 +61,12 @@
                     <?php get_search_form()?>
 
                     <div class="toggle-container" id="toggle-container">
-                        <input class="burger-check" id="burger-check" type="checkbox">
-                        <label for="burger-check" class="burger"></label>
+                        <section class="si-icons si-icons-default">
+                            <span class="si-icon si-icon-hamburger-cross" data-icon-name="hamburgerCross"></span>
+                        </section>
                         <div class="toggle-menu">
-                            <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
                             <?php get_search_form()?>
+                            <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
                             <?php get_template_part( 'template-parts/social-link' ); ?>
                             <a class="link-donate" href="<?php echo get_page_link(get_theme_mod('page-donate') ); ?>"><?php echo get_theme_mod('inscription-donate'); ?></a>
                         </div>

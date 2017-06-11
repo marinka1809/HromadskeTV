@@ -48,7 +48,7 @@ add_action('customize_register', function($customizer){
     $customizer->add_section(
         'titles-section',
         array(
-            'title' => esc_html__( 'Titles sections', 'hromadske-tv' ),
+            'title' => esc_html__( 'Sections', 'hromadske-tv' ),
             'description' => esc_html__( 'Titles section for front page.', 'hromadske-tv' ),
             'panel' => 'settings-front-page'
         )
@@ -120,6 +120,19 @@ add_action('customize_register', function($customizer){
     );
 
     $customizer->add_setting(
+        'disable-social-section'
+    );
+
+    $customizer->add_control(
+        'disable-social-section',
+        array(
+            'label' => esc_html__( 'Disable section social networking?', 'hromadske-tv' ),
+            'section' => 'titles-section',
+            'type' => 'checkbox',
+        )
+    );
+
+    $customizer->add_setting(
         'title-social-section',
         array('default' => 'Будь в курсі останніх новин')
     );
@@ -131,6 +144,7 @@ add_action('customize_register', function($customizer){
             'type' => 'text',
         )
     );
+
     $customizer->add_section(
         'button-donations',
         array(

@@ -1,20 +1,24 @@
+//-----------------------------------------------------
+//----------------------SEARCH-PAGE-------------------
+//-----------------------------------------------------
+
 .search-page {
-  padding: 65px 0 120px;
+  padding: 40px 20px 40px;
   width: 770px;
   max-width: 100%;
   margin: 0 auto;
   color: #171617;
-  font: 20px GothamProRegular;
+  font: 14px GothamProRegular;
 
   .blog-nav {
-    margin-top: 50px;
+    margin-top: 30px;
   }
 
   .menu-search-container {
     .searchform {
       display: flex;
       margin-bottom: 30px;
-      padding: 18px 25px;
+      padding: 9px 25px;
       border: 1px solid #eeeeee;
       border-radius: 82px;
     }
@@ -47,14 +51,19 @@
   }
 
   .search-nav {
-    margin-bottom: 15px;
-    font: 16px GothamProBold;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font: 14px GothamProBold;
     color: #171617;
     border-bottom: 1px solid #eeeeee;
 
+    li {
+      margin-right: 7px;
+    }
+
     a {
-      margin-right: 30px;
-      padding: 15px 0;
+      padding: 10px 0;
       color: inherit;
       text-transform: uppercase;
       border-radius: 0;

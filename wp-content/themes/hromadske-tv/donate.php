@@ -13,7 +13,7 @@ get_header();?>
                     </header>
                 </div>
                 <div class="row flex-block">
-                    <div class="col-md-5 col-md-offset-1 bank-details">
+                    <div class="col-sm-6 col-md-5 col-md-offset-1 bank-details">
                         <div class="block">
                             <h2><?php echo get_post_meta($post->ID, 'title-bank_details', 1); ?></h2>
                             <?php $ban_details = get_post_meta($post->ID, 'bank_details', 1);
@@ -26,7 +26,7 @@ get_header();?>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-5  online-payment">
+                    <div class="col-sm-6 col-md-5 online-payment">
                         <div class="block">
                             <h2><?php echo get_post_meta($post->ID, 'title-online_payment', 1); ?></h2>
                             <form>

@@ -23,24 +23,32 @@ get_header();?>
             </header><!-- .page-header -->
 
             <div class="container">
-            <ul class="row list-stories">
+                <ul class="row list-stories">
 
                 <?php while ( have_posts() ) : the_post();
 
                     get_template_part( 'template-parts/content', 'regular-thumbnail' );
 
                 endwhile;?>
-            </ul>
-            <div class="blog-nav">
-                <?php echo paginate_links(array(
-                       // 'total'        => $queryStories->max_num_pages,
-                        'prev_text'    => __('<'),
-                        'next_text'    => __('>'),
-                        'mid_size'     => 2,
-                    )
-                );?>
+                </ul>
+                <div class="tablet blog-nav">
+                    <?php echo paginate_links(array(
+                            'prev_text'    => '<',
+                            'next_text'    => '>',
+                            'mid_size'     => 2,
+                        )
+                    );?>
+                </div>
+                <div class="mobile blog-nav">
+                    <?php echo paginate_links(array(
+                            'prev_text'    => '<span> < </span><span>' .__( 'Prev', 'hromadske-tv' ) .'</span>',
+                            'next_text'    => '<span>' .__('Next', 'hromadske-tv' ) .'</span><span> > </span>',
+                            'mid_size'     => 0,
+                        )
+                    );?>
+                </div>
             </div>
-            </div>
+
 
         <?php else :
             get_template_part( 'template-parts/content', 'none' );

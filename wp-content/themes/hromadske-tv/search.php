@@ -16,10 +16,10 @@ get_header(); ?>
     if ( have_posts() ) : ?>
 
         <ul class="nav nav-pills search-nav" role="tablist">
-            <li role="presentation" ><a href="#all-content" aria-controls="all-content" role="tab" data-toggle="tab" id="first">Усе</a></li>
-            <li role="presentation"><a href="#news-content" aria-controls="website-content" role="tab" data-toggle="tab">Новини</a></li>
-            <li role="presentation"><a href="#stories-content" aria-controls="logo-content" role="tab" data-toggle="tab">Історії</a></li>
-            <li role="presentation"><a href="#project-content" aria-controls="kit-content" role="tab" data-toggle="tab">Проекти</a></li>
+            <li role="presentation" ><a href="#all-content" aria-controls="all-content" role="tab" data-toggle="tab" id="first"><?php esc_html_e('All', 'hromadske-tv') ?></a></li>
+            <li role="presentation"><a href="#news-content" aria-controls="website-content" role="tab" data-toggle="tab"><?php esc_html_e('News', 'hromadske-tv') ?></a></li>
+            <li role="presentation"><a href="#stories-content" aria-controls="logo-content" role="tab" data-toggle="tab"><?php esc_html_e('Stories', 'hromadske-tv') ?></a></li>
+            <li role="presentation"><a href="#project-content" aria-controls="kit-content" role="tab" data-toggle="tab"><?php esc_html_e('Projects', 'hromadske-tv') ?></a></li>
         </ul>
 
         <script>

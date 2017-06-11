@@ -1,12 +1,12 @@
 .section {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .section-header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 
   h1, h2 {
     font: 22px/1em GothamProBlack;
@@ -15,16 +15,15 @@
 
   .link-all-articles {
     padding-bottom: 5px;
-    font: 14px $font-content;
-    font-weight: 700;
+    font: 19px GothamProBlack;
     color: inherit;
     border-bottom: 4px solid $color-primary;
-    text-transform: uppercase;
     transition: all 0.2s ease;
 
     &:after {
       content: "  \e908";
       font: normal 12px 'icomoon';
+      color: $color-primary;
       transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
@@ -35,10 +34,22 @@
 }
 
 .img-wrapper {
+  position: relative;
+  display: block;
   width: 100%;
   margin-bottom: 20px;
   border-radius: 5px;
   overflow: hidden;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left:0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: all ease 0.5s;
+  }
 
   img {
     width: 100%;
@@ -50,14 +61,13 @@
 //-------------------------WELCOME---------------------
 
 .top-block {
- // margin-top: 140px;
 
   .last-news {
     background-color: #ffffff;
 
     .wrapper {
       width: 100%;
-      padding: 0 30px;
+      padding: 0 20px;
       color: #171617;
 
       h2 {
@@ -127,8 +137,15 @@
   color: #ffffff;
 
   .bg-dark {
-    padding: 60px 0 30px;
+    padding: 10px 0 0;
     background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .flex-block {
+    display: flex;
+    height: auto;
+    min-height: calc(100vh - 100px);
+    align-items: center;
   }
 
   h1 {
@@ -146,7 +163,7 @@
   }
 
   p {
-    margin-bottom: 35px;
+    margin-bottom: 55px;
     font: 18px $font-content;
     opacity: 0.8;
   }
@@ -155,10 +172,11 @@
 //-------------------------IMPORTANT-NEWS---------------------
 
 .important-news-section {
+  padding-bottom: 10px;
 
   .item-important-posts {
-    margin-bottom: 60px;
-    height: 380px;
+    margin-bottom: 30px;
+    height: 340px;
     cursor: pointer;
 
     .item-wrapper {
@@ -166,7 +184,13 @@
       height: 100%;
       padding-bottom: 20px;
       border-bottom: 1px solid #eeeeee;
+
       &:hover {
+        .img-wrapper:after {
+          background-color: #000000;
+          opacity: 0.4;
+          transition: all ease 0.5s;
+        }
         h3 {
           color: $color-second-text;
         }
@@ -202,7 +226,7 @@
 
   h1 {
     font: 24px/1.2em GothamProBlack;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 
     a {
       transition: all ease 0.5s;
@@ -215,7 +239,7 @@
 
   p {
     margin-bottom: 30px;
-    font: 18px/1.5em $font-content;
+    font: 14px/1.5em $font-content;
     opacity: 0.8;
   }
 }
@@ -226,14 +250,15 @@
   text-align: center;
 
   h1 {
-    margin-bottom: 30px;
-    font: 20px GothamProBold;
+    margin-bottom: 20px;
+    font: 22px GothamProBold;
     color: #171617;
   }
 }
 
 //-------------------------PROJECT-SECTION---------------------
 .front-project-section {
+  padding-bottom: 10px;
   background-color: #eff2f7;
 
   .first-item-project {
@@ -241,13 +266,21 @@
   }
 
   .item-project {
-    height: 390px;
+    margin-bottom: 30px;
+    height: auto;
+    max-height: 390px;
     cursor: pointer;
 
     a {
       display: block;
 
       &:hover {
+        .img-wrapper:after {
+          background-color: #000000;
+          opacity: 0.4;
+          transition: all ease 0.5s;
+        }
+
         h3 {
           color: $color-second-text;
         }
@@ -271,34 +304,33 @@
 
 //-------------------------SOCIAL-SECTION---------------------
 .front-social-section {
+  padding-bottom: 0;
   text-align: center;
+
+  h1, h2 {
+    margin-bottom: 20px;
+    font: 22px/26px GothamProBold;
+    color: #171617;
+  }
 
   h1 {
     margin-bottom: 30px;
-    font: 20px GothamProBold;
-    color: #171617;
   }
 
-  ul {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
+  li {
+    margin-bottom: 40px;
 
-  h2 {
-    margin-bottom: 20px;
-    font: 26px/30px GothamProBold;
-    color: #171617;
+    &:last-child {
+      margin-bottom: 0;
+      .wrapper {
+        border-bottom: none;
+      }
+    }
   }
 
   .wrapper {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 40px 60px;
-    border-radius: 2px;
-    border: 1px solid #e2e7eb;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e2e7eb;
   }
 
   .color-blue {

@@ -29,7 +29,7 @@ get_header();?>
                     <h1><?php the_field("title_section_team"); ?></h1>
                     <ul class="row">
                         <?php while ( $employeesPosts->have_posts() ) : $employeesPosts->the_post();?>
-                            <li class="col-sm-4">
+                            <li class="col-sm-6 col-md-4">
                                 <article>
                                     <?php the_post_thumbnail('thumbnails');?>
                                     <h3><?php the_title();?></h3>

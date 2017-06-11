@@ -1,6 +1,26 @@
 @media screen and (min-width: 768px) {
+
+  .container{
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .tablet {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+
   .site-content {
     padding-top: 120px;
+  }
+
+  main {
+    h1 {
+      font: 48px GothamProBlack;
+    }
   }
 
   .section {
@@ -13,6 +33,61 @@
     h1, h2 {
       font: 48px/1em GothamProBlack;
       margin-right: 2em;
+    }
+
+    .link-all-articles {
+      font: 14px $font-content;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  hr {
+    margin: 60px auto;
+  }
+
+  //--------------------LINKS-------------------------
+  //--------------------------------------------------
+
+  .link-front-page {
+    padding: 0 30px;
+    font: 15px/48px GothamProBold;
+
+    &:hover {
+      padding: 0 36px;
+    }
+  }
+
+  //-----------------PAGINATE------------------------
+  //---------------------------------------------
+  .blog-nav {
+    height: auto;
+
+    .page-numbers {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .prev,
+    .next {
+      float: none;
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+  //--------TITLE SECTION------------------------
+  //---------------------------------------------
+  .title-section {
+    padding: 100px 0;
+
+    h1 {
+      margin-bottom: 30px;
+      font: 48px/1.2em GothamProBlack;
+    }
+
+    p{
+      font: 22px/1.5em $font-content;
     }
   }
 
@@ -73,13 +148,33 @@
       }
     }
 
-    .menu-search-container  {
-      display: none;
+    // ----------------------------
+    // NAV Search Form
+    // ----------------------------
+    #menu-search {
+      display: block;
     }
 
+    .menu-search-container  {
+      display: none;
+      left: 30%;
+      width: 67%;
+    }
+
+    .toggle-container {
+      margin-left: 10px;
+    }
+
+    .si-icon-hamburger-cross {
+      margin: 0;
+    }
+
+    // ----------------------------
+    // TOGGLE-MENU
+    // ----------------------------
     .toggle-menu {
-      top: 70px;
-      width: 50%;
+      right: 0;
+      left: 50%;
       text-align: right;
 
       .menu,
@@ -90,6 +185,20 @@
 
   }
 
+  //--------Scroll button ------------------------
+  //---------------------------------------------
+  #up {
+    position: fixed;
+    bottom: 50px;
+    right: 3px;
+  }
+
+
+
+
+  //-----------------------------------------------------
+  //------------------------HOME-PAGE--------------------
+  //-----------------------------------------------------
 
 
   //-------------------------WELCOME---------------------
@@ -115,9 +224,11 @@
         }
 
         article {
+          width: 33.3%;
+
           .item-news {
-            width: 33.3%;
-            padding: 30px 15px 10px;
+            display: block;
+            padding: 30px 30px 10px;
             border-bottom: 1px solid #dedede;
             height: 200px;
             border-right: 1px solid #dedede;
@@ -156,13 +267,14 @@
     color: #ffffff;
 
     .bg-dark {
+
       padding: 70px 0;
       background-color: rgba(0, 0, 0, 0.5);
     }
 
     .flex-block {
       display: flex;
-      height: 100%;
+      min-height: 100px;
       align-items: center;
     }
 
@@ -263,11 +375,493 @@
   //-------------------------SOCIAL-SECTION---------------------
   .front-social-section {
 
-    h1 {
-      margin-bottom: 30px;
-      font-size: 26px;
+    h1, h2 {
+      margin-bottom: 20px;
+      font: 26px/30px GothamProBold;
     }
 
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    li {
+      &:last-child {
+        margin-bottom: 0;
+        .wrapper {
+          border: 1px solid #e2e7eb;
+        }
+      }
+    }
+
+    .wrapper {
+      height: 100%;
+      padding: 40px 60px;
+      border-radius: 2px;
+      border: 1px solid #e2e7eb;
+    }
+  }
+
+  //-----------------------------------------------------
+  //------------------------NEWS-PAGE--------------------
+  //-----------------------------------------------------
+
+  .page-news {
+    padding-top: 60px;
+    padding-bottom: 120px;
+    font: 20px GothamProRegular;
+
+    aside {
+      h1 {
+        margin-bottom: 30px;
+      }
+    }
+
+    h1 {
+      text-align: left;
+      font: 48px GothamProBlack;
+    }
+
+    .blog-nav {
+      margin-top: 50px;
+    }
+  }
+
+  .list-news {
+
+    li {
+      article {
+
+        a {
+          flex-direction: row;
+          padding: 30px 0;
+        }
+      }
+    }
+
+    .info-news {
+      flex-direction: column;
+      margin-bottom: 0;
+      margin-right: 45px;
+
+      .time,
+      time {
+        margin-right: 0;
+      }
+
+      .important-label,
+      .updated-label {
+        margin-bottom: 7px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .more-news {
+    box-sizing: border-box;
+    margin-left: 0;
+    padding: 0 10px;
+    border-radius: 8px;
+  }
+
+
+  //-----------------------------------------------------
+  //----------------------SEARCH-PAGE-------------------
+  //-----------------------------------------------------
+
+  .search-page {
+    padding: 65px 30px 120px;
+    font: 20px GothamProRegular;
+
+    .blog-nav {
+      margin-top: 50px;
+    }
+
+    .menu-search-container {
+      .searchform {
+        padding: 18px 25px;
+      }
+    }
+
+    .search-nav {
+      display: block;
+      margin-bottom: 15px;
+      font: 16px GothamProBold;;
+
+      li {
+        margin-right: 0;
+      }
+
+      a {
+        margin-right: 30px;
+        padding: 15px 0;
+      }
+    }
+  }
+
+  //-----------------------------------------------------
+  //------------STORIES-PAGE (episodes)------------------
+  //-----------------------------------------------------
+  .stories-page,
+  .project-page {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .blog-nav {
+      margin-bottom: 0;
+    }
+  }
+
+  .list-stories,
+  .list-episodes {
+
+    li {
+      margin-bottom: 60px;
+
+      article {
+        height: 320px;
+        padding-bottom: 25px;
+
+      }
+
+      h2 {
+        font: 20px/1.2em GothamProBold;
+      }
+    }
+  }
+
+  //-----------------------------------------------------
+  //----------------------PROJECT-PAGE-------------------
+  //-----------------------------------------------------
+  //
+  .project-page {
+    .blog-nav {
+      margin-top: 60px;
+    }
+  }
+
+  .list-projects {
+
+    .item-project {
+      margin-bottom: 60px;
+
+      .small-content {
+        height: 380px;
+        max-height: 380px;
+        padding-bottom: 25px;
+      }
+
+      h3 {
+        font: 24px/1.2em GothamProBold;
+      }
+
+      p {
+        font: 16px/1.5em $font-content;
+      }
+    }
+  }
+
+  //-----------------------------------------------------
+  //-----------------SINGL PROJECT-PAGE------------------
+  //-----------------------------------------------------
+
+  .project-title-section {
+    padding: 70px 0;
+
+    .type {
+      margin-bottom: 30px;
+      font: 16px GothamProBold;
+    }
+  }
+
+  .single-project-page {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+
+
+
+  //-----------------------------------------------------
+  //-----------------ABOUT-PAGE------------------
+  //-----------------------------------------------------
+
+  .about-page {
+    h1 {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+  }
+
+  .team-section {
+    padding: 120px 0 0;
+
+    li{
+      margin-bottom: 60px;
+    }
+
+    article {
+      padding-bottom: 30px;
+    }
+  }
+
+  .contacts-section {
+    padding: 70px 0 120px;
+
+
+    address {
+      margin-bottom: 50px;
+    }
+
+    .center-li {
+
+      &:after,
+      &:before {
+        position: absolute;
+        top: 50%;
+        width: 2px;
+        height: 50px;
+        transform:  translateY(-50%);
+      }
+
+      &:before {
+        left: 0;
+      }
+
+      &:after {
+        right: 0;
+      }
+    }
+  }
+
+  //------------------Google map------------------------
+  .acf-map {
+    width: 100%;
+    height: 315px;
+  }
+
+  //---------------------------------------------
+  //------------------REGULAR PAGE---------------
+  //---------------------------------------------
+
+  .page-id-31 {
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .content-regular-page {
+
+    padding-top: 80px;
+    padding-bottom: 90px;
+    font: 18px/1.7em $font-content;
+
+    h2,
+    h3 {
+      margin-top: 60px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font: 800 2em/1.2em $font-content;
+    }
+
+    h3 {
+      font: 800 1.5em/1.2em $font-content;
+    }
+
+    p,
+    br,
+    ol,
+    ul {
+      margin-bottom: 30px;
+    }
+
+    ol {
+      padding-left: 50px;
+    }
+
+    ul {
+      padding-left: 50px;
+    }
+
+    //-----------------------form------------------------
+
+    .gform_wrapper {
+
+      span.gform_description {
+        margin-bottom: 100px;
+        font: 16px/24px $font-content;
+      }
+
+      ul.gform_fields{
+
+        li.gfield {
+          margin-bottom: 0;
+        }
+
+        li.gfield.gfield_html {
+          margin-bottom: 35px;
+        }
+      }
+
+      .top_label .gfield_label {
+        margin-left: 25px;
+        font: 14px/2em GothamProBold;
+      }
+
+      input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+      textarea {
+        padding: 20px 25px;
+        font: 18px/1.2em $font-content;
+      }
+
+      .ginput_container_fileupload {
+        margin-bottom: 40px;
+      }
+
+      .gform_fileupload_multifile {
+
+        .gform_drop_area {
+          padding: 25px;
+        }
+      }
+
+      #gform_preview_1_10 {
+        position: absolute;
+        top: 53px;
+        left: 20px;
+        right: auto;
+        max-width: 400px;
+      }
+
+      .ginput_preview{
+        overflow: hidden;
+      }
+
+      .gform_footer {
+
+        input[type="submit"] {
+          padding: 0 30px;
+          font:15px/48px GothamProBold;
+
+          &:hover {
+            padding: 0 36px;
+          }
+        }
+      }
+    }
+  }
+
+
+  //---------------------------------------------
+  //------------DONATE (+REPORT) PAGE------------
+  //---------------------------------------------
+
+  .donate-content,
+  .reports-content {
+    padding: 80px 0 120px;
+
+    header {
+      margin-bottom: 60px;
+
+      h1 {
+        margin-bottom: 30px;
+        font: 48px/1.2em GothamProBlack;
+      }
+
+      p {
+        font: 16px/1.5em $font-content;
+      }
+    }
+
+    .block {
+      margin-bottom: 0;
+
+      h2 {
+        font: 26px GothamProBold;
+      }
+    }
+
+    .flex-block {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .bank-details  {
+      li {
+        margin-bottom: 20px;
+        font: 16px/1.5em $font-content;
+      }
+    }
+
+    .file-link {
+      margin-left: 35px;
+      padding: 35px 0;
+      font: 20px/1.2em GothamProBold;
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        transform:  translateY(-50%);
+        left: -35px;
+      }
+    }
+  }
+
+  //---------------------------------------------
+  //------------404 PAGE (+ NEWS SENT)------------
+  //---------------------------------------------
+
+  .error-404-content,
+  .news-sent-content {
+    padding-top: 90px;
+  }
+
+  .error-404,
+  .news-sent {
+    padding-bottom: 90px;
+
+    h1{
+      margin-bottom: 15px;
+      font: 62px/1.2em GothamProBlack;
+    }
+
+    p {
+      font:16px/1.5em $font-content;
+    }
+
+    .link-front-page {
+      margin-bottom: 0;
+    }
+  }
+
+  .news-sent {
+    h1{
+      font: 48px/1.2em GothamProBlack;
+    }
+  }
+
+  //---------------------------------------------
+  //---------------ARCHIVE PAGE------------------
+  //---------------------------------------------
+  .archive-content {
+    padding-bottom: 120px;
+
+    .blog-nav {
+      margin-bottom: 0;
+    }
+
+    header {
+      margin-bottom: 80px;
+      padding: 50px 0;
+
+      h1 {
+        font: bold 32px/1.25em $font-content;
+      }
+    }
   }
 
   //-------------------------FOOTER---------------------
@@ -284,8 +878,7 @@
       text-align: left;
 
       ul {
-        width: 100%;
-        display: flex;
+        flex-direction: row;
         justify-content: space-between;
 
         li:first-child {
@@ -293,21 +886,18 @@
             padding-left: 0;
           }
         }
-
       }
 
       a {
         padding: 10px;
         font: 12px GothamProBold;
-
       }
-
-
     }
 
     .site-info {
       flex-direction: row;
-      padding: 20px 0;
+      justify-content: space-between;
+      padding: 40px 0;
     }
 
     .site-title {
@@ -317,6 +907,7 @@
     .social-link {
       margin-bottom: 0;
     }
-
   }
+
+
 }

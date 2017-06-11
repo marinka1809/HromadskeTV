@@ -1,0 +1,245 @@
+//---------------------------------------------
+//------------------REGULAR PAGE---------------
+//---------------------------------------------
+
+.page-id-31 {
+  h1 {
+    text-align: center;
+  }
+}
+.content-regular-page {
+
+  padding-top: 40px;
+  padding-bottom: 20px;
+  font: 14px/20px $font-content;
+  color: #242729;
+
+  strong {
+    font-weight: 700;
+  }
+
+  h2,
+  h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    color: #171617;
+  }
+
+  h2 {
+    font: 800 22px/1.2em $font-content;
+  }
+
+  h3 {
+    font: 800 20px/1.2em $font-content;
+  }
+
+  p,
+  br,
+  ol,
+  ul {
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: #fc2e39;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(270deg, #ff9191, #ff9191);
+    background-size: 100%;
+    background-position: 0 25px;
+    transition: all .4s ease;
+
+    &:hover {
+      background-image: linear-gradient(270deg, #ffdada, #ffdada);
+      background-position: 0 0;
+    }
+  }
+
+  ol {
+    list-style: decimal;
+    padding-left: 30px;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 30px;
+  }
+
+  //-----------------------form------------------------
+
+  .gform_wrapper {
+    width: 570px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    span.gform_description {
+      margin-bottom: 40px;
+      font: 14px/20px $font-content;
+      color: #696e72;
+      text-align: center;
+    }
+
+    ul.gform_fields{
+
+      li.gfield {
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      li.gfield.gfield_html {
+        margin-bottom: 30px;
+
+        p {
+          margin-bottom: 15px;
+          font:14px/20px $font-content;
+          opacity: 0.8;
+          color: #696e72;
+        }
+      }
+    }
+
+    .top_label .gfield_label {
+      margin-left: 20px;
+      font: 12px/2em GothamProBold;
+      color: #a6b6c8;
+      text-transform: uppercase;
+    }
+
+    input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+    textarea {
+      padding: 20px;
+      font: 16px/1.2em $font-content;
+      color: #171617;
+      border-radius: 8px;
+      border: 1px solid #e5e5e5;
+      outline: none;
+
+      &:focus {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .ginput_container_fileupload {
+      margin-bottom: 20px;
+    }
+
+    .gform_fileupload_multifile {
+
+      .gform_drop_area {
+        height: 60px;
+        padding: 20px;
+        border: 1px solid #e5e5e5;
+        color: #171617;
+        margin-bottom: 5px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+
+        &:focus {
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+
+    .ginput_container span:not(.ginput_price) {
+      display: none;
+    }
+
+    span.gform_drop_instructions {
+      display: none;
+    }
+
+    input.button.gform_button_select_files {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0 30px;
+      font: 15px GothamProBold;
+      color: #171617;
+      border-radius: 0 8px 8px 0;
+      border: 0;
+      border-left: 1px solid #e5e5e5;
+      background-color: #eff2f7;
+
+
+    }
+
+    .gfield_required {
+      display: none;
+    }
+
+
+
+    #gform_preview_1_10 {
+      position: absolute;
+      top: 53px;
+      left: 5px;
+      right: 135px;
+    }
+
+    .ginput_preview{
+      position: relative;
+      color: #171617;
+      font-family: 16px $font-content;
+      white-space: nowrap;
+      direction: rtl;
+      overflow: scroll;
+
+      strong {
+        font-weight: 400;
+
+        &:after {
+          margin-left: 10px;
+          content:"\e90f";
+          font: 16px 'icomoon';
+          color: #a6b6c8;
+        }
+      }
+
+      &:hover {
+        strong:after {
+          color: $color-primary;
+        }
+      }
+    }
+
+    .gform_delete {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      transform:  translateY(-50%);
+      right: 0;
+      opacity: 0;
+    }
+
+    .gform_footer {
+      text-align: center;
+
+      input[type="submit"].gform_button {
+        width: auto;
+        padding: 0 36px;
+        color: #ffffff;
+        font:15px/60px GothamProBold;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 26px;
+        background-color: #f6921e;
+        transition: all 0.5s ease;
+
+        &:hover {
+          padding: 0 42px;
+        }
+      }
+
+      input:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
+         line-height: 60px;
+      }
+    }
+
+
+  }
+}

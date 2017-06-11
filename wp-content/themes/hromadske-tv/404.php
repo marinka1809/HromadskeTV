@@ -21,8 +21,8 @@ get_header(); ?>
 			</section><!-- .error-404 -->
 
 
-            <?php get_template_part( 'template-parts/social-section' );?>
 
+            <?php get_template_part( 'template-parts/social-section' );?>
 
             <?php get_template_part( 'template-parts/important-news' );?>
 

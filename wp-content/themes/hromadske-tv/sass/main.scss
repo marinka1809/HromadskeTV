@@ -107,6 +107,16 @@ $color-second: #f61e1e;
 $color-second-text: #ff4848;
 
 @import "reset";
+.site {
+
+}
+.container {
+  padding: 0 20px;
+}
+
+.tablet {
+  display: none;
+}
 
 a {
   color: inherit;
@@ -125,12 +135,12 @@ body {
 }
 
 .site-content {
- padding-top: 90px;
+ padding-top: 100px;
 }
 
 main {
   h1 {
-    font: 48px GothamProBlack;
+    font: 24px/30px GothamProBlack;
   }
 }
 
@@ -150,8 +160,8 @@ main {
 
 .link-front-page {
   display: inline-block;
-  padding: 0 30px;
-  font: 15px/48px GothamProBold;
+  padding: 0 36px;
+  font: 15px/60px GothamProBold;
   color: #ffffff;
   text-transform: uppercase;
   border-radius: 28px;
@@ -160,7 +170,7 @@ main {
   transition: all ease 0.5s;
 
   &:hover {
-    padding: 0 36px;
+    padding: 0 42px;
   }
 }
 
@@ -217,7 +227,7 @@ main {
 //-----------------------------------------
 hr {
   position: relative;
-  margin: 60px auto;
+  margin: 30px auto;
   border: none;
   width: 5px;
   height: 5px;
@@ -329,17 +339,6 @@ hr {
   }
 }
 
-.stories-page,
-.project-page {
-  padding-top: 60px;
-  padding-bottom: 60px;
-
-  h1 {
-    margin-bottom: 40px;
-    text-align: center;
-  }
-}
-
 //-----------------ASIDE------------------------
 //---------------------------------------------
 aside {
@@ -383,14 +382,14 @@ aside {
 
 //-----------------PAGINATE------------------------
 //---------------------------------------------
-.blog-nav {
+.blog-nav {;
+  height: 40px;
   text-align: center;
   font: 14px/2.5em GothamProBold;
   color: #696e72;
 
   .page-numbers {
-    margin: 0 10px;
-    display: inline-block;
+    display: none;
     padding: 0 1em;
     border-radius: 4px;
   }
@@ -402,7 +401,18 @@ aside {
 
   .prev,
   .next {
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .prev {
+    float: left;
+  }
+
+  .next {
+    float: right;
   }
 
   a {
@@ -414,278 +424,36 @@ aside {
   }
 }
 
+
+//--------TITLE SECTION------------------------
+//---------------------------------------------
 .title-section {
-  padding: 100px 0;
+  padding: 40px 0;
   color: #ffffff;
   text-align: center;
   overflow: hidden;
 
   h1 {
-    margin-bottom: 30px;
-    font: 48px/1.2em GothamProBlack;
+    margin-bottom: 10px;
+    font: 24px/1.2em GothamProBlack;
   }
 
   p{
-    font: 22px/1.5em $font-content;
+    font: 14px/20px $font-content;
     opacity: 0.8;
   }
 }
 
-//--------REGULAR PAGE------------------------
-//---------------------------------------------
-
-.page-id-31 {
-  h1 {
-    text-align: center;
-  }
-}
-.content-regular-page {
-
-  padding-top: 80px;
-  padding-bottom: 90px;
-  font: 18px/1.7em $font-content;
-  color: #242729;
-
-  strong {
-    font-weight: 700;
-  }
-
-  h2,
-  h3 {
-    margin-top: 60px;
-    margin-bottom: 30px;
-  }
-
-  h1 {
-    margin-bottom: 20px;
-    color: #171617;
-  }
-
-
-
-  h2 {
-    font: 800 2em/1.2em $font-content;
-  }
-
-  h3 {
-    font: 800 1.5em/1.2em $font-content;
-  }
-
-  p,
-  br,
-  ol,
-  ul {
-    margin-bottom: 30px;
-  }
-
-  a {
-    color: #fc2e39;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(270deg, #ff9191, #ff9191);
-    background-size: 100%;
-    background-position: 0 25px;
-    transition: all .4s ease;
-
-    &:hover {
-      background-image: linear-gradient(270deg, #ffdada, #ffdada);
-      background-position: 0 0;
-    }
-  }
-
-  ol {
-    list-style: decimal;
-    padding-left: 50px;
-  }
-
-  ul {
-    list-style: disc;
-    padding-left: 50px;
-  }
-
-  //-----------------------form------------------------
-
-  .gform_wrapper {
-    width: 570px;
-    max-width: 100%;
-    margin: 0 auto;
-
-    span.gform_description {
-      margin-bottom: 100px;
-      font: 16px/24px $font-content;
-      color: #696e72;
-      text-align: center;
-    }
-
-    ul.gform_fields{
-
-      li.gfield {
-        position: relative;
-      }
-
-      li.gfield.gfield_html {
-        margin-bottom: 35px;
-
-        p {
-          margin-bottom: 15px;
-          font:14px/20px $font-content;
-          opacity: 0.8;
-          color: #696e72;
-        }
-      }
-    }
-
-    .top_label .gfield_label {
-      margin-left: 25px;
-      font: 14px/2em GothamProBold;
-      color: #a6b6c8;
-      text-transform: uppercase;
-    }
-
-    input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
-    textarea {
-      padding: 20px 25px;
-      font-family:18px/1.2em $font-content;
-      color: #171617;
-      border-radius: 8px;
-      border: 1px solid #e5e5e5;
-      outline: none;
-
-      &:focus {
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-    }
-    .ginput_container_fileupload {
-      margin-bottom: 40px;
-    }
-
-    .gform_fileupload_multifile {
-
-      .gform_drop_area {
-        height: 60px;
-        padding: 25px;
-        border: 1px solid #e5e5e5;
-        color: #171617;
-        margin-bottom: 5px;
-        background-color: #ffffff;
-        border-radius: 8px;
-        overflow: hidden;
-
-        &:focus {
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-      }
-    }
-
-    span.gform_drop_instructions {
-      display: none;
-    }
-
-    input.button.gform_button_select_files {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      padding: 0 30px;
-      font: 15px GothamProBold;
-      color: #171617;
-      border-radius: 0 8px 8px 0;
-      border: 0;
-      border-left: 1px solid #e5e5e5;
-      background-color: #eff2f7;
-
-
-    }
-
-    .gfield_required {
-       display: none;
-     }
-
-
-
-    #gform_preview_1_10 {
-      position: absolute;
-      top: 53px;
-      left: 20px;
-    }
-
-    .ginput_preview{
-      position: relative;
-      //padding-right: 25px;
-      color: #171617;
-      font-family: 18px $font-content;
-
-      strong {
-        font-weight: 400;
-
-        &:after {
-         // position: absolute;
-         // top: 50%;
-         // transform:  translateY(-50%);
-          margin-left: 10px;
-          content:"\e90f";
-          font: 16px 'icomoon';
-          color: #a6b6c8;
-        }
-      }
-
-
-      &:hover {
-        strong:after {
-          color: $color-primary;
-        }
-      }
-    }
-
-    .gform_delete {
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      transform:  translateY(-50%);
-      right: 0;
-      opacity: 0;
-
-    }
-
-    .gform_footer {
-      text-align: center;
-
-      input[type="submit"] {
-        padding: 0 30px;
-        color: #ffffff;
-        font:15px/48px GothamProBold;
-        text-transform: uppercase;
-        border: none;
-        border-radius: 26px;
-        background-color: #f6921e;
-        transition: all 0.5s ease;
-
-        &:hover {
-          padding: 0 36px;
-        }
-      }
-    }
-  }
-
-
-
-}
-
-//--------Google map------------------------
-//---------------------------------------------
-.acf-map {
-  width: 100%;
-  height: 315px;
-}
 
 //--------Scroll button ------------------------
 //---------------------------------------------
 #up {
   display: none;
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  width: 50px;
-  height: 50px;
+  position: absolute;
+  bottom: 450px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
   box-shadow: 0 2px 8px rgba(132, 148, 164, 0.25);
   border-radius: 50%;
   transition: all ease 0.5s;
@@ -705,6 +473,7 @@ aside {
 @import "pages/singl-project";
 @import "pages/about";
 @import "pages/singl";
+@import "pages/regular-page";
 @import "pages/donate";// +reports
 @import "pages/search";
 @import "pages/error-404";
@@ -712,27 +481,9 @@ aside {
 
 @import "responsive/media768";
 @import "responsive/media992";
+@import "responsive/media768-singl";
+@import "responsive/media992-singl";
 @import "responsive/media1200";
 @import "responsive/media1400";
 
 
-
-//-------------------------------------
-
-.si-icons span {
-  display: inline-block;
-  width: 64px;
-  height: 64px;
-  margin: 40px 30px;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.si-icons-hover span {
-  width: 128px;
-  height: 128px;
-  margin: 50px 40px;
-}
-
-.no-svg .si-icon-hamburger, .no-svg .si-icon-hamburger-cross { background-image: url('../png/hamburger.png') }

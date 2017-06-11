@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hromadske-tv\n"
-"POT-Creation-Date: 2017-06-02 23:17+0300\n"
-"PO-Revision-Date: 2017-06-02 23:30+0300\n"
+"POT-Creation-Date: 2017-06-09 19:15+0300\n"
+"PO-Revision-Date: 2017-06-09 19:15+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk_UA\n"
@@ -58,141 +58,145 @@ msgstr "Додайте сюди віджет."
 msgid "Social section"
 msgstr "Секція соціальних мереж"
 
-#: functions.php:161
+#: functions.php:160
 msgid "Choice of cap"
 msgstr "Вибір типу заголовка"
 
-#: functions.php:162 functions.php:163 functions.php:164
+#: functions.php:161 functions.php:162 functions.php:163
 msgid "Additional notation"
 msgstr "Додаткові позначки"
 
-#: functions.php:167
+#: functions.php:166
 msgid "Section of bank details"
 msgstr "Розділ банківських реквізитів"
 
-#: functions.php:168
+#: functions.php:167
 msgid "Online payment section"
 msgstr "Розділ онлайн платежу"
 
-#: functions.php:177
+#: functions.php:176
 msgid "Appearance of title for single page:"
 msgstr "Зовнішній вигляд заголовка для сторінки:"
 
-#: functions.php:179
+#: functions.php:178
 msgid "image"
 msgstr "зображення"
 
-#: functions.php:180
+#: functions.php:179
 msgid "video"
 msgstr "відеозапис"
 
-#: functions.php:181
+#: functions.php:180
 msgid "clean"
 msgstr "пустий"
 
-#: functions.php:184
+#: functions.php:183
 msgid "Url video:"
 msgstr "Адреса(url ) відеозапису:"
 
-#: functions.php:198
+#: functions.php:197
 msgid "Important"
 msgstr "Важливо"
 
-#: functions.php:202
+#: functions.php:201
 msgid "Updated"
 msgstr "Оновлено"
 
-#: functions.php:216
+#: functions.php:215
 msgid "Stick front page"
 msgstr "Закріпити на головну сторінку"
 
-#: functions.php:220 functions.php:234
+#: functions.php:219 functions.php:233
 msgid "Big Thumbnail"
 msgstr "Великий шаблон"
 
-#: functions.php:245 functions.php:263
+#: functions.php:244 functions.php:262
 msgid "Title for section"
 msgstr "Заголовок ля секцї"
 
-#: functions.php:250
+#: functions.php:249
 msgid "Bank detailsn:"
 msgstr "Банківські реквізити:"
 
-#: functions.php:268
+#: functions.php:267
 msgid "Placeholder text for the input field of sum"
 msgstr "Текст placeholder для поля введення суми"
 
-#: functions.php:273
+#: functions.php:272
 msgid "Label for submit button:"
 msgstr "Напис для кнопки відправки:"
 
-#: functions.php:282
+#: functions.php:278
+msgid "Setting for ligpay"
+msgstr "Налаштування для ligpay"
+
+#: functions.php:281
 msgid "Public key:"
 msgstr "Відкритий ключ (public key):"
 
-#: functions.php:287
+#: functions.php:286
 msgid "Private key:"
 msgstr "Секретний ключ (private key:):"
 
-#: functions.php:292
+#: functions.php:291
 msgid "Purpose of payment:"
 msgstr "Призначення платежу:"
 
-#: functions.php:331 functions.php:343
+#: functions.php:330 functions.php:342
 msgid "Stick project"
 msgstr "Закрыплений проект"
 
-#: functions.php:426
+#: functions.php:425
 msgid "Add background for text"
 msgstr "Додати фон для тексту"
 
-#: functions.php:427
+#: functions.php:426
 msgid "Quote type 1"
 msgstr "Цитата 1-го типу"
 
-#: functions.php:428
+#: functions.php:427
 msgid "Add shortcode: quote type 2"
 msgstr "Додати шорткод: цитата 2-го типу"
 
-#: functions.php:429
+#: functions.php:428
 msgid "Add autor?"
 msgstr "Додати автора?"
 
-#: functions.php:430
+#: functions.php:429
 msgid "Name"
 msgstr "Ім`я"
 
-#: functions.php:431
+#: functions.php:430
 msgid "Photo URL"
-msgstr " URL фотографії"
+msgstr "URL фотографії"
 
-#: functions.php:432
+#: functions.php:431
 msgid "Upload/select File"
 msgstr "Завантаження/вибір файлу"
 
-#: functions.php:433
+#: functions.php:432
 msgid "Description"
 msgstr "Опис"
 
-#: functions.php:509 functions.php:585 stories.php:34 tag.php:37
-#: taxonomy-projects.php:49 taxonomy.php:37
-msgid "<"
-msgstr "<"
+#: functions.php:520 functions.php:604 stories.php:43 tag.php:44
+#: taxonomy-projects.php:56 taxonomy.php:44
+msgid "Prev"
+msgstr "Назад"
 
-#: functions.php:510 functions.php:586 stories.php:35 tag.php:38
-#: taxonomy-projects.php:50 taxonomy.php:38
-msgid ">"
-msgstr ">"
+#: functions.php:521 functions.php:605 stories.php:44 tag.php:45
+#: taxonomy-projects.php:57 taxonomy.php:45
+msgid "Next"
+msgstr "Далі"
 
-#: functions.php:553
+#: functions.php:564
 #, php-format
 msgid "Found 1 result"
 msgid_plural "Found %s results"
-msgstr[0] "Знайдено 1 результат"
+msgstr[0] "Знайдено %s  результат"
 msgstr[1] "Знайдено %s результати"
 msgstr[2] "Знайдено %s результатів"
 
-#: inc/custom-post-type.php:22
+#: inc/custom-post-type.php:22 search.php:21
 msgid "Stories"
 msgstr "Історії"
 
@@ -297,7 +301,7 @@ msgstr "Позначки історій"
 msgid "Tag stories"
 msgstr "Позначка історій"
 
-#: inc/custom-post-type.php:150 sidebar.php:12
+#: inc/custom-post-type.php:150 search.php:22 sidebar.php:12
 msgid "Projects"
 msgstr "Проекти"
 
@@ -342,8 +346,8 @@ msgid "Titles and label buttons for front page."
 msgstr "Заголовки та надписи кнопок, для головної сторінки."
 
 #: inc/customizer.php:51
-msgid "Titles sections"
-msgstr "Заголовки секцій"
+msgid "Sections"
+msgstr "Секції"
 
 #: inc/customizer.php:52
 msgid "Titles section for front page."
@@ -370,38 +374,42 @@ msgid "Title for the project section"
 msgstr "Заголовок для розділу проектів"
 
 #: inc/customizer.php:129
+msgid "Disable section social networking?"
+msgstr "Відображати розділ соціальних мереж?"
+
+#: inc/customizer.php:142
 msgid "Title for the section social networking"
 msgstr "Заголовок для розділу соціальніх мереж"
 
-#: inc/customizer.php:137
+#: inc/customizer.php:151
 msgid "Button donations"
 msgstr "Кнопка пожертвувань"
 
-#: inc/customizer.php:149
+#: inc/customizer.php:163
 msgid "Inscription:"
 msgstr "Напис:"
 
-#: inc/customizer.php:161
+#: inc/customizer.php:175
 msgid "Select page:"
 msgstr "Вибір сторінки:"
 
-#: inc/customizer.php:170
+#: inc/customizer.php:184
 msgid "Button labels"
 msgstr "Написи для кнопок"
 
-#: inc/customizer.php:182
+#: inc/customizer.php:196
 msgid "Inscription for type buttons: continue reading the article."
 msgstr "Написи для кнопок типу: продовжути читати статтю."
 
-#: inc/customizer.php:195
+#: inc/customizer.php:209
 msgid "Inscription for type buttons: see all articles of this type"
 msgstr "Написи для кнопок типу: переглянути всі статті цього типу"
 
-#: inc/customizer.php:207
+#: inc/customizer.php:221
 msgid "Social links section"
 msgstr "Секція соціальних посилань"
 
-#: inc/customizer.php:208
+#: inc/customizer.php:222
 msgid ""
 "If you need to add a link to the site, add the address in the appropriate "
 "field, if the link is not needed just do not fill the field."
@@ -409,87 +417,87 @@ msgstr ""
 "Якщо вам потрібно додати посилання на соціальні мережі,- додайте адрес у "
 "відповідне поле, якщо посилання не потрібно - просто не заповнюйте поле."
 
-#: inc/customizer.php:219
+#: inc/customizer.php:233
 msgid "Vk:"
 msgstr "Vk:"
 
-#: inc/customizer.php:232
+#: inc/customizer.php:246
 msgid "Facebook:"
 msgstr "Facebook:"
 
-#: inc/customizer.php:245
+#: inc/customizer.php:259
 msgid "Google +:"
 msgstr "Google +:"
 
-#: inc/customizer.php:258
+#: inc/customizer.php:272
 msgid "Youtube:"
 msgstr "Youtube:"
 
-#: inc/customizer.php:271
+#: inc/customizer.php:285
 msgid "Tumblr:"
 msgstr "Tumblr:"
 
-#: inc/customizer.php:284
+#: inc/customizer.php:298
 msgid "RSS:"
 msgstr "RSS:"
 
-#: inc/customizer.php:297
+#: inc/customizer.php:311
 msgid "Twitter:"
 msgstr "Twitter:"
 
-#: inc/customizer.php:309
+#: inc/customizer.php:323
 msgid "Project page settings"
 msgstr "Налаштування сторінки проектів"
 
-#: inc/customizer.php:321
+#: inc/customizer.php:335
 msgid "From which series to begin to display big thumbnail:"
 msgstr "З якого ряду почати показувати великий шаблон:"
 
-#: inc/customizer.php:336
+#: inc/customizer.php:350
 msgid "Number of episodes per page:"
 msgstr "Кількість епізодів на одній сторінці:"
 
-#: inc/customizer.php:348
+#: inc/customizer.php:362
 msgid "Stories page settings"
 msgstr "Налаштування сторінки історій"
 
-#: inc/customizer.php:361
+#: inc/customizer.php:375
 msgid "Number of stories per page:"
 msgstr "Кількість історій на одній сторінці:"
 
-#: inc/customizer.php:375
+#: inc/customizer.php:389
 msgid "News settings"
 msgstr "Налаштування новин"
 
-#: inc/customizer.php:387
+#: inc/customizer.php:401
 msgid "Label for important news:"
 msgstr "Напис для важливих новин:"
 
-#: inc/customizer.php:401
+#: inc/customizer.php:415
 msgid "Label for updated news:"
 msgstr "Напис для оновлених новин:"
 
-#: inc/customizer.php:415
+#: inc/customizer.php:429
 msgid "Icon for news with video:"
 msgstr "Іконка для новин, які містять відеозапиc:"
 
-#: inc/customizer.php:416
+#: inc/customizer.php:430
 msgid "Insert here the class icons with Font Awesome"
 msgstr "Вставте тут клас потрібної іконки, з іконочного шрифта"
 
-#: inc/customizer.php:429
+#: inc/customizer.php:443
 msgid "Inscription for type button more news."
 msgstr "Напис для кнопки, типу, більше новин."
 
-#: inc/customizer.php:442
+#: inc/customizer.php:456
 msgid "Title for section Related posts"
 msgstr "Заголовок для секції схожих записів"
 
-#: inc/customizer.php:456
+#: inc/customizer.php:470
 msgid "Logo for footer"
 msgstr "Логотип для футера"
 
-#: inc/customizer.php:471
+#: inc/customizer.php:485
 msgid "Image arrow for scroll up:"
 msgstr "Зображення стрілки для прокрутки вгору:"
 
@@ -516,6 +524,14 @@ msgstr "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 #, php-format
 msgid "Edit %s"
 msgstr "Edit %s"
+
+#: search.php:19
+msgid "All"
+msgstr "Усе"
+
+#: search.php:20
+msgid "News"
+msgstr "Новини"
 
 #: searchform.php:6
 msgid "Search ..."
@@ -556,3 +572,21 @@ msgstr ""
 #: template-parts/content-page.php:22
 msgid "Pages:"
 msgstr "Cторінки:"
+
+#~ msgid "Further"
+#~ msgstr "Далі"
+
+#~ msgid "<"
+#~ msgstr "<"
+
+#~ msgid ">"
+#~ msgstr ">"
+
+#~ msgid "Back"
+#~ msgstr "Назад"
+
+#~ msgid "next"
+#~ msgstr "Далі"
+
+#~ msgid "Titles sections"
+#~ msgstr "Заголовки секцій"

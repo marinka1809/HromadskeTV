@@ -113,7 +113,7 @@ function hromadske_tv_widgets_init() {
         'name'          => esc_html__( 'Social section', 'hromadske-tv' ),
         'id'            => 'social-sections',
         'description'   => esc_html__( 'Add widgets here.', 'hromadske-tv' ),
-        'before_widget' => '<li id="%1$s" class="col-sm-offset-3 col-sm-6 col-md-offset-0 widget %2$s"> <div class="wrapper">',
+        'before_widget' => '<li id="%1$s" class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-6 widget %2$s"> <div class="wrapper">',
         'after_widget'  => '</div></li>',
         'before_title'  => '<h2 class="widget-title-social">',
         'after_title'   => '</h2>',
@@ -139,20 +139,19 @@ function hromadske_tv_scripts() {
 	wp_enqueue_style( 'hromadske-tv-style', get_stylesheet_uri() );
     wp_enqueue_style( 'libs-css', get_template_directory_uri() . '/style/libs.css', array(), true );
     wp_enqueue_style( 'icomoonHromadske', get_template_directory_uri() . '/fonts/icomoonHromadske/style.css', array(), true );
-    wp_enqueue_style( 'main', get_template_directory_uri() . '/style/main.css', array(), true );
+    wp_enqueue_style( 'main', get_template_directory_uri() . '/style/main.css', array() );
+    wp_enqueue_style( 'snap-component', get_template_directory_uri() . '/AnimatedSVGIcons/css/component.css', array(), true );
 
-
-    wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/95a5ddb753.js', true);
+	wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/95a5ddb753.js', true);
+	wp_enqueue_script( 'hromadske-tv-snap', get_template_directory_uri() . '/AnimatedSVGIcons/js/snap.svg-min.js', true );
+	wp_enqueue_script( 'hromadske-tv-modernizr', get_template_directory_uri() . '/AnimatedSVGIcons/js/modernizr.custom.js', true );
 	wp_enqueue_script( 'hromadske-tv-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'hromadske-tv-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-    wp_enqueue_script( 'libs', get_template_directory_uri() . '/js/libs.min.js', array(),  false );
-    wp_enqueue_script( 'svgicons-config', get_template_directory_uri() . '/svgicon/js/svgicons-config.js', array(),  false );
-    wp_enqueue_script( 'svgicons', get_template_directory_uri() . '/svgicon/js/svgicons.js', array(),  false );
-    wp_enqueue_script( 'main-script', get_template_directory_uri() . '/js/main.js', array(),  false );
+    wp_enqueue_script( 'libs', get_template_directory_uri() . '/js/libs.min.js', array(),  '1.0.0', true);
+    wp_enqueue_script( 'svgicons-config', get_template_directory_uri() . '/AnimatedSVGIcons/js/svgicons-config.js', array('hromadske-tv-snap','hromadske-tv-modernizr'),  '1.0.0', true);
+    wp_enqueue_script( 'svgicons', get_template_directory_uri() . '/AnimatedSVGIcons/js/svgicons.js', array('svgicons-config'),  '1.0.0' , true);
+    wp_enqueue_script( 'main-script', get_template_directory_uri() . '/js/main.js', array('libs','svgicons-config', 'svgicons'),  '1.0.0' , true);
 }
 add_action( 'wp_enqueue_scripts', 'hromadske_tv_scripts' );
 
@@ -276,7 +275,7 @@ function online_payment_box_func( $post ){ ?>
         </li>
     </ul>
     <fieldset style="border:1px solid #aaaaaa; border-radius: 5px; padding: 20px;">
-        <legend>Setting for ligpay</legend>
+        <legend><?php esc_html_e('Setting for ligpay', 'hromadske-tv') ?>Setting for ligpay</legend>
         <ul>
             <li>
                 <label><?php esc_html_e( 'Public key:', 'hromadske-tv' ); ?>
@@ -500,16 +499,28 @@ function add_news_func(){
         );
         $big = 999999999; // need an unlikely integer
     ?>
-        <div class="blog-nav">
+        <div class="tablet blog-nav">
             <?php echo paginate_links(array(
                 'base' => $url .'%_%',
                 'format' => '?paged=%#%',
                 'current' =>  $args['paged'],
                 'total' => $q->max_num_pages,
-                'prev_text'    => __('<'),
-                'next_text'    => __('>'),
+                'prev_text'    => '<',
+                'next_text'    => '>',
                 'mid_size'     => 2,
             )
+            );?>
+        </div>
+        <div class="mobile blog-nav">
+            <?php echo paginate_links(array(
+                    'base' => $url .'%_%',
+                    'format' => '?paged=%#%',
+                    'current' =>  $args['paged'],
+                    'total' => $q->max_num_pages,
+                    'prev_text'    => '<span> < </span><span>' .__( 'Prev', 'hromadske-tv' ) .'</span>',
+                    'next_text'    => '<span>' .__('Next', 'hromadske-tv' ) .'</span><span> > </span>',
+                    'mid_size'     => 0,
+                )
             );?>
         </div>
     <?php endif;
@@ -576,15 +587,23 @@ function add_search_func()
         $big = 999999999; // need an unlikely integer
 
         ?>
-        <div class="blog-nav">
+        <div class="tablet blog-nav">
             <?php echo paginate_links(array(
-                    //'base' => $_POST['my_url'] .'%_%',
-                   // 'format' => '?paged=%#%',
                     'current' =>  $fun_args['paged'],
                     'total' => $q->max_num_pages,
-                    'prev_text'    => __('<'),
-                    'next_text'    => __('>'),
+                    'prev_text'    => '<',
+                    'next_text'    => '>',
                     'mid_size'     => 2,
+                )
+            );?>
+        </div>
+        <div class="mobile blog-nav">
+            <?php echo paginate_links(array(
+                    'current' =>  $fun_args['paged'],
+                    'total' => $q->max_num_pages,
+                    'prev_text'    => '<span> < </span><span>' .__( 'Prev', 'hromadske-tv' ) .'</span>',
+                    'next_text'    => '<span>' .__('Next', 'hromadske-tv' ) .'</span><span> > </span>',
+                    'mid_size'     => 0,
                 )
             );?>
         </div>
@@ -743,9 +762,11 @@ add_action('pre_get_posts', 'hwl_archive_pagesize', 1 );
 function hwl_archive_pagesize( $query ) {
 
     if( $query->is_archive ){
-        $query->set( 'posts_per_page', 16 );
-        if(  $query->is_tax == 'projects' ) {
-            $query->set('posts_per_page', get_theme_mod('per-page-episodes'));
+        if ( $query->is_tax('projects') ) {
+            $query->set('posts_per_page',  get_theme_mod('per-page-episodes'));
+        }
+        else {
+            $query->set('posts_per_page', 16 );
         }
     }
 
@@ -796,3 +817,12 @@ add_filter('get_post_time', 'true_ukrainian_date_forms');
 add_filter('get_comment_date', 'true_ukrainian_date_forms');
 add_filter('get_comment_date', 'true_ukrainian_date_forms');
 add_filter('date_i18n', 'true_ukrainian_date_forms');
+
+
+add_action('wp_head', 'my_js_var_stylesheet_directory', 9);
+function my_js_var_stylesheet_directory() { ?>
+    <script type="text/javascript">
+        var stylesheetDir = " <?php echo get_template_directory_uri() .'/AnimatedSVGIcons/'  ?>";
+    </script>
+<?php }
+

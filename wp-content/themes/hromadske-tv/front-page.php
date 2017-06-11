@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="front-content" role="main">
             <div class="top-block">
                 <?php
                 $args = array(
@@ -108,8 +108,10 @@ get_header(); ?>
                             <div class="row">
                                 <div class="col-md-9">
                                     <header class="section-header">
-                                        <h2><?php echo get_theme_mod('title-stories-section'); ?></h2>
-                                        <a class="link-all-articles" href="/all-stories"> <?php echo get_theme_mod('inscription-button-all-articles'); ?></a>
+                                        <h2 class="tablet"><?php echo get_theme_mod('title-stories-section'); ?></h2>
+                                        <a class="tablet link-all-articles" href="/all-stories"> <?php echo get_theme_mod('inscription-button-all-articles'); ?></a>
+
+                                        <a class="mobile link-all-articles" href="/all-stories"> <?php echo get_theme_mod('title-stories-section'); ?></a>
                                     </header>
                                     <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
                                     <p><?php the_excerpt_max_charlength(165); ?></p>
@@ -149,8 +151,10 @@ get_header(); ?>
                 <section class="section front-project-section" >
                     <div class="container">
                         <header class="section-header">
-                            <h1><?php echo get_theme_mod('title-project-section'); ?></h1>
-                            <a class="link-all-articles" href="/projects"> <?php echo get_theme_mod('inscription-button-all-articles'); ?></a>
+                            <h1  class="tablet"><?php echo get_theme_mod('title-project-section'); ?></h1>
+                            <a class="tablet link-all-articles" href="/projects"> <?php echo get_theme_mod('inscription-button-all-articles'); ?></a>
+
+                            <a class="mobile link-all-articles" href="/projects"> <?php echo get_theme_mod('title-project-section');  ?></a>
                         </header>
                         <ul class="row">
                             <?php foreach( $projects_query->terms as $project ){
@@ -181,16 +185,12 @@ get_header(); ?>
                             } ?>
                         </ul>
                     </div>
-                    <section class="si-icons si-icons-default">
-                        <span class="si-icon si-icon-hamburger-cross" data-icon-name="hamburgerCross"></span>
-                        <!-- ... -->
-                    </section>
                 </section>
             <?php endif;?>
             <?php wp_reset_postdata();?>
 
-
             <?php get_template_part( 'template-parts/social-section' );?>
+
 
 
         </main><!-- #main -->

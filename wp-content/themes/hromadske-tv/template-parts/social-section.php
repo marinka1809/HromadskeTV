@@ -8,15 +8,19 @@
  */
 ?>
 
-<section class="section front-social-section">
-    <div class="container">
-        <?php if ( get_theme_mod('title-social-section')) :
-            echo '<h1>' .get_theme_mod('title-social-section') .'</h1>';
-        endif;  ?>
+<?php if(get_theme_mod('disable-social-section') == '') : ?>
 
-        <ul class="row">
-            <?php dynamic_sidebar( 'social-sections' ); ?>
-        </ul>
+    <section class="section front-social-section">
+        <div class="container">
+            <?php if ( get_theme_mod('title-social-section')) :
+                echo '<h1>' .get_theme_mod('title-social-section') .'</h1>';
+            endif;  ?>
 
-    </div>
-</section>
+            <ul class="row">
+                <?php dynamic_sidebar( 'social-sections' ); ?>
+            </ul>
+
+        </div>
+    </section>
+
+<?php endif; ?>

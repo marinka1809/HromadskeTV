@@ -15,7 +15,7 @@
 get_header();?>
 <div class="container page-news">
     <div class="row">
-        <main class="col-sm-9" >
+        <main class="col-md-9" >
             <h1><?php single_post_title();?></h1>
             <?php if ( have_posts() ) : ?>
                 <ul class="list-news">

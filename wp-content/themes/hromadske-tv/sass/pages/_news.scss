@@ -1,28 +1,24 @@
-.page-news {
-  padding-top: 60px;
-  padding-bottom: 120px;
-  color: #171617;
-  font: 20px GothamProRegular;
+//-----------------------------------------------------
+//------------------------NEWS-PAGE--------------------
+//-----------------------------------------------------
 
-  main
-  {
-    padding-right: 65px;
-  }
+.page-news {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #171617;
+  font: 14px GothamProRegular;
 
   aside {
-    h1 {
-      margin-bottom: 30px;
-    }
+   display: none;
   }
 
   h1 {
-    font: 48px GothamProBlack;
+    text-align: center;
+    font: 24px GothamProBlack;
   }
 
-
-
   .blog-nav {
-    margin-top: 50px;
+    margin-top: 40px;
   }
 }
 
@@ -36,7 +32,8 @@
 
       a {
         display: flex;
-        padding: 30px 0;
+        flex-direction: column;
+        padding: 25px 0;
         color: inherit;
         border-bottom: 1px solid  #eeeeee;
 
@@ -55,13 +52,12 @@
 
   .info-news {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 0;
-    margin-right: 45px;
+    margin-bottom: 10px;
+    align-items: center;
 
     .time,
     time {
-      margin-right: 0;
+      margin-right: 7px;
       font: 16px $font-content;
       font-weight: 700;
       color: #a6b6c8;
@@ -69,8 +65,7 @@
 
     .important-label,
     .updated-label {
-      margin-bottom: 7px;
-      margin-right: 0;
+      margin-right: 7px;
       text-align: center;
       font-size: 11px;
     }
@@ -89,15 +84,16 @@
 .more-news {
   display: block;
   width: 100%;
+  box-sizing: content-box;
+  margin-left: -20px;
   margin-top: -4px;
-  padding: 0 10px;
+  padding: 0 20px;
   font: 14px/4.5em GothamProBold;
   color: #ffffff;
   text-align: center;
   text-transform: uppercase;
   background-color: $color-primary;
   border: none;
-  border-radius: 8px;
   transition: all 0.2s ease;
 
   &:after {
@@ -111,6 +107,4 @@
   &:hover:after {
     margin-left: 22px;
   }
-
-
 }

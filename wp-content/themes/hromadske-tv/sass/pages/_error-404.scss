@@ -1,37 +1,38 @@
+//---------------------------------------------
+//------------404 PAGE (+ NEWS SENT)------------
+//---------------------------------------------
+
 .error-404-content,
 .news-sent-content {
-  padding-top: 90px;
+  padding-top: 40px;
+
+  .front-social-section {
+    padding-top: 0;
+  }
 
   .important-news-section {
     background-color: #eff2f7;
   }
-
 }
 
 .error-404,
 .news-sent {
+  padding-bottom: 40px;
   text-align: center;
 
-
   h1{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #171617;
-    font: 62px/1.2em GothamProBlack;
+    font: 24px/30px GothamProBlack;
   }
 
   p {
     margin-bottom: 30px;
     color: #696e72;
-    font:16px/1.5em $font-content;
+    font:14px/1.5em $font-content;
   }
 
   .link-front-page {
     color: #ffffff;
-  }
-}
-
-.news-sent {
-  h1{
-    font: 48px/1.2em GothamProBlack;
   }
 }

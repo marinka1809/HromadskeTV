@@ -28,12 +28,21 @@ get_header();
                 <?php endif; ?>
             <?php endwhile; ?>
         </ul>
-        <div class="blog-nav">
+        <div class="tablet blog-nav">
             <?php echo paginate_links(array(
                     'total'        => $queryStories->max_num_pages,
-                    'prev_text'    => __('<'),
-                    'next_text'    => __('>'),
+                    'prev_text'    => '<',
+                    'next_text'    => '>',
                     'mid_size'     => 2,
+                )
+            );?>
+        </div>
+        <div class="mobile blog-nav">
+            <?php echo paginate_links(array(
+                    'total'        => $queryStories->max_num_pages,
+                    'prev_text'    => '<span> < </span><span>' .__( 'Prev', 'hromadske-tv' ) .'</span>',
+                    'next_text'    => '<span>' .__('Next', 'hromadske-tv' ) .'</span><span> > </span>',
+                    'mid_size'     => 0,
                 )
             );?>
         </div>

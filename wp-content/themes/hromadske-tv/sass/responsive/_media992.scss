@@ -1,12 +1,7 @@
 @media screen and (min-width: 992px) {
   .container {
-    padding: 0;
-  }
-
-  .stories-page,
-  .project-page {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .site-content {
@@ -25,7 +20,7 @@
 
   //--------------------------------HEADER----------------------
   .site-header {
-    .burger {
+    .si-icons-default {
       display: none;
     }
 
@@ -38,14 +33,33 @@
       text-align: left;
       box-shadow: none;
 
+      &:before {
+        display: none;
+      }
+
       .social-link {
+          margin: auto;
           margin-right: 30px;
       }
     }
   }
 
-  //-------------------------WELCOME---------------------
+  //--------Scroll button ------------------------
+  //---------------------------------------------
+  #up {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+  }
 
+
+  //-----------------------------------------------------
+  //------------------------HOME-PAGE--------------------
+  //-----------------------------------------------------
+
+  //-------------------------WELCOME---------------------
   .top-block {
     height: calc(100vh - 140px);
     max-height: 800px;
@@ -82,9 +96,10 @@
         }
 
         article {
+          width: 100%;
+
           .item-news {
             display: block;
-            width: 100%;
             height: auto;
             padding: 30px 0;
             border: none;
@@ -192,6 +207,69 @@
     }
   }
 
+  //-------------------------SOCIAL-SECTION---------------------
+  .front-social-section {
+    li {
+      margin-bottom: 0;
+    }
+
+    ul {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+
+  //-----------------------------------------------------
+  //------------------------NEWS-PAGE--------------------
+  //-----------------------------------------------------
+
+  .page-news {
+
+    aside {
+      display: block;
+    }
+
+    main
+    {
+      padding-right: 65px;
+    }
+  }
+
+  .list-news {
+    .info-news {
+      margin-right: 45px;
+    }
+  }
+
+  //---------------------------------------------
+  //------------DONATE (+REPORT) PAGE------------
+  //---------------------------------------------
+
+  .donate-content,
+  .reports-content {
+
+    .block {
+      padding: 60px 40px;
+
+      h2 {
+        margin-bottom: 20px;
+      }
+    }
+
+    .online-payment {
+      form {
+        width: 90%;
+      }
+
+      .payment {
+        font: 15px/3em GothamProBold;
+      }
+    }
+  }
+
+
   //-------------------------FOOTER---------------------
   .site-footer {
 
@@ -203,20 +281,17 @@
       width: auto;
       margin-bottom: auto;
 
-      li {
-        display: inline-block;
-      }
+      ul {
+        li {
+          display: inline-block;
+        }
 
-      a {
-        padding: 10px 20px;
-        font: 14px GothamProBold;
+        a {
+          padding: 10px 20px;
+          font: 14px GothamProBold;
+        }
       }
     }
   }
 }
 
-//------------------page-news------------------
-.page-news {
-  padding-top: 60px;
-  padding-bottom: 120px;
-}

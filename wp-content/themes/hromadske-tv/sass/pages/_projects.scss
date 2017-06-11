@@ -1,20 +1,25 @@
-.project-page {
+//-----------------------------------------------------
+//----------------------PROJECT-PAGE-------------------
+//-----------------------------------------------------
+
+ .project-page {
   .blog-nav {
-    margin-top: 60px;
+    margin-top: 30px;
   }
 }
 
 .list-projects {
 
   .item-project {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     color: #3e4144;
     cursor: pointer;
 
     .small-content {
       display: block;
-      height: 380px;
-      padding-bottom: 25px;
+      height: auto;
+      max-height: 340px;
+      padding-bottom: 20px;
       color: inherit;
       border-bottom: 1px solid #eeeeee;
       overflow: hidden;
@@ -49,11 +54,11 @@
 
     h3 {
       margin-bottom: 10px;
-      font: 24px/1.2em GothamProBold;
+      font: 18px/1.2em GothamProBold;
     }
 
     p {
-      font: 16px/1.5em $font-content;
+      font: 14px/1.5em $font-content;
       opacity: 0.8;
     }
   }

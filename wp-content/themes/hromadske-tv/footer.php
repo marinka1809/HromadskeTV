@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-    <a href="#" id="up" style="background: #ffffff url('<?php echo get_theme_mod( 'scroll-up' ) ?>') 50% 50% no-repeat; "></a>
+    <a href="#" id="desktop-up" style="background: #ffffff url('<?php echo get_theme_mod( 'scroll-up' ) ?>') 50% 50% no-repeat; "></a>
 
 	<footer id="colophon" class="site-footer" role="contentinfo" >
         <div class="container">

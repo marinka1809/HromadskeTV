@@ -1,16 +1,23 @@
+//-----------------------------------------------------
+//-----------------ABOUT-PAGE------------------
+//-----------------------------------------------------
 .about-page {
-
   h1 {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-align: center;
+  }
+  .title-section {
+    h1 {
+      margin-bottom: 10px;
+    }
   }
 }
 
 .team-section {
-  padding: 120px 0 0;
+  padding: 40px 0 10px;
 
   h1 {
-    color: #171617;
+      color: #171617;
   }
 
   ul {
@@ -20,12 +27,12 @@
   }
 
   li{
-    margin-bottom: 60px;
+    margin-bottom: 30px;
   }
 
   article {
     height: 100%;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     border-bottom: 1px solid #eeeeee;
   }
 
@@ -49,14 +56,14 @@
 }
 
 .contacts-section {
-  padding: 70px 0 120px;
+  padding: 0 0 40px;
 
   h1 {
     color: #171617;
   }
 
   address {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 
     li {
       display: flex;
@@ -79,6 +86,7 @@
 
     p {
       font: 1em/1.5em $font-content;
+      text-align: center;
       color: #696e72;
 
       a {
@@ -94,8 +102,6 @@
       display: inline-block;
       color: $color-primary;
       position: relative;
-      //text-decoration: underline;
-      //border-bottom: 1px solid $color-primary;
 
       &:after {
         content: '';
@@ -139,22 +145,18 @@
 
     &:after,
     &:before {
-
       content: "";
-      position: absolute;
-      top: 50%;
-      width: 2px;
-      height: 50px;
-      transform:  translateY(-50%);
+      margin: 25px 0;
+      width: 50px;
+      height: 2px;
       background-color: #eeeeee;
     }
-
-    &:before {
-      left: 0;
-    }
-
-    &:after {
-      right: 0;
-    }
   }
+}
+
+//-----------Google map------------------------
+//---------------------------------------------
+.acf-map {
+  width: 100%;
+  height: 315px;
 }

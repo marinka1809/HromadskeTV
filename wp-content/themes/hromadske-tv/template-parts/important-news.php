@@ -22,8 +22,10 @@ if ( $importantPosts->have_posts() ) :?>
     <section class="section important-news-section">
         <div class="container">
             <header class="section-header">
-                <h1><?php echo get_theme_mod('title-important-news-section'); ?></h1>
-                <a class="link-all-articles" href="/news"> <?php echo get_theme_mod('inscription-button-all-articles'); ?></a>
+                <h1 class="tablet"><?php echo get_theme_mod('title-important-news-section'); ?></h1>
+                <a class="tablet link-all-articles" href="/news"> <?php echo get_theme_mod('inscription-button-all-articles'); ?></a>
+
+                <a class="mobile link-all-articles" href="/news"> <?php echo get_theme_mod('title-important-news-section'); ?></a>
             </header>
             <ul class="row">
                 <?php while ( $importantPosts->have_posts() ) : $importantPosts->the_post();?>

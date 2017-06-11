@@ -1,46 +1,51 @@
+//---------------------------------------------
+//------------DONATE (+REPORT) PAGE------------
+//---------------------------------------------
+
 .donate-content,
 .reports-content {
-  padding: 80px 0 120px;
+  padding: 40px 0 40px;
 
   header {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     text-align: center;
 
     h1 {
-      margin-bottom: 30px;
-      font: 48px/1.2em GothamProBlack;
+      margin-bottom: 10px;
+      font: 24px/30px GothamProBlack;
       color: #171617;
     }
 
     p {
-      font: 16px/1.5em $font-content;
+      font: 14px/1.5em $font-content;
       color: #696e72;
     }
   }
 
   .block {
+    margin-bottom: 30px;
     height: 100%;
-    padding: 60px 40px;
+    padding: 40px 20px;
     border-radius: 8px;
     border: 1px solid #eeeeee;
     background-color: #eff2f7;
 
     h2 {
-      margin-bottom: 20px;
-      font: 26px GothamProBold;
+      margin-bottom: 25px;
+      font: 22px/26px GothamProBold;
       color: #343434;
     }
   }
 
-  .flex-block {
-    display: flex;
-    align-items: stretch;
-  }
-
   .bank-details  {
+
+    .block {
+      padding-bottom: 20px;
+    }
+
     li {
-      margin-bottom: 20px;
-      font: 16px/1.5em $font-content;
+      margin-bottom: 10px;
+      font: 14px/1.5em $font-content;
       color: #696e72;
     }
   }
@@ -50,7 +55,7 @@
 
     form {
       position: relative;
-      width: 90%;
+      width: 100%;
     }
 
     input {
@@ -97,7 +102,7 @@
     .payment {
       display: inline-block;
       padding: 0 25px;
-      font: 15px/3em GothamProBold;
+      font: 15px/4em GothamProBold;
       color: #ffffff;
       text-transform: uppercase;
       border-radius: 26px;
@@ -115,19 +120,18 @@
   .file-link {
     position: relative;
     display: block;
-    margin-left: 35px;
-    padding: 35px 0;
-    font: 20px/1.2em GothamProBold;
+    margin-left: 25px;
+    padding: 20px 0;
+    font: 14px/1.2em GothamProBold;
     color: #343434;
     border-bottom: 1px solid #eeeeee;
 
     &:before {
       position: absolute;
-      top: 50%;
-      transform:  translateY(-50%);
-      left: -35px;
+      top: 20px;
+      left: -25px;
       content: "\e900";
-      font:15px 'icomoon';
+      font: 15px 'icomoon';
       color: #bebebe;
     }
 
@@ -136,3 +140,12 @@
     }
   }
 }
+
+.donate-content {
+  padding-bottom: 10px;
+
+  header {
+    margin-bottom: 40px;
+  }
+}
+

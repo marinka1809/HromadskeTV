@@ -1,0 +1,170 @@
+@media screen and (min-width: 992px) {
+
+  //-----------------------------------------------------
+  //----------------------SINGL-PAGE-------------------
+  //-----------------------------------------------------
+
+
+  //----------------------ARTICLE HEADER-------------------
+  .article-header {
+
+    .header-wrap {
+      padding: 0;
+    }
+
+    .video-wrap {
+      iframe {
+        height: 546px;
+      }
+    }
+  }
+
+
+  //----------------------CONTENT-------------------
+  .single-content {
+
+    p, h1, h2, h3, h4, ul, ol, figcaption {
+      padding: 0;
+    }
+
+    img.size-large {
+      padding: 0;
+    }
+
+    img.size-medium {
+      padding: 0;
+    }
+
+    ol {
+      padding-left: 50px;
+    }
+
+    ul {
+      padding-left: 50px;
+    }
+
+    //----------------------blockquote-------------------
+    .quote-type1 {
+      width: 970px;
+      margin: 60px auto;
+    }
+
+    .quote-type2 {
+      width: 970px;
+      margin: 60px auto;
+      padding: 65px 100px 35px;
+    }
+
+    //----------------------VIDEO-------------------
+    iframe {
+      height: 546px;
+    }
+
+    //----------------------IMAGES-------------------
+    img.size-large {
+      padding: 0;
+    }
+
+    img.size-medium {
+      padding: 0;
+    }
+
+    //----------------------SLIDER-------------------
+    .gallery-columns-1 {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      padding: 0;
+
+      .gallery-item {
+        padding: 0 15px 0;
+      }
+
+      .slick-prev,
+      .slick-next {
+        width: 25%;
+        height: auto;
+        top:0;
+        bottom: 0;
+        transform: translate(0,0);
+
+        &:before {
+          margin:0;
+          font: 60px 'icomoon';
+          opacity: 0;
+          transition: all ease 0.5s;
+        }
+
+        &:hover:before {
+          opacity: 1;
+          transition: all ease 0.5s;
+        }
+      }
+
+      .slick-next {
+        right: 0;
+        text-align: right;
+
+        &:before {
+          content: "\e90e";
+        }
+
+        &:hover:before {
+          margin-right: 70px;
+        }
+      }
+
+      .slick-prev {
+        left:0;
+        z-index: 2;
+        text-align: left;
+
+        &:before {
+          content: "\e90d";
+        }
+
+        &:hover:before {
+          margin-left: 70px;
+        }
+      }
+
+      .pagingInfo {
+        display: none;
+        margin-top: 10px;
+        font: italic 14px $font-content;
+        opacity: 0.8;
+        color: #696e72;
+        text-align: right;
+      }
+
+      .slick-current {
+        .pagingInfo {
+          display: block;
+        }
+      }
+    }
+
+    iframe {
+      display: block;
+      width: 970px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+
+
+  //----------------------TAGS LIST-------------------
+  .tags-list {
+    width: 770px;
+    max-width: 100%;
+    margin: 0 auto 40px;
+  }
+
+  //----------------------GETSOCIAL-------------------
+  .getsocial {
+    width: 770px;
+    max-width: 100%;
+    margin: 0 auto 100px;
+  }
+
+}

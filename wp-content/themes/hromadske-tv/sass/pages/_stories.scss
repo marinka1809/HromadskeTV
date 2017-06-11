@@ -1,13 +1,31 @@
+//-----------------------------------------------------
+//------------STORIES-PAGE (episodes)------------------
+//-----------------------------------------------------
+.stories-page,
+.project-page {
+  padding-top: 40px;
+  padding-bottom: 10px;
+
+  h1 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .blog-nav {
+    margin-bottom: 30px;
+  }
+}
+
 .list-stories,
 .list-episodes {
 
   li {
     cursor: pointer;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 
     article {
-      height: 320px;
-      padding-bottom: 25px;
+      height: 340px;
+      padding-bottom: 20px;
       border-bottom: 1px solid #eeeeee;
 
       a {
@@ -27,24 +45,10 @@
       }
     }
 
-    .img-wrapper {
-      position: relative;
-      display: block;
-
-      &:after {
-        content: "";
-        position: absolute;
-        left:0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        transition: all ease 0.5s;
-      }
-    }
 
     h2 {
       margin-bottom: 10px;
-      font: 20px/1.2em GothamProBold;
+      font: 18px/1.2em GothamProBold;
       color: #343434;
     }
 
@@ -54,6 +58,7 @@
     }
 
     article.big {
+      width: 100%;
       padding: 0;
       border-radius: 8px;
       overflow: hidden;

@@ -8,7 +8,7 @@
  */
 
 ?>
-<li class="col-xs-6 col-md-3">
+<li class="col-xs-12 col-sm-6 col-md-3">
     <article class="regular" id="<?php the_ID(); ?>">
         <a href="<?php the_permalink(); ?>">
             <div class="img-wrapper">
