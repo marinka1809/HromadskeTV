@@ -9,7 +9,6 @@
 ?>
 
 <aside id="secondary" class="col-sm-3" role="complementary">
-    <h1><?php esc_html_e('Projects', 'hromadske-tv') ?></h1>
     <?php
     $args = array(
         'taxonomy'      => array( 'projects' ),
@@ -20,6 +19,7 @@
     );
     $projects_query = new WP_Term_Query( $args );
     if ( $projects_query->terms ) :?>
+        <h1><?php esc_html_e('Projects', 'hromadske-tv') ?></h1>
         <ul>
             <?php foreach( $projects_query->terms as $project ){
                 $image = get_field('image_project', $project);?>

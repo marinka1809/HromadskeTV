@@ -49,7 +49,7 @@ get_header();
                         </a>
                     </li>
                 <?php else: ?>
-                    <li class="col-xs-12 col-sm-4 item-project">
+                    <li class="col-xs-12 col-sm-6 col-md-4 item-project">
                         <a href="<?php echo get_term_link($project);?>" class="small-content">
                             <div class="img-wrapper">
                                 <?php if( !empty($image) ): ?>

@@ -176,7 +176,11 @@ function choice_cap_func( $post ){
         <li><?php esc_html_e('Appearance of title for single page:', 'hromadske-tv') ?><?php $mark_v = get_post_meta($post->ID, 'content-cap', 1); ?></li>
         <li>
             <label><input type="radio" name="extra[content-cap]" value="image" <?php checked( $mark_v, 'image' ); ?> /> <?php esc_html_e('image', 'hromadske-tv') ?></label>
+        </li>
+        <li>
             <label><input type="radio" name="extra[content-cap]" value="video" <?php checked( $mark_v, 'video' ); ?> /> <?php esc_html_e('video', 'hromadske-tv') ?></label>
+        </li>
+        <li>
             <label><input type="radio" name="extra[content-cap]" value="clean" <?php checked( $mark_v, 'clean' ); ?> /> <?php esc_html_e('clean', 'hromadske-tv') ?></label>
         </li>
         <li>
@@ -759,9 +763,9 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 //-------------------------------------------------
 add_action('pre_get_posts', 'hwl_archive_pagesize', 1 );
 
-function hwl_archive_pagesize( $query ) {
+function hwl_archive_pagesize( $query )  {
 
-    if( $query->is_archive ){
+    if( ($query->is_archive) && ($query->is_main_query()) &&  ! is_admin()  ){
         if ( $query->is_tax('projects') ) {
             $query->set('posts_per_page',  get_theme_mod('per-page-episodes'));
         }

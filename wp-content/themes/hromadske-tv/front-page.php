@@ -59,7 +59,7 @@ get_header(); ?>
                                 <article>
                                     <a class="item-news" href="<?php the_permalink(); ?>">
                                         <div class="info-news">
-                                            <span class="time"><?php the_time('d.m.Y');?></span>
+                                            <span class="time"><?php the_time('d.m.y');?></span>
                                             <?php if ( get_post_meta($post->ID,'important')):?>
                                             <span class="important-label"><?php echo get_theme_mod('label-important-news'); ?></span>
                                             <?php endif;?>
