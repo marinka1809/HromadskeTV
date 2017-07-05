@@ -428,6 +428,7 @@ aside {
   .site-header .toggle-menu {
     display: none;
     position: absolute;
+    height: 100vh;
     top: 60px;
     right: -20px;
     left: -20px;
@@ -1331,6 +1332,9 @@ ul.ui-widget-content {
   .team-section h1 {
     color: #171617; }
   .team-section ul {
+    margin-left: -15px;
+    margin-right: -15px;
+    overflow: hidden;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2301,7 +2305,7 @@ ul.ui-widget-content {
       height: 50px;
       overflow: hidden; }
     .site-header .main-navigation {
-      display: block;
+      display: none;
       width: auto;
       font: 16px/1.8em GothamProBold;
       text-transform: uppercase; }
@@ -2343,13 +2347,6 @@ ul.ui-widget-content {
       margin-left: 10px; }
     .site-header .si-icon-hamburger-cross {
       margin: 0; }
-    .site-header .toggle-menu {
-      right: 0;
-      left: 50%;
-      text-align: right; }
-      .site-header .toggle-menu .menu,
-      .site-header .toggle-menu .menu-search-container {
-        display: none; }
   .si-icons span {
     margin: 40px 30px; }
   .si-icons-hover span {
@@ -2386,12 +2383,12 @@ ul.ui-widget-content {
         height: 200px;
         border-right: 1px solid #dedede; }
       .top-block .last-news .wrapper article {
-        width: 33.3%; }
+        width: 50%; }
         .top-block .last-news .wrapper article .item-news {
           display: block;
-          padding: 30px 30px 10px;
+          padding: 25px 30px 10px;
           border-bottom: 1px solid #dedede;
-          height: 200px;
+          height: 135px;
           border-right: 1px solid #dedede; }
       .top-block .last-news .wrapper h3.title {
         font: 14px GothamProRegular;
@@ -2414,8 +2411,8 @@ ul.ui-widget-content {
       -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center;
-      width: 33.6%;
-      height: 200px;
+      width: 50%;
+      height: 135px;
       padding: 0 35px; }
   .welcome-section {
     color: #ffffff; }
@@ -2800,6 +2797,8 @@ ul.ui-widget-content {
     padding-bottom: 120px; }
   .site-header .si-icons-default {
     display: none; }
+  .site-header .main-navigation {
+    display: block; }
   .site-header .toggle-menu {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2811,6 +2810,7 @@ ul.ui-widget-content {
             align-items: center;
     position: static;
     width: auto;
+    height: auto;
     padding: 0;
     text-align: left;
     -webkit-box-shadow: none;
@@ -2820,6 +2820,9 @@ ul.ui-widget-content {
     .site-header .toggle-menu .social-link {
       margin: auto;
       margin-right: 30px; }
+    .site-header .toggle-menu .menu,
+    .site-header .toggle-menu .menu-search-container {
+      display: none; }
   .site-header .menu-search-container {
     left: 25%;
     width: 50%; }

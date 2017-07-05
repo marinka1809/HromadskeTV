@@ -3,7 +3,7 @@ $=jQuery;
 $(document).ready(function(){
 
     $(function() {
-        var pull 		= $('.si-icon-hamburger-cross g');
+        var pull 		= $('.si-icons');
         menu 		= $('.toggle-menu');
         menuHeight	= menu.height();
 

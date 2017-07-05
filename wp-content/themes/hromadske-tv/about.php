@@ -27,7 +27,7 @@ get_header();?>
             <section class="team-section">
                 <div class="container">
                     <h1><?php the_field("title_section_team"); ?></h1>
-                    <ul class="row">
+                    <ul>
                         <?php while ( $employeesPosts->have_posts() ) : $employeesPosts->the_post();?>
                             <li class="col-sm-6 col-md-4">
                                 <article>

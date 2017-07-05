@@ -110,7 +110,7 @@
     }
 
     .main-navigation {
-      display: block;
+      display: none;
       width: auto;
       font: 16px/1.8em GothamProBold;
       text-transform: uppercase;
@@ -173,14 +173,8 @@
     // TOGGLE-MENU
     // ----------------------------
     .toggle-menu {
-      right: 0;
-      left: 50%;
-      text-align: right;
 
-      .menu,
-      .menu-search-container  {
-        display: none;
-      }
+
     }
 
   }
@@ -234,13 +228,13 @@
         }
 
         article {
-          width: 33.3%;
+          width: 50%;
 
           .item-news {
             display: block;
-            padding: 30px 30px 10px;
+            padding: 25px 30px 10px;
             border-bottom: 1px solid #dedede;
-            height: 200px;
+            height: 135px;
             border-right: 1px solid #dedede;
           }
         }
@@ -262,8 +256,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 33.6%;
-        height: 200px;
+        width: 50%;
+        height: 135px;
         padding: 0 35px;
 
       }

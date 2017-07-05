@@ -24,11 +24,16 @@
       display: none;
     }
 
+    .main-navigation {
+      display: block;
+    }
+
     .toggle-menu {
       display: flex;
       align-items: center;
       position: static;
       width: auto;
+      height: auto;
       padding: 0;
       text-align: left;
       box-shadow: none;
@@ -40,6 +45,11 @@
       .social-link {
           margin: auto;
           margin-right: 30px;
+      }
+
+      .menu,
+      .menu-search-container  {
+        display: none;
       }
     }
 
