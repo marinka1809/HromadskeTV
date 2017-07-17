@@ -81,6 +81,7 @@
           display: block;
           padding: 30px 0;
           border-bottom: 1px solid #dedede;
+          overflow: hidden;
 
           &:hover {
             h3.title,
@@ -179,6 +180,7 @@
     margin-bottom: 30px;
     height: 340px;
     cursor: pointer;
+    overflow: hidden;
 
     .item-wrapper {
       display: block;
@@ -272,6 +274,7 @@
     height: auto;
     max-height: 390px;
     cursor: pointer;
+    overflow: hidden;
 
     a {
       display: block;

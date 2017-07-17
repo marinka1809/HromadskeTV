@@ -237,6 +237,18 @@ add_action('customize_register', function($customizer){
     );
 
     $customizer->add_setting(
+        'instagram-link',
+        array('default' => '')
+    );
+    $customizer->add_control(
+        'instagram-link',
+        array(
+            'label' => esc_html__('Instagram:', 'hromadske-tv' ) ,
+            'section' => 'social-links-section',
+            'type' => 'url',        )
+    );
+
+    $customizer->add_setting(
         'facebook-link',
         array('default' => '')
     );

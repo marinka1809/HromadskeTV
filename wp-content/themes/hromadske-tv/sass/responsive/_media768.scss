@@ -153,6 +153,8 @@
     // ----------------------------
     #menu-search {
       display: block;
+      margin-left: auto;
+      margin-right: 30px;
     }
 
     .menu-search-container  {
@@ -173,8 +175,9 @@
     // TOGGLE-MENU
     // ----------------------------
     .toggle-menu {
-
-
+      right: -40px;
+      left: -40px;
+      padding: 20px 40px;
     }
 
   }
@@ -464,6 +467,7 @@
   .more-news {
     box-sizing: border-box;
     margin-left: 0;
+    margin-bottom: 0;
     padding: 0 10px;
     border-radius: 8px;
   }
@@ -793,6 +797,7 @@
     .flex-block {
       display: flex;
       align-items: stretch;
+      justify-content: center;
     }
 
     .bank-details  {

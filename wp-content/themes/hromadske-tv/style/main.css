@@ -200,6 +200,9 @@ main h1 {
 .social-link li {
   display: inline-block; }
 
+.social-link .icon-instagram {
+  font-weight: bold; }
+
 .social-link a {
   padding: 0 15px 0 0;
   font-size: 14px;
@@ -421,6 +424,8 @@ aside {
     border-bottom: 2px solid #f6921e; }
   .site-header .social-link .icon-vkontakte:hover {
     color: #507299; }
+  .site-header .social-link .icon-instagram:hover {
+    color: #993D83; }
   .site-header .social-link .icon-facebook:hover {
     color: #3b5998; }
   .site-header .social-link .icon-Youtube:hover {
@@ -492,7 +497,7 @@ aside {
       .site-header .toggle-menu .menu-search-container .submit {
         position: absolute;
         right: 20px;
-        top: auto;
+        top: 30%;
         color: #bebebe; }
       .site-header .toggle-menu .menu-search-container .active .submit {
         color: #171617; }
@@ -875,7 +880,8 @@ ul.ui-widget-content {
     .top-block .last-news .wrapper article .item-news {
       display: block;
       padding: 30px 0;
-      border-bottom: 1px solid #dedede; }
+      border-bottom: 1px solid #dedede;
+      overflow: hidden; }
       .top-block .last-news .wrapper article .item-news:hover h3.title,
       .top-block .last-news .wrapper article .item-news:hover h3.important-title {
         color: #ff4848; }
@@ -942,7 +948,8 @@ ul.ui-widget-content {
   .important-news-section .item-important-posts {
     margin-bottom: 30px;
     height: 340px;
-    cursor: pointer; }
+    cursor: pointer;
+    overflow: hidden; }
     .important-news-section .item-important-posts .item-wrapper {
       display: block;
       height: 100%;
@@ -1000,7 +1007,8 @@ ul.ui-widget-content {
     margin-bottom: 30px;
     height: auto;
     max-height: 390px;
-    cursor: pointer; }
+    cursor: pointer;
+    overflow: hidden; }
     .front-project-section .item-project a {
       display: block; }
       .front-project-section .item-project a:hover .img-wrapper:after {
@@ -1111,6 +1119,7 @@ ul.ui-widget-content {
           box-sizing: content-box;
   margin-left: -20px;
   margin-top: -4px;
+  margin-bottom: -40px;
   padding: 0 20px;
   font: 14px/4.5em GothamProBold;
   color: #ffffff;
@@ -1150,7 +1159,8 @@ ul.ui-widget-content {
   .list-episodes li article {
     height: 340px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #eeeeee; }
+    border-bottom: 1px solid #eeeeee;
+    overflow: hidden; }
     .list-stories li article a,
     .list-episodes li article a {
       display: block; }
@@ -1799,6 +1809,7 @@ ul.ui-widget-content {
   .related-post .related-item {
     margin-bottom: 30px;
     max-height: 330px;
+    overflow: hidden;
     cursor: pointer; }
     .related-post .related-item .item-wrapper {
       display: block;
@@ -2338,7 +2349,9 @@ ul.ui-widget-content {
     .site-header .current_page_item a {
       border-bottom: 2px solid #f6921e; }
     .site-header #menu-search {
-      display: block; }
+      display: block;
+      margin-left: auto;
+      margin-right: 30px; }
     .site-header .menu-search-container {
       display: none;
       left: 30%;
@@ -2347,6 +2360,10 @@ ul.ui-widget-content {
       margin-left: 10px; }
     .site-header .si-icon-hamburger-cross {
       margin: 0; }
+    .site-header .toggle-menu {
+      right: -40px;
+      left: -40px;
+      padding: 20px 40px; }
   .si-icons span {
     margin: 40px 30px; }
   .si-icons-hover span {
@@ -2532,6 +2549,7 @@ ul.ui-widget-content {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     margin-left: 0;
+    margin-bottom: 0;
     padding: 0 10px;
     -webkit-border-radius: 8px;
             border-radius: 8px; }
@@ -2700,7 +2718,11 @@ ul.ui-widget-content {
       -webkit-box-align: stretch;
       -webkit-align-items: stretch;
           -ms-flex-align: stretch;
-              align-items: stretch; }
+              align-items: stretch;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
     .donate-content .bank-details li,
     .reports-content .bank-details li {
       margin-bottom: 20px;
@@ -2823,6 +2845,8 @@ ul.ui-widget-content {
     .site-header .toggle-menu .menu,
     .site-header .toggle-menu .menu-search-container {
       display: none; }
+  .site-header #menu-search {
+    margin: 0; }
   .site-header .menu-search-container {
     left: 25%;
     width: 50%; }

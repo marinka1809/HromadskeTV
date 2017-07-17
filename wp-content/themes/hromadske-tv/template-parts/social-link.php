@@ -5,6 +5,11 @@
             <a class="icon-vkontakte" href=" <?php  echo get_theme_mod('vk-link'); ?>"></a>
         </li>
     <?php endif; ?>
+    <?php if (get_theme_mod('instagram-link')): ?>
+        <li>
+            <a class="icon-instagram" href=" <?php  echo get_theme_mod('instagram-link'); ?>"></a>
+        </li>
+    <?php endif; ?>
     <?php if (get_theme_mod('facebook-link')): ?>
         <li>
             <a class="icon-facebook" href=" <?php  echo get_theme_mod('facebook-link'); ?>"></a>

@@ -39,6 +39,12 @@
       }
     }
 
+    .icon-instagram {
+      &:hover {
+        color:  #993D83;
+      }
+    }
+
     .icon-facebook {
       &:hover {
         color:  #3b5998;
@@ -129,7 +135,7 @@
       .submit {
         position: absolute;
         right: 20px;
-        top: auto;
+        top: 30%;
         color: #bebebe;
       }
 

@@ -8,7 +8,7 @@
  */
 
 ?>
-<li class="tablet col-md-6">
+<li class="tablet col-sm-12 col-md-6">
     <article class="big" id="<?php the_ID(); ?>" style="background: url('<?php the_post_thumbnail_url(); ?>') 50% 50% no-repeat; background-size: cover;">
         <a class="dark-bg" href="<?php the_permalink(); ?>">
             <h2> <?php the_title();?> </h2>
