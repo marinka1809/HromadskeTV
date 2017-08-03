@@ -3,7 +3,7 @@ $=jQuery;
 $(document).ready(function(){
 
     $(function() {
-        var pull 		= $('.si-icons');
+        var pull 		= $('.si-icons-default > .si-icon');
         menu 		= $('.toggle-menu');
         menuHeight	= menu.height();
 

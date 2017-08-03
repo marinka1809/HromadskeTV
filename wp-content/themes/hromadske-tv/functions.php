@@ -830,3 +830,16 @@ function my_js_var_stylesheet_directory() { ?>
     </script>
 <?php }
 
+
+
+//----------Modify query on news page---------------------
+//-------------------------------------------------
+function my_modify_blog_query($query)
+{
+    if ($query->is_home() && $query->is_main_query()) { // Run only on the homepage
+        $query->query_vars['ignore_sticky_posts'] = 1; // Exclude my featured category because I display that elsewhere
+    }
+}
+
+add_action('pre_get_posts', 'my_modify_blog_query');
+
