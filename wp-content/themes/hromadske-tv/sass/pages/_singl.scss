@@ -263,13 +263,20 @@
   }
 
   //----------------------VIDEO-------------------
-  iframe {
-    display: block;
-    width: 970px;
-    max-width: 100%;
-    height: 180px;
-    margin: 0 auto;
+  .youtube-wrapper {
+    iframe {
+      display: block;
+      width: 970px;
+      max-width: 100%;
+      height: 180px;
+      margin: 0 auto;
+    }
   }
+
+  .instagram-media {
+    margin: 0 auto !important;
+  }
+
 
   //----------------------IMAGES-------------------
   figure {
