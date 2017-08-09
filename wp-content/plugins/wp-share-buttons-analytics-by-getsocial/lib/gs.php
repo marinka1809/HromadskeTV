@@ -2,7 +2,7 @@
 
 class GS {
 
-    public $plugin_version = "4.0";
+    public $plugin_version = "4.0.2";
     private $gs_url = "https://api.at.getsocial.io";
     private $gs_account = "https://getsocial.io";
     private $gs_url_api = "//api.at.getsocial.io";
