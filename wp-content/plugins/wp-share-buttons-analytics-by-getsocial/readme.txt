@@ -1,15 +1,11 @@
-=== Premium Social Tools & Social Sharing Analytics ===
+=== Social Media Share Buttons & Analytics ===
 Contributors: GetSocial.io, joaoromao
-
-Tags: addthis, addtoany, share, sharing, social, analytics, button, facebook share, facebook button, like button, tweet button, twitter share, pinterest share, pin button, floating buttons, share, share button, share buttons, share links, shareaholic, sharethis, social analytics, social media, social bookmarking, social buttons, social media, social plugin, social share buttons, social sharing, mobile share bar, mobile sharing, top bar, welcome bar, hello bar, follow buttons, instagram, youtube, increase followers, increase shares, increase traffic, copy paste shares, google analytics integration, yummly, flickr, rss, mailchimp, popup, list builder, infusion soft, bitly, exit intent, time on page, automatic popup, fly-in, exit popup, popup builder, share popup, wordpress popup, subscribe popup, popup on exit, reaction buttons, reactions, reaction bar, virality alerts, alerts, dark social, scheduling, scheduler, automatic social media, automation, automatic facebook
-
+Tags: share buttons, social media, social, share, sharing, analytics, button, facebook share, facebook button, like button, tweet button, twitter share, pinterest share, pin button, floating buttons, share, share button, share links, shareaholic, sharethis, social analytics, social media, social bookmarking, social buttons, social plugin, social share buttons, social sharing, mobile share bar, mobile sharing, top bar, welcome bar, hello bar, follow buttons, instagram, youtube, increase followers, increase shares, increase traffic, copy paste shares, google analytics integration, yummly, flickr, rss, mailchimp, popup, list builder, infusion soft, bitly, exit intent, time on page, automatic popup, fly-in, exit popup, popup builder, share popup, wordpress popup, subscribe popup, popup on exit, reaction buttons, reactions, reaction bar, virality alerts, alerts, dark social, scheduling, scheduler, automatic social media, automation, automatic facebook, addthis, addtoany
 Requires at least: 3.0
-Tested up to: 4.7.2
-Stable tag: 4.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tested up to: 4.8
+Stable tag: 4.0.2
 
-Professional Social Tools and Analytics for desktop & mobile. Used by small websites & Fortune 500 companies. No code required!
+Share Buttons & Analytics for desktop & mobile. Used by small websites & Fortune 500 companies. No code required.
 
 == Description ==
 
@@ -243,6 +239,14 @@ We have a free plan called Test Plan and it’s meant as a demo for you to test 
 9. Analytics for your Social Bars
 
 == Changelog ==
+**4.0.2**
+
+- Bug fixes
+
+**4.0.1**
+
+- Add support to Wordpress 4.8
+
 **4.0**
 
 - Introduction of new pricing structure and reposition as a premium tools & analytics platform.
