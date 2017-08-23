@@ -1538,6 +1538,8 @@ ul.ui-widget-content {
   .single-content ul {
     list-style: disc;
     padding-left: 50px; }
+  .single-content em {
+    font-style: italic; }
   .single-content a {
     color: #fc2e39;
     background-repeat: no-repeat;
