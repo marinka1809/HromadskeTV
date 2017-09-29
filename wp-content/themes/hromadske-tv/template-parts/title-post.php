@@ -35,7 +35,7 @@
 
             $time_string = sprintf( $time_string,
                 esc_attr( get_the_date( 'c' ) ),
-                date_i18n( 'l, d F Y',  strtotime( get_the_date( ) ) )
+                date_i18n( 'l, d F Y',  strtotime( get_the_date('c' ) ) )
             );
             ?>
             <?php echo $time_string ;?>
