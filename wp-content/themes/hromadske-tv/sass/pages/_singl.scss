@@ -538,4 +538,20 @@
       color: #696e72;
     }
   }
+
+
+  //---------------------- IMAGE POPUP-------------------
+  .image-popup {
+    display: block;
+    overflow: hidden;
+    background-image: none;
+
+    &:hover {
+      background-image: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
 }

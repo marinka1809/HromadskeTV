@@ -389,12 +389,6 @@ aside {
         -ms-transform: scale(1.2, 1.2);
             transform: scale(1.2, 1.2); }
 
-.image-popup {
-  display: block;
-  overflow: hidden; }
-  .image-popup:focus {
-    outline: none; }
-
 /* magnific-popup */
 /* padding-bottom and top for image */
 .mfp-no-margins img.mfp-img {
@@ -1870,6 +1864,14 @@ ul.ui-widget-content {
     .related-post .related-item p {
       font: 14px/1.5em "Open Sans", sans-serif;
       color: #696e72; }
+  .related-post .image-popup {
+    display: block;
+    overflow: hidden;
+    background-image: none; }
+    .related-post .image-popup:hover {
+      background-image: none; }
+    .related-post .image-popup:focus {
+      outline: none; }
 
 .page-id-31 h1 {
   text-align: center; }
