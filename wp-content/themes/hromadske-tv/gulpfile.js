@@ -36,6 +36,7 @@ gulp.task('scripts', function() {
         'libs/dotdotdot-master/jquery.dotdotdot.min.js',
         'libs/jQuery-autoComplete-master/jquery.auto-complete.min.js', // autoComplete
         'libs/slick/slick.min.js', // Slick slider
+        'libs/magnific-popup/dist/jquery.magnific-popup.min.js', // Slick slider
 
     ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
