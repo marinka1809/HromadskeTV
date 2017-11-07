@@ -28,7 +28,7 @@ get_header(); ?>
                             <div class="container flex-block">
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                         <p><?php the_excerpt_max_charlength(165); ?></p>
                                         <a class="link-detailed" href="<?php the_permalink(); ?>"><?php echo get_theme_mod('inscription-detailed-button'); ?></a>
                                     </div>
@@ -113,7 +113,7 @@ get_header(); ?>
 
                                         <a class="mobile link-all-articles" href="/all-stories"> <?php echo get_theme_mod('title-stories-section'); ?></a>
                                     </header>
-                                    <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                                    <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                     <p><?php the_excerpt_max_charlength(165); ?></p>
                                     <a class="link-detailed" href="<?php the_permalink(); ?>"><?php echo get_theme_mod('inscription-detailed-button'); ?></a>
                                 </div>
@@ -128,7 +128,7 @@ get_header(); ?>
 
             <section class="section section-donate">
                 <div class="container">
-                    <h1><?php echo get_theme_mod('title-donate-section'); ?></h1>
+                    <h2><?php echo get_theme_mod('title-donate-section'); ?></h2>
                     <a class="link-donate" href="<?php echo get_page_link(get_theme_mod('page-donate') ); ?>">
                         <?php echo get_theme_mod('inscription-donate'); ?>
                     </a>
@@ -151,7 +151,7 @@ get_header(); ?>
                 <section class="section front-project-section" >
                     <div class="container">
                         <header class="section-header">
-                            <h1  class="tablet"><?php echo get_theme_mod('title-project-section'); ?></h1>
+                            <h2  class="tablet"><?php echo get_theme_mod('title-project-section'); ?></h2>
                             <a class="tablet link-all-articles" href="/projects"> <?php echo get_theme_mod('inscription-button-all-articles'); ?></a>
 
                             <a class="mobile link-all-articles" href="/projects"> <?php echo get_theme_mod('title-project-section');  ?></a>

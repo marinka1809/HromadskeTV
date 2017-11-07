@@ -157,10 +157,10 @@ add_action( 'wp_enqueue_scripts', 'hromadske_tv_scripts' );
 
 // We connect the function of activating the meta block (my_extra_fields)
 function my_extra_fields() {
-    add_meta_box( 'choice_cap', esc_html__( 'Choice of cap', 'hromadske-tv' ), 'choice_cap_func', array('post','stories','episodes'), 'side', 'high'  );
+    add_meta_box( 'choice_cap', esc_html__( 'Choice of cap', 'hromadske-tv' ), 'choice_cap_func', array('post','stories','episodes', 'production'), 'side', 'high'  );
     add_meta_box( 'extra_fields', esc_html__( 'Additional notation', 'hromadske-tv' ), 'extra_fields_box_func', 'post', 'side', 'high'  );
     add_meta_box( 'stories_extra_fields', esc_html__( 'Additional notation', 'hromadske-tv'), 'stories_extra_fields_box', 'stories', 'side', 'high'  );
-    add_meta_box( 'episodes_extra_fields', esc_html__( 'Additional notation', 'hromadske-tv'), 'episodes_extra_fields_box', 'episodes', 'side', 'high'  );
+    add_meta_box( 'episodes_extra_fields', esc_html__( 'Additional notation', 'hromadske-tv'), 'episodes_extra_fields_box', array('episodes', 'production'), 'side', 'high'  );
     global $post;
     if ( $post->post_name == donate ) {
         add_meta_box( 'bank_details',  esc_html__('Section of bank details', 'hromadske-tv'), 'bank_details_box_func', 'page', 'normal', 'high'  );

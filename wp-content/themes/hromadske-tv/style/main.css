@@ -960,13 +960,13 @@ ul.ui-widget-content {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
-  .welcome-section h1 {
+  .welcome-section h2 {
     margin-bottom: 25px;
     font: 24px GothamProBlack; }
-    .welcome-section h1 a {
+    .welcome-section h2 a {
       -webkit-transition: all ease 0.5s;
       transition: all ease 0.5s; }
-      .welcome-section h1 a:hover {
+      .welcome-section h2 a:hover {
         color: #ff4848;
         opacity: 0.9; }
   .welcome-section p {
@@ -1008,13 +1008,13 @@ ul.ui-widget-content {
     background-color: rgba(0, 0, 0, 0.4); }
   .front-story-section .section-header {
     opacity: 0.75; }
-  .front-story-section h1 {
+  .front-story-section .title {
     font: 24px/1.2em GothamProBlack;
     margin-bottom: 10px; }
-    .front-story-section h1 a {
+    .front-story-section .title a {
       -webkit-transition: all ease 0.5s;
       transition: all ease 0.5s; }
-      .front-story-section h1 a:hover {
+      .front-story-section .title a:hover {
         color: #ff4848;
         opacity: 0.9; }
   .front-story-section p {
@@ -1024,7 +1024,7 @@ ul.ui-widget-content {
 
 .section-donate {
   text-align: center; }
-  .section-donate h1 {
+  .section-donate h2 {
     margin-bottom: 20px;
     font: 22px GothamProBold;
     color: #171617; }
@@ -2489,7 +2489,7 @@ ul.ui-widget-content {
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center; }
-    .welcome-section h1 {
+    .welcome-section h2 {
       margin-bottom: 25px;
       font: 50px GothamProBlack; }
     .welcome-section p {
@@ -2503,13 +2503,13 @@ ul.ui-widget-content {
   .front-story-section .bg-dark {
     padding: 120px 0;
     background-color: rgba(0, 0, 0, 0.5); }
-  .front-story-section h1 {
+  .front-story-section .title {
     font-size: 62px;
     margin-bottom: 0; }
   .front-story-section p {
     margin-bottom: 50px;
     font-size: 22px; }
-  .section-donate h1 {
+  .section-donate h2 {
     font-size: 26px; }
   .front-project-section .first-item-project {
     display: block;
@@ -2984,7 +2984,7 @@ ul.ui-widget-content {
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center; }
-    .welcome-section h1 {
+    .welcome-section h2 {
       margin-bottom: 25px;
       font: 50px GothamProBlack; }
     .welcome-section p {
@@ -2997,7 +2997,7 @@ ul.ui-widget-content {
       margin-bottom: 0; }
   .front-story-section .section-header {
     margin-bottom: 110px; }
-  .front-story-section h1 {
+  .front-story-section .title {
     margin-bottom: 25px; }
   .front-project-section .first-item-project {
     display: none; }
