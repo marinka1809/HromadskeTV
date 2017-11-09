@@ -145,13 +145,13 @@ function hromadske_tv_scripts() {
 	wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/95a5ddb753.js', true);
 	wp_enqueue_script( 'hromadske-tv-snap', get_template_directory_uri() . '/AnimatedSVGIcons/js/snap.svg-min.js', true );
 	wp_enqueue_script( 'hromadske-tv-modernizr', get_template_directory_uri() . '/AnimatedSVGIcons/js/modernizr.custom.js', true );
-	wp_enqueue_script( 'hromadske-tv-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-	wp_enqueue_script( 'hromadske-tv-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'hromadske-tv-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'hromadske-tv-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20151215', true );
 
     wp_enqueue_script( 'libs', get_template_directory_uri() . '/js/libs.min.js', array(),  '1.0.0', true);
-    wp_enqueue_script( 'svgicons-config', get_template_directory_uri() . '/AnimatedSVGIcons/js/svgicons-config.js', array('hromadske-tv-snap','hromadske-tv-modernizr'),  '1.0.0', true);
-    wp_enqueue_script( 'svgicons', get_template_directory_uri() . '/AnimatedSVGIcons/js/svgicons.js', array('svgicons-config'),  '1.0.0' , true);
-    wp_enqueue_script( 'main-script', get_template_directory_uri() . '/js/main.js', array('libs','svgicons-config', 'svgicons'),  '1.0.0' , true);
+    wp_enqueue_script( 'svgicons-config', get_template_directory_uri() . '/AnimatedSVGIcons/js/svgicons-config.min.js', array('hromadske-tv-snap','hromadske-tv-modernizr'),  '1.0.0', true);
+    wp_enqueue_script( 'svgicons', get_template_directory_uri() . '/AnimatedSVGIcons/js/svgicons.min.js', array('svgicons-config'),  '1.0.0' , true);
+    wp_enqueue_script( 'main-script', get_template_directory_uri() . '/js/main.min.js', array('libs','svgicons-config', 'svgicons'),  '1.0.0' , true);
 }
 add_action( 'wp_enqueue_scripts', 'hromadske_tv_scripts' );
 
@@ -475,7 +475,7 @@ function wp_quote_type2_func( $atts, $content) {
 }
 
 function admin_ajax() {
-   wp_enqueue_script( 'ajax-script', get_theme_file_uri( '/js/ajax-script.js' ), array('libs') );
+   wp_enqueue_script( 'ajax-script', get_theme_file_uri( '/js/ajax-script.min.js' ), array('libs') );
 }
 add_action('wp_enqueue_scripts', 'admin_ajax');
 
@@ -696,8 +696,8 @@ add_action( 'init', 'hromadske_autocomplete_init' );
 function hromadske_autocomplete_init() {
     // Register our jQuery UI style and our custom javascript file
     wp_register_script( 'jquery-ui', "https://code.jquery.com/ui/1.12.1/jquery-ui.js");
-    wp_register_style('hromadske-jquery-ui','http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
-    wp_register_script( 'my_acsearch', get_template_directory_uri() . '/js/myacsearch.js', array('libs','jquery-ui' ),null,true);
+    wp_register_style('hromadske-jquery-ui','https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
+    wp_register_script( 'my_acsearch', get_template_directory_uri() . '/js/myacsearch.min.js', array('libs','jquery-ui' ),null,true);
     wp_localize_script( 'my_acsearch', 'MyAcSearch', array('url' => admin_url( 'admin-ajax.php' )));
     // Function to fire whenever search form is displayed
     add_action( 'get_search_form', 'hromadske_autocomplete_search_form' );
