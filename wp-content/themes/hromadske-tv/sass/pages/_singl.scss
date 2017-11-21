@@ -462,32 +462,24 @@
 
 
 //----------------------GETSOCIAL-------------------
-.getsocial {
+.addthis_inline_share_toolbox_dyx4 {
   width: auto;
   max-width: 100%;
   margin: 0 20px 30px;
 
-  .gs-buttons.gs-round a[class*="gs-"] {
-    border-radius: 20px;
-  }
-
-  .gs-buttons a[class*="gs-"]:not(.gs-plus) i,
-  .gs-buttons a[class*="gs-"]:not(.gs-hide) i {
-
+  a.at-share-btn {
+    min-width: 100px;
+    margin-right: 10px;
+    padding: 5px 15px;
+    background-image: none;
     &:after {
       width: 0;
     }
   }
-
-  .gs-buttons.gs-flat-colors.gs-medium a[class*="gs-"] {
-    padding: 10px 20px;
-    margin-right: 10px;
-  }
-
-  a.gs-plus{
-    display: none !important;
-  }
 }
+
+
+
 
 
 //----------------------RELATED POSTS-------------------
