@@ -31,7 +31,7 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 
 gulp.task('scripts', function() {
     return gulp.src([ // Берем все необходимые библиотеки
-        'libs/jquery/dist/jquery.min.js', // jQuery
+        // 'libs/jquery/dist/jquery.min.js', // jQuery (disabled this version because it conflicts with earlier ones)
         'libs/bootstrap/dist/js/bootstrap.min.js', // bootstrap
         'libs/dotdotdot-master/jquery.dotdotdot.min.js',
         'libs/jQuery-autoComplete-master/jquery.auto-complete.min.js', // autoComplete
