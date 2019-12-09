@@ -8,6 +8,7 @@ sitemap.xml
 *.log
 wp-content/cache/
 wp-content/backups/
+wp-content/uploads/
 sitemap.xml.gz
 wp-includes
 wp-admin

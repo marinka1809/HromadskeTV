@@ -1,0 +1,469 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 2J Slideshow\n"
+"POT-Creation-Date: 2016-07-28 10:46+0200\n"
+"PO-Revision-Date: 2016-07-28 10:48+0200\n"
+"Last-Translator: RoboSoft Team <team@robosoft.co>\n"
+"Language-Team: 2J Team <team@2joomla.net>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ../inc\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: addons/report/report.html.php:6
+msgid "2J Slideshow Detailed Report"
+msgstr "2J Slideshow Detailed Report"
+
+#: addons/report/report.html.php:29
+msgid "Slideshow Views"
+msgstr "Slideshow Views"
+
+#: addons/report/report.html.php:33
+msgid "Slideshows Amount"
+msgstr "Slideshows Amount"
+
+#: addons/report/report.html.php:48
+msgid "Published"
+msgstr "Published"
+
+#: addons/report/report.html.php:49
+msgid "Future"
+msgstr "Future"
+
+#: addons/report/report.html.php:50
+msgid "Pending"
+msgstr "Pending"
+
+#: addons/report/report.html.php:51
+msgid "Private"
+msgstr "Private"
+
+#: addons/report/report.html.php:52
+msgid "Draft"
+msgstr "Draft"
+
+#: addons/report/report.html.php:53
+msgid "Trash"
+msgstr "Trash"
+
+#: addons/report/report.html.php:54
+msgid "In Total"
+msgstr "In Total"
+
+#: editor_button.php:11 media_fields.php:32
+msgid "2J Slideshow"
+msgstr "2J Slideshow"
+
+#: editor_button.php:12 listing.php:17
+msgid "Close"
+msgstr "Close"
+
+#: editor_button.php:13
+msgid "Insert"
+msgstr "Insert"
+
+#: editor_button.php:19
+msgid "Add 2J Slideshow"
+msgstr "Add 2J Slideshow"
+
+#: editor_button.php:28
+msgid "Select slideshow"
+msgstr "Select slideshow"
+
+#: editor_button.php:30
+msgid "Manage your "
+msgstr "Manage your "
+
+#: editor_button.php:32
+msgid "2J Slideshows"
+msgstr "2J Slideshows"
+
+#: init.php:59
+msgid "Slideshows"
+msgstr "Slideshows"
+
+#: init.php:60 init.php:61
+msgid "Add Slideshow"
+msgstr "Add Slideshow"
+
+#: init.php:62
+msgid "Edit Slideshow"
+msgstr "Edit Slideshow"
+
+#: listing.php:16
+msgid "Get 2J Slideshow Premium version"
+msgstr "Get 2J Slideshow Premium version"
+
+#: listing.php:18 options/premium_version.php:6
+msgid "Get Premium version"
+msgstr "Get Premium version"
+
+#: listing.php:20
+msgid ""
+"You can create only 1 slideshow. Update to Premium to get unlimited "
+"slideshows"
+msgstr ""
+"You can create only 1 slideshow. Update to Premium to get unlimited "
+"slideshows"
+
+#: listing.php:44
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: media_fields.php:37
+msgid "Link\\Video\\JS"
+msgstr "Link\\Video\\JS"
+
+#: media_fields.php:46
+msgid "Link"
+msgstr "Link"
+
+#: media_fields.php:47
+msgid "Link on new window"
+msgstr "Link on new window"
+
+#: media_fields.php:48
+msgid "Javascript"
+msgstr "Javascript"
+
+#: media_fields.php:52
+msgid "Type Link"
+msgstr "Type Link"
+
+#: media_fields.php:62
+msgid "Image"
+msgstr "Image"
+
+#: media_fields.php:64
+msgid "Video"
+msgstr "Video"
+
+#: media_fields.php:65
+msgid "Video + splash images"
+msgstr "Video + splash images"
+
+#: media_fields.php:67
+msgid "Description text"
+msgstr "Description text"
+
+#: media_fields.php:68
+msgid "Image + Description text"
+msgstr "Image + Description text"
+
+#: media_fields.php:73
+msgid "Type Slide"
+msgstr "Type Slide"
+
+#: media_fields.php:83
+msgid "light"
+msgstr "light"
+
+#: media_fields.php:84
+msgid "dark"
+msgstr "dark"
+
+#: media_fields.php:85
+msgid "purple"
+msgstr "purple"
+
+#: media_fields.php:86
+msgid "blue"
+msgstr "blue"
+
+#: media_fields.php:87
+msgid "dark blue"
+msgstr "dark blue"
+
+#: media_fields.php:88
+msgid "red"
+msgstr "red"
+
+#: media_fields.php:89
+msgid "yellow"
+msgstr "yellow"
+
+#: media_fields.php:90
+msgid "green"
+msgstr "green"
+
+#: media_fields.php:91
+msgid "orange"
+msgstr "orange"
+
+#: media_fields.php:92
+msgid "violet"
+msgstr "violet"
+
+#: media_fields.php:93
+msgid "pink"
+msgstr "pink"
+
+#: media_fields.php:94
+msgid "brown"
+msgstr "brown"
+
+#: media_fields.php:95
+msgid "coral"
+msgstr "coral"
+
+#: media_fields.php:96
+msgid "redviolet"
+msgstr "redviolet"
+
+#: media_fields.php:97
+msgid "salmon"
+msgstr "salmon"
+
+#: media_fields.php:98
+msgid "rosepink"
+msgstr "rosepink"
+
+#: media_fields.php:99
+msgid "redorange"
+msgstr "redorange"
+
+#: media_fields.php:100
+msgid "carmine"
+msgstr "carmine"
+
+#: media_fields.php:101
+msgid "maroon"
+msgstr "maroon"
+
+#: media_fields.php:102
+msgid "fuchia"
+msgstr "fuchia"
+
+#: media_fields.php:103
+msgid "seashell"
+msgstr "seashell"
+
+#: media_fields.php:104
+msgid "yellowgreen"
+msgstr "yellowgreen"
+
+#: media_fields.php:113
+msgid "Style"
+msgstr "Style"
+
+#: media_fields.php:123 media_fields.php:148
+msgid "off"
+msgstr "off"
+
+#: media_fields.php:138
+msgid "Opacity"
+msgstr "Opacity"
+
+#: media_fields.php:171 options/general.php:38
+msgid "Padding"
+msgstr "Padding"
+
+#: media_fields.php:181
+msgid "left"
+msgstr "left"
+
+#: media_fields.php:182
+msgid "bottom"
+msgstr "bottom"
+
+#: media_fields.php:183
+msgid "right"
+msgstr "right"
+
+#: media_fields.php:184
+msgid "top"
+msgstr "top"
+
+#: media_fields.php:190
+msgid "Position"
+msgstr "Position"
+
+#: media_fields.php:215
+msgid "Size"
+msgstr "Size"
+
+#: options/animation.php:6
+msgid "Animation"
+msgstr "Animation"
+
+#: options/animation.php:14
+msgid "Effect"
+msgstr "Effect"
+
+#: options/animation.php:28
+msgid "Effect Duration"
+msgstr "Effect Duration"
+
+#: options/animation.php:39
+msgid "Loop"
+msgstr "Loop"
+
+#: options/animation.php:47
+msgid "AutoPlay"
+msgstr "AutoPlay"
+
+#: options/animation.php:57
+msgid "AutoPlay Timer"
+msgstr "AutoPlay Timer"
+
+#: options/animation.php:68
+msgid "AutoPlay stop on touch"
+msgstr "AutoPlay stop on touch"
+
+#: options/general.php:6
+msgid "General"
+msgstr "General"
+
+#: options/general.php:14
+msgid "Start Index"
+msgstr "Start Index"
+
+#: options/general.php:24
+msgid "Align"
+msgstr "Align"
+
+#: options/general.php:49
+msgid "RTL"
+msgstr "RTL"
+
+#: options/images.php:6
+msgid "Tools"
+msgstr "Tools"
+
+#: options/images.php:15
+msgid "Manage Slides"
+msgstr "Manage Slides"
+
+#: options/interface.php:6
+msgid "Interface"
+msgstr "Interface"
+
+#: options/interface.php:18
+msgid "Show Caption"
+msgstr "Show Caption"
+
+#: options/interface.php:29
+msgid "Navigation style"
+msgstr "Navigation style"
+
+#: options/interface.php:42
+msgid "Navigation position"
+msgstr "Navigation position"
+
+#: options/interface.php:53
+msgid "Thumbs Options"
+msgstr "Thumbs Options"
+
+#: options/interface.php:61
+msgid "FullScreen"
+msgstr "FullScreen"
+
+#: options/interface.php:74
+msgid " Show Arrow"
+msgstr " Show Arrow"
+
+#: options/interface.php:82
+msgid "Click"
+msgstr "Click"
+
+#: options/interface.php:91
+msgid "Swipe"
+msgstr "Swipe"
+
+#: options/interface.php:100
+msgid "Keyboard"
+msgstr "Keyboard"
+
+#: options/interface.php:109
+msgid "Thumbs Border"
+msgstr "Thumbs Border"
+
+#: options/interface.php:118
+msgid "Border options"
+msgstr "Border options"
+
+#: options/interface.php:129
+msgid "Bg color"
+msgstr "Bg color"
+
+#: options/interface.php:140
+msgid "Bg Color"
+msgstr "Bg Color"
+
+#: options/interface.php:150
+msgid "Bg Nav Color"
+msgstr "Bg Nav Color"
+
+#: options/premium_version.php:16 topblock.php:10
+msgid "Get Unlimited Functionality in Premium version"
+msgstr "Get Unlimited Functionality in Premium version"
+
+#: options/size.php:6
+msgid "Size Slideshow"
+msgstr "Size Slideshow"
+
+#: options/size.php:18
+msgid "Size "
+msgstr "Size "
+
+#: options/size.php:29
+msgid "Min Size "
+msgstr "Min Size "
+
+#: options/size.php:38
+msgid "Max Size "
+msgstr "Max Size "
+
+#: options/size.php:48
+msgid "Ratio"
+msgstr "Ratio"
+
+#: options/size.php:57
+msgid " Image Fit"
+msgstr " Image Fit"
+
+#: options/size.php:70
+msgid "Images Space"
+msgstr "Images Space"
+
+#: options/size.php:81
+msgid "Thumb Space"
+msgstr "Thumb Space"
+
+#: widget.php:9
+msgid "2J Slideshow Widget"
+msgstr "2J Slideshow Widget"
+
+#: widget.php:10
+msgid "Publish slideshow on your website."
+msgstr "Publish slideshow on your website."
+
+#: widget.php:25 widget.php:57
+msgid "This widget available in Premium version"
+msgstr "This widget available in Premium version"
+
+#: widget.php:34
+msgid "New Slideshow"
+msgstr "New Slideshow"
+
+#: widget.php:61
+msgid "Title"
+msgstr "Title"
+
+#: widget.php:66
+msgid "Slideshow:"
+msgstr "Slideshow:"
+
+#: widget.php:69
+msgid "Configure it in"
+msgstr "Configure it in"
+
+#: widget.php:71
+msgid "2J Slideshow plugin"
+msgstr "2J Slideshow plugin"
