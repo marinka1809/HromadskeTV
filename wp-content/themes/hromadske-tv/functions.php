@@ -183,6 +183,9 @@ function choice_cap_func( $post ){
         <li>
             <label><input type="radio" name="extra[content-cap]" value="clean" <?php checked( $mark_v, 'clean' ); ?> /> <?php esc_html_e('clean', 'hromadske-tv') ?></label>
         </li>
+		<li>
+            <label><input type="radio" name="extra[content-cap]" value="none" <?php checked( $mark_v, 'none' ); ?> /> <?php esc_html_e('none', 'hromadske-tv') ?></label>
+        </li>
         <li>
             <label><?php esc_html_e('Url video:', 'hromadske-tv') ?> <input type="text" name="extra[url-video]" value="<?php echo get_post_meta($post->ID, 'url-video', 1); ?>" style="width:70%" /></label>
         </li>
