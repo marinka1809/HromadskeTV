@@ -1,0 +1,5 @@
+/*  
+ * 2J SlideShow		http://2joomla.net/wordpress
+ * Author:            2J Team  http://2joomla.net
+ * License:           GPL-2.0+
+ */.twojTopBlock{	background-color: #337AB7;	padding: 25px 0 10px 0;	margin-left: -20px;	font-family: Myriad Pro ;	cursor: pointer;	text-align: center;}.twojTopBlock .twojTopBig{	color: white;	font-size: 26px;	font-weight: bolder;	padding: 0 0 15px 0;}.twojTopBlock .twojTopBig .dashicons{	font-size: 40px;	position: absolute;	margin-left: -45px;	margin-top: -10px;}@media screen and ( max-width: 600px ) {	.twojTopBlock{ padding-top: 60px; margin-bottom: -50px; }}

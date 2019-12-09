@@ -1,0 +1,35 @@
+/*  
+ * 2J SlideShow		http://2joomla.net/wordpress
+ * Author:            2J Team  http://2joomla.net
+ * License:           GPL-2.0+
+ */
+
+.collection-settings.gallery-settings{
+	display: none
+}
+
+.pw-gallery.twoj_block{
+	text-align: center;
+}
+
+.cmb-type-pw-gallery p.cmb2-metabox-description{
+	text-align: center;
+}
+
+table.compat-attachment-fields tr.compat-field-twojs_gallery_line,
+table.compat-attachment-fields tr.compat-field-twojs_gallery_link_options,
+table.compat-attachment-fields tr.compat-field-twojs_gallery_col,
+table.compat-attachment-fields tr.compat-field-twojs_gallery_video_link,
+table.compat-attachment-fields tr.compat-field-twojs_gallery_type_link,
+table.compat-attachment-fields tr.compat-field-twojs_gallery_link,
+table.compat-attachment-fields tr.compat-field-twojs_style,
+table.compat-attachment-fields tr.compat-field-twojs_opacity,
+table.compat-attachment-fields tr.compat-field-twojs_padding,
+table.compat-attachment-fields tr.compat-field-twojs_position,
+table.compat-attachment-fields tr.compat-field-twojs_size{
+	display:block !important;
+}
+
+#side-sortables .cmb-type-pw-gallery .cmb2-metabox-description{
+	padding-bottom: 5px;
+}
