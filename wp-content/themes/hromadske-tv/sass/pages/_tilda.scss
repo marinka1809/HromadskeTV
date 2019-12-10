@@ -4,3 +4,17 @@
 #allrecords a {
 	background: none;
 }
+
+.single-content {
+	.t-records {
+		p, h1, h2, h3, h4, ul, ol, figcaption, blockquote {
+			padding: 0;
+		}
+	}
+}
+
+.tilda-publishing {
+	.single-content {
+		padding-top: 0;
+	}
+}
