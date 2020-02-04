@@ -2254,6 +2254,9 @@ ul.ui-widget-content {
 #allrecords a {
   background: none; }
 
+#allrecords ul {
+  width: auto; }
+
 .single-content .t-records p, .single-content .t-records h1, .single-content .t-records h2, .single-content .t-records h3, .single-content .t-records h4, .single-content .t-records ul, .single-content .t-records ol, .single-content .t-records figcaption, .single-content .t-records blockquote {
   padding: 0; }
 
